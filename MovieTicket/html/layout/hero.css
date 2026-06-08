@@ -1,0 +1,185 @@
+/* --- Slider (Hero Slider) --- */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Điều chỉnh chiều cao phù hợp (70-80% màn hình) */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Đảm bảo slide-bg lấp đầy */
+.slide-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+/* --- Slides Wrapper --- */
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+/* --- Background & Overlay --- */
+.slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    transition: transform 6s ease;
+}
+
+.slide.active .slide-bg {
+    transform: scale(1);
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #0D0D0D 15%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.4));
+    z-index: 2;
+}
+
+/* --- Content Animation --- */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--text-sub);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+    transition-delay: 0.2s;
+}
+
+.btn-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+    transition-delay: 0.4s;
+}
+
+/* Active Slide Animation Trigger */
+.slide.active h1,
+.slide.active p,
+.slide.active .btn-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Professional Button Style --- */
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px; /* Square vibe but modern */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 102, 0, 0.4);
+    filter: brightness(1.1);
+}
+
+/* --- Navigation Controls --- */
+.slider-nav {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.dot {
+    width: 40px;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #c90000;
+}
+
+/* Arrow Navigation */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.hero-slider:hover .arrow {
+    opacity: 1;
+}
+
+.arrow:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.arrow-prev { left: 30px; }
+.arrow-next { right: 30px; }
+
+@media (max-width: 768px) {
+    .arrow { display: none; }
+    .hero-content h1 { font-size: 3rem; }
+}

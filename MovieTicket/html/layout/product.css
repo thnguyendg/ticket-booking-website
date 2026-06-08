@@ -1,0 +1,232 @@
+/* product.css */
+:root {
+    --primary-color: #E50914;
+    --text-main: #FFFFFF;
+    --text-muted: #B3B3B3;
+    --bg-dark: #141414;
+    --bg-card: #1a1a1a;
+    --border-color: #2a2a2a;
+    --grid-gap: 20px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding-top: 75px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+/* Header Styles[cite: 1] */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+/* Bao quanh các thẻ a bằng một cái box */
+.filter-nav {
+    display: inline-flex;
+    padding: 8px;
+    border-radius: 12px; /* Bo góc cho box ngoài */
+    gap: 10px; /* Khoảng cách giữa các thẻ a */
+    border: solid 1px #1f1f1f;
+}
+
+.filter-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 8px; /* Bo góc cho từng thẻ a */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Hiệu ứng khi di chuột qua (Hover) */
+.filter-link:hover {
+    background-color: #8d4444;
+    color: #ffffff;
+}
+
+/* Hiệu ứng khi được chọn (Active) - Background màu đỏ */
+.filter-link.active {
+    background-color: #ff4d4d !important; /* Màu đỏ */
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3); /* Thêm chút bóng đổ cho sang */
+}
+
+/* Grid Layout - 4 Columns, 4 Rows */
+.product-grid {
+    display: grid !important; /* Override inline flex from source if necessary */
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: min-content;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+
+/* Product Card Styles[cite: 1] */
+.product-card {
+    background: transparent;
+    border: none;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+    outline: 1px solid var(--primary-color);
+    z-index: 10;
+}
+
+.product-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 2/3;
+    background: #333;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.category-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #e67e22;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    z-index: 2;
+}
+
+.product-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: left;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-card:hover .product-name {
+    color: var(--primary-color);
+}
+
+.product-price {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    margin-right: 8px;
+}
+
+.sale-price {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+/* Pagination Styling */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.page-numbers-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.page-btn, .page-num {
+    background: var(--card-bg);
+    color: var(--text-gray);
+    border: 1px solid #333;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+}
+
+.page-btn:hover:not(:disabled), 
+.page-num:hover {
+    border-color: var(--primary-red);
+    color: #790000;
+    background: #1f1919;
+}
+
+.page-num.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: #ff0000;
+}
+
+.page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+
+/* Responsive Design */
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .page-num:not(.active) { display: none; } /* Hide extra numbers on mobile */
+}
+
+

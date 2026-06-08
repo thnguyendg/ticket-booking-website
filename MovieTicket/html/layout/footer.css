@@ -1,0 +1,246 @@
+/* footer.css */
+:root {
+    --accent-color: #e50914;
+    --text-white: #ffffff;
+    --bg-icon: #1a1a1a;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Social Brand Colors */
+    --fb-color: #1877f2;
+    --ms-color: #0084ff;
+    --yt-color: #ff0000;
+    --zl-color: #0068ff;
+}
+
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-column h3 {
+    position: relative;
+    color: var(--text-white);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: var(--accent-color);
+}
+
+.brand-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-column ul li a:hover {
+    padding-left: 0; 
+}
+
+/* Chỉ áp dụng cho các cột danh sách văn bản */
+.footer-column:not(.social-column) ul li a:hover {
+    padding-left: 5px;
+    color: var(--text-main);
+}
+
+.footer-social-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.social-title {
+    color: var(--text-white);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.social-title h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.social-links-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 1. Reset các thuộc tính gây dịch chuyển mà bạn đã gặp */
+.footer-column ul li a:hover {
+    padding-left: 0; /* Đảm bảo không bị đẩy sang phải */
+}
+
+/* 2. Thiết lập cơ bản cho Social Link */
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    
+    /* Quan trọng: Phải có transition cho transform */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                color 0.3s ease, 
+                background-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* 3. Hiệu ứng Zoom khi Hover */
+.social-link:hover {
+    /* scale(1.15) sẽ phóng to 15% so với kích thước gốc */
+    transform: scale(1.15); 
+    background-color: transparent;
+}
+
+/* Zoom thêm cho icon bên trong nếu bạn muốn hiệu ứng mạnh hơn */
+.social-link:hover i, 
+.social-link:hover .zalo-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* 4. Màu sắc và Shadow khi hover (Giữ nguyên theo ý bạn) */
+.social-link.facebook:hover {
+    color: #1877f2;
+    border-color: #1877f2;
+    box-shadow: 0 0 15px rgba(24, 119, 242, 0.4);
+}
+
+.social-link.messenger:hover {
+    color: #0084ff;
+    border-color: #0084ff;
+    box-shadow: 0 0 15px rgba(0, 132, 255, 0.4);
+}
+
+.social-link.youtube:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.social-link.zalo:hover {
+    color: #0068ff;
+    border-color: #0068ff;
+    box-shadow: 0 0 15px rgba(0, 104, 255, 0.4);
+}
+
+.social-link.zalo:hover .zalo-icon {
+    filter: none; /* Hiện màu gốc của Zalo nếu cần */
+}
+
+.zalo-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+/* Animation for subtle glow */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.contact-info span {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-bottom p {
+    color: #555;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}

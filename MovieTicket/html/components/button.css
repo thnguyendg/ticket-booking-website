@@ -1,0 +1,37 @@
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #ff1f1f;
+}
+
+/* special button */
+.btn-ticket {
+    background: #F97316;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+    color: #fff;
+    text-decoration: none;
+    gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-ticket::before {
+    content: "★";
+}
+
+.btn-ticket:hover {
+    background: #EA580C;
+}

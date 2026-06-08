@@ -1,0 +1,15 @@
+@import "./base/reset.css";
+
+@import "./layout/header.css";
+@import "./layout/hero.css";
+@import "./layout/section.css";
+@import "./layout/footer.css";
+
+@import "./components/button.css";
+@import "./components/card.css";
+@import "./components/form.css";
+@import "./components/dropdown.css";
+@import "./components/searchfiller.css";
+
+
+@import "./utilities/animations.css";

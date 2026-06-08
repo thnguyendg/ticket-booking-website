@@ -1,0 +1,1252 @@
+[
+  {
+    "id": 1,
+    "name": "Khóa Xanh",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqD8SmKVSQN-p4D28bdmvQ3-Zx0X53sA6anQ&s",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Bình Dương",
+      "Cinema TPHCM",
+      "Cinema Hà Nội"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "year": 2022,
+    "trailer": "https://www.youtube.com/watch?v=7wA0ANokCJM",
+    "age": "T16",
+    "director": "Shunsuke Ishikawa",
+    "filter": "popular",
+    "duration": "103 phút",
+    "description": "Powerpoint animation",
+    "original_price": 120000,
+    "sale_price": null
+  },
+  {
+    "id": 2,
+    "name": "Kung Fu Panda 4",
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7f/Kung_Fu_Panda_4_poster.jpg",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Hải Phòng",
+      "Cinema Chung Chánh",
+      "Cinema Tân Bình"
+    ],
+    "gio_chieu": [
+      "08:00",
+      "09:30",
+      "15:30"
+    ],
+    "filter": "newest",
+    "original_price": 100000,
+    "sale_price": 85000,
+    "age": "T18",
+    "duration": "120 phút",
+    "year": 2026,
+    "director": "Mike Mitchell",
+    "trailer": "https://www.youtube.com/watch?v=_inKs4eeHiI",
+    "description": "Nội dung chính của Kung Fu Panda 4 xoay quanh hành trình mới của Po sau khi đã trở thành Thần Long Đại Hiệp nổi tiếng.\n\nPo được sư phụ Shifu yêu cầu trở thành “Thủ lĩnh Tinh thần” của Thung Lũng Bình Yên. Điều này đồng nghĩa với việc cậu phải tìm người kế nhiệm vị trí Thần Long Đại Hiệp. Tuy nhiên, Po không muốn từ bỏ vai trò quen thuộc của mình nên khá miễn cưỡng.\n\nTrong lúc đó, một nữ phản diện mới xuất hiện: The Chameleon (Tắc Kè Hoa) — một pháp sư có khả năng biến hình thành bất kỳ ai và sao chép kung fu của họ. Mụ đang tìm cách lấy cây trượng của Po để mở cánh cổng linh giới và triệu hồi các phản diện cũ như Tai Lung, Lord Shen và Kai trở lại.\n\nPo sau đó gặp Zhen — một cô cáo chuyên trộm cắp nhưng rất nhanh nhẹn và thông minh. Ban đầu Zhen chỉ lợi dụng Po theo lệnh của The Chameleon, nhưng dần dần cô thay đổi sau khi đồng hành cùng Po trong chuyến phiêu lưu đến Juniper City.\n\nỞ cao trào phim, The Chameleon đánh cắp sức mạnh của nhiều cao thủ kung fu và biến thành phiên bản cực mạnh của Po. Tuy nhiên, Po đã tin tưởng Zhen và cùng cô đánh bại mụ. Cuối cùng, Po nhận ra ý nghĩa của sự trưởng thành và quyết định chọn Zhen làm người kế nhiệm Thần Long Đại Hiệp.\n\nPhim vẫn giữ phong cách hài hước, hành động nhanh và thông điệp về sự thay đổi, trưởng thành và truyền lại thế hệ sau."
+  },
+  {
+    "id": 3,
+    "name": "300",
+    "image": "https://images.openai.com/static-rsc-4/fNn_gBQrfwwDy4Ne-ZHdcD4AqiWBX3vt6dUMy8uiSDWYQYcFZ37wz3IXAT_Ii1c51gK3j4G3ekQsfKKXzemWTNluoHzkJPPi9GsmICuJP6B5ei-49YObmw1kvO4RN8u6Schpl2LhAjvS_lLFRG9FsWw1Fcx4M1NYJIy36JvzYAlsVtM7P-whd_uf66zamo4L?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Bình Tân",
+      "Cinema Bình Chánh",
+      "Cinema Bà Rịa"
+    ],
+    "gio_chieu": [
+      "09:00",
+      "12:30",
+      "16:00"
+    ],
+    "filter": "newest",
+    "original_price": 110000,
+    "sale_price": 75000,
+    "age": "T18",
+    "duration": "117 phút",
+    "year": 2012,
+    "director": "Zack Snyder",
+    "trailer": "https://www.youtube.com/watch?v=UrIbxk7idYA",
+    "description": "Bối cảnh phim diễn ra vào năm 480 TCN. Vua Leonidas I của Sparta nhận được yêu cầu đầu hàng từ Hoàng đế Ba Tư Xerxes I, người đang dẫn đạo quân khổng lồ xâm lược Hy Lạp.\n\nLeonidas từ chối khuất phục và quyết định mang theo 300 chiến binh Sparta tinh nhuệ đến hẻm núi Thermopylae để chặn bước tiến của quân Ba Tư. Dù lực lượng cực kỳ chênh lệch, người Sparta tin rằng địa hình hẹp sẽ giúp họ chống lại quân địch đông đảo.\n\nTrong nhiều ngày chiến đấu, 300 chiến binh Sparta cùng các đồng minh Hy Lạp gây tổn thất nặng nề cho quân Ba Tư bằng kỷ luật và kỹ năng chiến đấu vượt trội. Tuy nhiên, một người Hy Lạp tên Ephialtes đã phản bội và chỉ cho quân Ba Tư con đường bí mật để bao vây quân Sparta.\n\nBiết mình không thể sống sót, Leonidas vẫn quyết định ở lại tử chiến cùng các chiến binh của mình để tạo cảm hứng cho toàn Hy Lạp đứng lên chống lại Ba Tư. Cuối phim, sự hy sinh của họ trở thành biểu tượng cho tinh thần tự do và lòng quả cảm."
+  },
+  {
+    "id": 4,
+    "name": "Độ Mixi: Ấn Độ Phiêu Lưu Ký",
+    "image": "https://danviet-24h.ex-cdn.com/files/upload/2-2021/images/2021-06-26/42725836-adf9-4fc7-8764-9f671109ee3a-1624678195-502-width600height400.jpeg",
+    "category": "Hành động",
+    "cinema_supported": [
+      "Cinema Thủ Đức",
+      "Cinema Cần Giờ",
+      "Cinema Hóc Môn"
+    ],
+    "gio_chieu": [
+      "09:00",
+      "12:30",
+      "15:00"
+    ],
+    "filter": "popular",
+    "original_price": 150000,
+    "sale_price": 120000,
+    "age": "T18",
+    "duration": "127 phút",
+    "year": 2026,
+    "director": "Phùng Canh Mộ",
+    "trailer": "https://www.youtube.com/watch?v=1QrFvQeOb7o",
+    "description": "Đệ Nhất Khô Gà – Do Mixhar (Ấn Độ). Trong sử sách truyền miệng của lục địa Tò Cháy, cái tên Do Mixhar được khắc bằng mỡ gà và ớt bột. Xuất thân từ phương Đông xa xôi, hắn không dùng gươm giáo để chinh phạt mà dùng… khô gà xé sợi. Do Mixhar cai trị Vương quốc Tò Cháy, nơi luật pháp chỉ gói gọn trong một điều: Ai có khô gà ăn, kẻ đó trung thành. Dân chúng nơi đây không cần vàng bạc, không cần ruộng đất. Chỉ cần mỗi ngày được phân phát khô gà cay vừa đủ tê lưỡi kèm bã mía ngọt hậu là đã sống an yên, sẵn sàng tung hô Đệ Nhất Khô Gà vạn tuế. Trẻ con lớn lên bằng mùi ớt, người già nhắm mắt cũng thấy sợi gà bay trong gió. Triều đình của Do Mixhar không có quan văn võ, chỉ có Tể Tướng Xé Gà, Thượng Thư Rang Ớt và Hộ Pháp Sấy Nhiệt. Mọi quyết sách quốc gia đều được thông qua trong lúc nhai rôm rốp. Mỗi khi vương quốc gặp biến cố – từ nồi khô gà cháy đáy cho đến phản loạn thiếu cay – Do Mixhar không hề hoảng loạn. Hắn chỉ trầm giọng, rút pháp bảo tối thượng là chiếc điện thoại cũ, rồi nói một câu đã trở thành huyền thoại: “Alo Vũ à, Vũ?” Ngay khi câu nói vang lên, trật tự lập tức được vãn hồi. Không ai biết Vũ là ai, ở đâu, hay có tồn tại hay không. Nhưng dân Tò Cháy tin rằng: chỉ cần Do Mixhar còn gọi Vũ, khô gà sẽ không bao giờ cạn. Và thế là vương quốc tiếp tục yên bình, chìm trong cay – mặn – ngọt, dưới sự cai trị bất diệt của Đệ Nhất Khô Gà – Do Mixhar, kẻ mà lịch sử không nhớ mặt… chỉ nhớ mùi."
+  },
+  {
+    "id": 5,
+    "name": "Avatar: The Way of Water",
+    "image": "https://m.media-amazon.com/images/M/MV5BNWI0Y2NkOWEtMmM2OC00MjQ3LWI1YzItZGQxYzQ3NzI4NWZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "category": "Phiêu lưu",
+    "cinema_supported": [
+      "Cinema Củ Chi",
+      "Cinema Vũng Tàu",
+      "Cinema Bình Phước"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "filter": "newest",
+    "original_price": 180000,
+    "sale_price": 155000,
+    "age": "T18",
+    "duration": "192 phút",
+    "year": 2022,
+    "director": "James Cameron",
+    "trailer": "https://www.youtube.com/watch?v=d9MyW72ELq0",
+    "description": "Phim lấy bối cảnh hơn 10 năm sau phần đầu. Jake Sully và Neytiri giờ đã có gia đình với nhiều người con và sống yên bình trên hành tinh Pandora. Tuy nhiên, con người từ Trái Đất quay trở lại Pandora để tiếp tục khai thác tài nguyên và xâm lược hành tinh này.  Kẻ thù cũ là Đại tá Quaritch được hồi sinh dưới dạng Na’vi lai người và tiếp tục săn đuổi Jake Sully. Để bảo vệ gia đình, Jake đưa cả nhà rời khỏi khu rừng và tìm nơi trú ẩn tại bộ tộc Metkayina — một tộc Na’vi sống giữa đại dương."
+  },
+  {
+    "id": 6,
+    "name": "Spider-Man: Across the Universe",
+    "image": "https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=500",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Thái Bình",
+      "Cinema Kon Tum",
+      "Cinema Gia Lai"
+    ],
+    "gio_chieu": [
+      "09:30",
+      "13:30",
+      "18:00"
+    ],
+    "filter": "popular",
+    "original_price": 120000,
+    "sale_price": 99000,
+    "age": "T18",
+    "duration": "140 phút",
+    "year": 2023,
+    "director": "Joaquim Dos Santos",
+    "trailer": "https://www.youtube.com/watch?v=cqGjhVJWtEg",
+    "description": "Sau các sự kiện ở phần trước, Miles Morales vừa làm học sinh bình thường vừa tiếp tục làm Spider-Man tại Brooklyn. Một ngày nọ, cậu gặp lại Gwen Stacy và bị cuốn vào cuộc phiêu lưu xuyên đa vũ trụ.\n\nMiles phát hiện tồn tại một tổ chức Spider-Society do Miguel O'Hara lãnh đạo. Đây là tập hợp hàng trăm phiên bản Spider-Man từ nhiều vũ trụ khác nhau, có nhiệm vụ bảo vệ sự ổn định của đa vũ trụ. \n\nPhản diện chính là The Spot — một tên tội phạm có khả năng tạo cổng dịch chuyển không gian. Ban đầu hắn khá hài hước và vụng về, nhưng dần trở nên cực kỳ nguy hiểm sau khi hấp thụ năng lượng đa vũ trụ.\n\nĐiểm mấu chốt của phim là Miles phát hiện “canon events” — những bi kịch bắt buộc phải xảy ra với mỗi Spider-Man để giữ ổn định đa vũ trụ. Miguel tin rằng không thể thay đổi các sự kiện này, nhưng Miles quyết tâm cứu cha mình dù điều đó có thể phá vỡ mọi thứ.\n\nCuối phim, Miles bị đưa nhầm đến một vũ trụ khác, nơi cậu gặp phiên bản thay thế của chính mình: Prowler Miles. Phần phim kết thúc ở cao trào và mở đường cho phần tiếp theo."
+  },
+  {
+    "id": 7,
+    "name": "Cù Lao Xác Sống",
+    "image": "https://upload.wikimedia.org/wikipedia/vi/d/d7/Main_1_fa_1080x1350.jpg",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Phú Thọ",
+      "Cinema Củ Chi",
+      "Cinema Hà Nội"
+    ],
+    "gio_chieu": [
+      "12:00",
+      "16:30",
+      "19:00"
+    ],
+    "filter": "newest",
+    "original_price": 120000,
+    "sale_price": 99000,
+    "age": "T18",
+    "duration": "100 phút",
+    "year": 2022,
+    "director": "Nhất Trung",
+    "trailer": "https://www.youtube.com/watch?v=lFHGCtZRZnI",
+    "description": "Cù Lao Xác Sống là phim kinh dị – hành động Việt Nam lấy bối cảnh miền Tây sông nước, nội dung xoay quanh một cù lao hẻo lánh nơi bùng phát dịch bệnh khiến con người biến thành xác sống, buộc những người còn sống phải chiến đấu sinh tồn, bảo vệ người thân và tìm đường thoát khỏi khu vực nguy hiểm, đồng thời dần khám phá ra bí ẩn phía sau dịch bệnh."
+  },
+  {
+    "id": 8,
+    "name": "John Wick 4",
+    "image": "https://media.themoviedb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+    "category": "Hành động",
+    "cinema_supported": [
+      "Cinema Bình Dương",
+      "Cinema TPHCM",
+      "Cinema Bình Chánh"
+    ],
+    "gio_chieu": [
+      "08:00",
+      "10:30",
+      "14:00"
+    ],
+    "filter": "pupular",
+    "original_price": 150000,
+    "sale_price": 90000,
+    "age": "T18",
+    "duration": "169 phút",
+    "year": 2023,
+    "director": "Chad Stahelski",
+    "trailer": "https://www.youtube.com/watch?v=qEVUtrk8_B4",
+    "description": "Sau các sự kiện phần 3, John Wick tiếp tục bị tổ chức High Table truy sát trên toàn thế giới. John tìm cách giành lại tự do bằng cách thách đấu với High Table theo luật cổ xưa của giới sát thủ.\n\nĐối thủ chính của anh là Marquis Vincent de Gramont — một thành viên quyền lực của High Table, kẻ sẵn sàng dùng mọi thủ đoạn để tiêu diệt John. Marquis thuê sát thủ mù cực kỳ nguy hiểm Caine, đồng thời treo thưởng lớn khiến hàng loạt sát thủ săn đuổi John"
+  },
+  {
+    "id": 9,
+    "name": "Avengers: Endgame",
+    "image": "https://images.openai.com/static-rsc-4/qxN7Pzt5JlYIocRHQNAR-7NUUzvJYkEqVARzmDIQ4OiQmAPUyV8zkLVSZ2kB-tmJhyqmzSWCTncIYEPVYQKTGXwV3EgVn8mQtT4PCw018Rdu0O6Lx1dSA2w89xUeibqmToEncm3-Ml0N7WqGaUDtiVzI6eha6rvF9sPpM1m5f7cj18QQczdjz2gL4wbP3oR0?purpose=fullsize",
+    "category": "Hành động",
+    "cinema_supported": [
+      "Cinema Thái Bình",
+      "Cinema Kon Tum",
+      "Cinema Hải Phòng"
+    ],
+    "gio_chieu": [
+      "10:00",
+      "14:30",
+      "17:30"
+    ],
+    "filter": "newest",
+    "original_price": 200000,
+    "sale_price": 100000,
+    "age": "T18",
+    "duration": "181 phút",
+    "year": 2019,
+    "director": "Anthony Russo",
+    "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
+    "description": "Avengers: Endgame là phim siêu anh hùng của Marvel Studios, nội dung tiếp nối sau sự kiện Infinity War khi Thanos đã xóa sổ một nửa vũ trụ, khiến các Avengers còn sống sót phải tìm cách quay ngược thời gian bằng “time heist” để thu thập các Viên đá Vô cực ở các mốc quá khứ khác nhau nhằm phục hồi lại mọi thứ; trong hành trình đó họ phải đối mặt với nhiều thử thách, mất mát và sự hy sinh, đặc biệt là cái chết của một số nhân vật quan trọng trong cuộc chiến cuối cùng chống lại Thanos, nơi toàn bộ các siêu anh hùng hội tụ trong trận đại chiến quy mô lớn để cứu vũ trụ."
+  },
+  {
+    "id": 10,
+    "name": "Avengers: Infinity War",
+    "image": "https://images.openai.com/static-rsc-4/GyFMRtMgWxA354xVKqH6BaOR2o4cth20odcDxwpN1kMJ7WvugB6dxR8_GhytXFmvNNh9a5v8x-phs-8QhFlUeP2PQhONCUeMNDLIT5xDXKF9WcwW-itkFh_TvMlzo3Aw5ecfz8Wo3_AG1ltXAd2VZvWUxmwBsfxzugLRuqvnjnSkKAWu1AbJmQH_X-HyXaGD?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Bình Thuận",
+      "Cinema TPHCM",
+      "Cinema Bà Rịa"
+    ],
+    "gio_chieu": [
+      "07:00",
+      "09:30",
+      "19:30"
+    ],
+    "filter": "popular",
+    "original_price": 150000,
+    "sale_price": 95000,
+    "age": "T18",
+    "duration": "149 phút",
+    "year": 2018,
+    "director": "Anthony Russo",
+    "trailer": "https://www.youtube.com/watch?v=6ZfuNTqbHE8",
+    "description": "Avengers: Infinity War là phim siêu anh hùng của Marvel Studios, nội dung xoay quanh việc Thanos bắt đầu hành trình thu thập 6 Viên đá Vô cực để búng tay xóa đi một nửa sự sống trong vũ trụ nhằm “cân bằng” tài nguyên, khiến các nhóm siêu anh hùng như Avengers, Guardians of the Galaxy và Doctor Strange phải liên minh để ngăn chặn hắn, nhưng dù chiến đấu rất quyết liệt trên nhiều hành tinh và Trái Đất, Thanos vẫn hoàn thành mục tiêu của mình, dẫn đến cái kết bi thảm khi rất nhiều siêu anh hùng biến mất."
+  },
+  {
+    "id": 11,
+    "name": "The Dark Knight",
+    "image": "https://i.ebayimg.com/00/s/MTYwMFgxMDM1/z/qxoAAOSweOhh0HWF/%24_57.JPG?set_id=8800005007",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Bình Chánh",
+      "Cinema Tân Bình",
+      "Cinema Bình Tân"
+    ],
+    "gio_chieu": [
+      "08:00",
+      "13:00",
+      "18:30"
+    ],
+    "filter": "newest",
+    "original_price": 160000,
+    "sale_price": 75000,
+    "age": "T18",
+    "duration": "152 phút",
+    "year": 2008,
+    "director": "Christopher Nolan",
+    "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+    "description": "The Dark Knight là phim siêu anh hùng – tội phạm của Christopher Nolan, nội dung tiếp nối sau Batman Begins, khi Bruce Wayne (Batman) cùng cảnh sát trưởng James Gordon và công tố viên Harvey Dent hợp tác để quét sạch tội phạm ở Gotham, nhưng mọi thứ bị đảo lộn khi tên tội phạm điên loạn Joker xuất hiện, gây ra hàng loạt vụ khủng bố và thao túng tâm lý khiến thành phố rơi vào hỗn loạn, buộc Batman phải đối mặt với lựa chọn khó khăn giữa việc bảo vệ danh tiếng người hùng và ngăn chặn Joker, dẫn đến bi kịch của Harvey Dent và cái kết u tối, đặt nền móng cho hình tượng “Dark Knight” bị hiểu lầm nhưng vẫn tiếp tục bảo vệ Gotham."
+  },
+  {
+    "id": 12,
+    "name": "INCEPTION",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw%40%40._V1_FMjpg_UX1000_.jpg",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Tân Phú",
+      "Cinema Bình Phước",
+      "Cinema Nha Trang"
+    ],
+    "gio_chieu": [
+      "09:30",
+      "13:00",
+      "20:30"
+    ],
+    "filter": "popular",
+    "original_price": 150000,
+    "sale_price": 79000,
+    "age": "T18",
+    "duration": "148 phút",
+    "year": 2010,
+    "director": "Christopher Nolan",
+    "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+    "description": "Inception là phim khoa học viễn tưởng – hành động của Christopher Nolan, nội dung xoay quanh Dom Cobb, một “kẻ đánh cắp giấc mơ” có khả năng xâm nhập vào tiềm thức người khác khi họ đang ngủ để lấy cắp bí mật, nhưng lần này anh được giao một nhiệm vụ đặc biệt là “cấy ý tưởng” vào đầu một người thừa kế tập đoàn bằng cách đi sâu qua nhiều tầng giấc mơ lồng nhau; cùng đội của mình, Cobb phải thực hiện một phi vụ nguy hiểm khi ranh giới giữa mơ và thực ngày càng mờ đi, đồng thời đối mặt với ký ức về người vợ đã mất luôn xuất hiện trong tiềm thức gây cản trở nhiệm vụ, dẫn đến cao trào đầy căng thẳng trong thế giới giấc mơ phức tạp."
+  },
+  {
+    "id": 13,
+    "name": "Tenet",
+    "image": "https://m.media-amazon.com/images/M/MV5BYjI0NDQzYmEtNzMwZC00ODA3LTgzZDYtZTk5ODZjY2Y2OTkzXkEyXkFqcGc%40._V1_.jpg",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Đà lạt",
+      "Cinema Vũng Tàu",
+      "Cinema Thái Nguyên"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "filter": "newest",
+    "original_price": 150000,
+    "sale_price": 79000,
+    "age": "T18",
+    "duration": "150 phút",
+    "year": 2020,
+    "director": "Christopher Nolan",
+    "trailer": "https://www.youtube.com/watch?v=LdOM0x0XDMo",
+    "description": "Tenet là phim hành động – khoa học viễn tưởng của Christopher Nolan, nội dung xoay quanh một đặc vụ bí ẩn được gọi là “The Protagonist” được tuyển vào một tổ chức mật có nhiệm vụ ngăn chặn Thế chiến thứ ba, trong đó anh phát hiện ra công nghệ “đảo ngược thời gian” (time inversion) cho phép các vật thể và con người di chuyển ngược dòng thời gian, từ đó truy tìm nguồn gốc một âm mưu toàn cầu liên quan đến nhà tài phiệt Andrei Sator, người có khả năng liên lạc với tương lai để kích hoạt thảm họa hủy diệt thế giới, buộc nhân vật chính phải tham gia các nhiệm vụ phức tạp diễn ra song song giữa thời gian xuôi và ngược để cứu nhân loại."
+  },
+  {
+    "id": 14,
+    "name": "Mad Max: Fury Road",
+    "image": "https://images.openai.com/static-rsc-4/f3cNzcutR16rNMnulug_UU6AJxAximWIldlnq3exfNDWv7q-v560Qr13QLp9eplKux7YPOyAAUprITcrPzBw8KC2M4I1IUTCbyj5ggz56bh83oROhal_LFimbUh2zK_SvxYewtwVJrQVko4uLH-TXlhucoE2fMcTHWCiZjOeJm9V8NTIfe1_PDN-aCX-F73I?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Khánh Hòa",
+      "Cinema TPHCM",
+      "Cinema Tây Nguyên"
+    ],
+    "gio_chieu": [
+      "12:00",
+      "15:30",
+      "16:00"
+    ],
+    "filter": "popular",
+    "original_price": 180000,
+    "sale_price": 89000,
+    "age": "T18",
+    "duration": "120 phút",
+    "year": 2015,
+    "director": "George Miller",
+    "trailer": "https://www.youtube.com/watch?v=hEJnMQG9ev8",
+    "description": "Mad Max: Fury Road là phim hành động – hậu tận thế của George Miller, nội dung diễn ra trong một thế giới hoang mạc sau sụp đổ xã hội, nơi tài nguyên nước và nhiên liệu bị kiểm soát bởi bạo chúa Immortan Joe; câu chuyện xoay quanh Max Rockatansky và chiến binh Furiosa khi họ cùng nhau giải cứu những phụ nữ bị giam cầm và bỏ trốn khỏi chế độ độc tài, dẫn đến một cuộc rượt đuổi tốc độ cao xuyên sa mạc với hàng loạt xe chiến đấu, cháy nổ và hành động liên tục, trong đó Furiosa tìm cách đưa các “vợ” của Joe đến vùng đất tự do còn Max dần tìm lại nhân tính của mình."
+  },
+  {
+    "id": 15,
+    "name": "John Wick",
+    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24510842/john_wick_chapter_4_JW4_Unit_211027_00134_R2_rgb.jpeg?quality=90&strip=all&crop=19.583333333333,0,60.833333333333,100",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Bình Phước",
+      "Cinema Cát Lái",
+      "Cinema Ninh Thuận"
+    ],
+    "gio_chieu": [
+      "14:30",
+      "18:00",
+      "22:30"
+    ],
+    "filter": "newest",
+    "original_price": 190000,
+    "sale_price": 99000,
+    "age": "T18",
+    "duration": "101 phút",
+    "year": 2014,
+    "director": "Chad Stahelski",
+    "trailer": "https://www.youtube.com/watch?v=2AUmvWm5ZDQ",
+    "description": "John Wick là phim hành động – tội phạm của Chad Stahelski, nội dung xoay quanh John Wick, một cựu sát thủ huyền thoại đã giải nghệ để sống yên bình, nhưng sau khi vợ anh qua đời và chú chó – món quà cuối cùng cô để lại – bị con trai của một trùm tội phạm giết hại, John Wick buộc phải quay lại thế giới sát thủ, bắt đầu hành trình trả thù tàn khốc chống lại cả một tổ chức tội phạm ngầm, nơi anh một mình đối đầu hàng loạt sát thủ và khám phá lại luật lệ của thế giới ngầm mà anh từng thuộc về."
+  },
+  {
+    "id": 16,
+    "name": "Mission: Impossible – Fallout ",
+    "image": "https://images.openai.com/static-rsc-4/vXrz9HFpdPthBz1wumsdFn-z6MH0E2P-EK2QFfYisOmA7l7y3Rtq-dlFplwsnU-MYR3FiJKCpAGvdFu_idG0vUOtLP_PtPQSMCql-asD7tEYMIQlDcBx0V7NRXxgrhVvaAahkQtGmiRc6wSJqn3LhkOu1WubV4MrsXyPQ6PC54fqwP73UTV_uKvyoUdZ9C6k?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Bình Chánh",
+      "Cinema Nha Trang",
+      "Cinema Đà Lạt"
+    ],
+    "gio_chieu": [
+      "09:30",
+      "12:00",
+      "15:30"
+    ],
+    "filter": "popular",
+    "original_price": 200000,
+    "sale_price": 100000,
+    "age": "T18",
+    "duration": "147 phút",
+    "year": 2018,
+    "director": "Christopher McQuarrie",
+    "trailer": "https://www.youtube.com/watch?v=wb49-oV0F78",
+    "description": "Mission: Impossible – Fallout là phim hành động – gián điệp của Christopher McQuarrie, nội dung xoay quanh Ethan Hunt (do Tom Cruise thủ vai) khi anh và đội IMF phải truy đuổi một nhóm khủng bố tên “Apostles” sau khi một nhiệm vụ thất bại khiến plutonium bị đánh cắp, dẫn đến nguy cơ xảy ra thảm họa hạt nhân toàn cầu; trong quá trình truy tìm, Ethan buộc phải hợp tác và đối đầu với cả những thế lực cũ lẫn mới, đồng thời đối mặt với sự nghi ngờ từ CIA, tạo nên chuỗi nhiệm vụ rượt đuổi, đấu súng, nhảy dù và hành động quy mô lớn trải dài nhiều quốc gia."
+  },
+  {
+    "id": 17,
+    "name": "Top Gun: Maverick",
+    "image": "https://m.media-amazon.com/images/I/71BokibfVUL.jpg",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Kon Tum",
+      "Cinema Thái Bình",
+      "Cinema Thanh Hóa"
+    ],
+    "gio_chieu": [
+      "08:30",
+      "12:00",
+      "15:30"
+    ],
+    "filter": "newest",
+    "original_price": 200000,
+    "sale_price": 100000,
+    "age": "T18",
+    "duration": "131 phút",
+    "year": 2022,
+    "director": "Joseph Kosinski",
+    "trailer": "https://www.youtube.com/watch?v=giXco2jaZ_4",
+    "description": "Top Gun: Maverick là phim hành động – quân sự của Joseph Kosinski, nội dung tiếp nối sau nhiều năm kể từ phần đầu Top Gun, khi Pete 'Maverick' Mitchell (do Tom Cruise thủ vai) vẫn là một phi công thử nghiệm của Hải quân Mỹ và được giao nhiệm vụ huấn luyện một nhóm phi công trẻ cho một phi vụ cực kỳ nguy hiểm nhằm phá hủy một cơ sở làm giàu uranium được bảo vệ nghiêm ngặt; trong quá trình huấn luyện, Maverick phải đối mặt với quá khứ của mình, đặc biệt là mối quan hệ căng thẳng với Bradley 'Rooster' Bradshaw, con trai của người đồng đội cũ Goose, đồng thời dẫn dắt đội bay thực hiện nhiệm vụ gần như bất khả thi với độ chính xác cao và tốc độ cực lớn"
+  },
+  {
+    "id": 18,
+    "name": "Interstellar ",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc%40._V1_.jpg",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Thanh Hóa",
+      "Cinema Trương Trinh",
+      "Cinema Tây Ninh"
+    ],
+    "gio_chieu": [
+      "08:00",
+      "10:30",
+      "18:00"
+    ],
+    "filter": "popular",
+    "original_price": 200000,
+    "sale_price": 150000,
+    "age": "T18",
+    "duration": "169 phút",
+    "year": 2014,
+    "director": "Christopher Nolan",
+    "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+    "description": "Interstellar là phim khoa học viễn tưởng – phiêu lưu của Christopher Nolan, nội dung lấy bối cảnh Trái Đất tương lai đang dần trở nên khắc nghiệt vì biến đổi khí hậu và thiếu lương thực, buộc loài người phải tìm hành tinh mới để sinh sống; Joseph Cooper (do Matthew McConaughey thủ vai), một cựu phi công NASA, được chọn tham gia nhiệm vụ xuyên không gian qua một hố sâu gần Sao Thổ để tìm các hành tinh có thể ở được cho nhân loại, trong khi con gái ông là Murph ở Trái Đất cố gắng giải mã các thông điệp liên quan đến trọng lực để cứu loài người, tạo nên câu chuyện kết hợp giữa khoa học vũ trụ, thuyết tương đối, tình cảm gia đình và hy sinh.20"
+  },
+  {
+    "id": 19,
+    "name": "The Matrix",
+    "image": "https://images.openai.com/static-rsc-4/ChZJTmcqDxL9aXwpEBhv2-aFQmAENHO1fXJ5EW8_GE0ZIF9_LvlO-_i3ZQabyqtuTmUpPRamNzSBerBnogWcuF2utJZsS-sUf_0U2X9WF2SLSGq3By5Qpi00w-tK-wvy5jcb458HJowf-f1SWGiCrApMgAMh1h8X1zyFJwXAeAy1hqqyq4apHz8oqjlhGTiD?purpose=fullsize",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Thái Hòa",
+      "Cinema Trương Trinh",
+      "Cinema Huế"
+    ],
+    "gio_chieu": [
+      "08:30",
+      "12:30",
+      "15:00"
+    ],
+    "filter": "newest",
+    "original_price": 220000,
+    "sale_price": 150000,
+    "age": "T18",
+    "duration": "136 phút",
+    "year": 1999,
+    "director": "The Wachowskis",
+    "trailer": "https://www.youtube.com/watch?v=vKQi3bBA1y8",
+    "description": "The Matrix là phim khoa học viễn tưởng – hành động của The Wachowskis, nội dung xoay quanh Neo (do Keanu Reeves thủ vai), một lập trình viên bình thường phát hiện ra rằng thế giới mà con người đang sống thực chất là một mô phỏng do máy móc tạo ra để kiểm soát loài người, trong khi cơ thể thật của họ bị nuôi dưỡng trong thế giới thật; sau khi được Morpheus giải cứu, Neo tham gia vào cuộc chiến giữa loài người và máy móc, dần nhận ra vai trò “Người Được Chọn” của mình và học cách làm chủ thực tại mô phỏng để chống lại các đặc vụ như Agent Smith, từ đó mở ra cuộc chiến giải phóng nhân loại khỏi Matrix."
+  },
+  {
+    "id": 20,
+    "name": "The Matrix Resurrections",
+    "image": "https://images.openai.com/static-rsc-4/mQWwpurv6XCCTP3yOHi8AxSCKNwhdgL_OW7nN6nBsUqetId_s8bZfBlydFyfH-W7vv7jCmKfXEipsYeXCKY_-fu4aTIdMeSWWJrk8wRepUD7PuSj9y-8AhYny0ww4TmEDOxFU70qFSlEv9DSgvcJ1V1w95sOUl-ERs9meX3bkU3lqcrUks4lgBdx7ytVxlgv?purpose=fullsize",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Trung Chánh",
+      "Cinema Thanh Hóa",
+      "Cinema Vũng Tàu"
+    ],
+    "gio_chieu": [
+      "12:00",
+      "16:30",
+      "19:00"
+    ],
+    "filter": "popular",
+    "original_price": 250000,
+    "sale_price": 120000,
+    "age": "T18",
+    "duration": "148 phút",
+    "year": 2021,
+    "director": "Lana Wachowski",
+    "trailer": "https://www.youtube.com/watch?v=9ix7TUGVYIo",
+    "description": "The Matrix Resurrections là phim khoa học viễn tưởng – hành động của Lana Wachowski, nội dung tiếp nối câu chuyện của Neo nhiều năm sau các sự kiện trong The Matrix, khi Neo (do Keanu Reeves thủ vai) sống một cuộc đời tưởng như bình thường trong một thế giới hiện đại nhưng dần nhận ra những “glitch” trong thực tại; anh gặp lại Trinity và bị kéo trở lại cuộc chiến với hệ thống Matrix mới do máy móc kiểm soát, nơi cả hai phải tìm cách phá vỡ vòng lặp và giành lại tự do trong một phiên bản Matrix phức tạp hơn và được “tái tạo” để kiểm soát con người sâu hơn"
+  },
+  {
+    "id": 21,
+    "name": "Dune",
+    "image": "https://images.openai.com/static-rsc-4/ctR6DoRJ3Pg-YCX3pg4qD4d_HriLGK3NxrEgQ39ZtxwDj_NwMF2qDoNcn13tb0LZI0FkDw6u8S8f7BB-I7A4CL_T9uL21TQpcICpinkGuy3pv_aRTkFt6psUMTCiIfwAGEEiyH50a9IiEo0b0T4YXspm6iMfbkd8Yw0PQCK391q7xGortjExa3K1Ga4f7dYa?purpose=fullsize",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Bình Thuận",
+      "Cinema Bình Phước",
+      "Cinema Hưng Yên"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "filter": "newest",
+    "original_price": 200000,
+    "sale_price": 120000,
+    "age": "T18",
+    "duration": "155 phút",
+    "year": 2021,
+    "director": "Denis Villeneuve",
+    "trailer": "https://www.youtube.com/watch?v=n9xhJrPXop4",
+    "description": "Dune là phim khoa học viễn tưởng – sử thi của Denis Villeneuve, nội dung xoay quanh Paul Atreides (do Timothée Chalamet thủ vai), con trai của Công tước Leto Atreides, khi gia tộc Atreides được hoàng đế giao quyền cai quản hành tinh sa mạc Arrakis – nơi duy nhất sản xuất “spice” (melange), loại tài nguyên quý giá nhất vũ trụ; tuy nhiên đây là một cái bẫy chính trị dẫn đến sự phản bội từ nhà Harkonnen, khiến gia tộc Atreides bị tấn công và sụp đổ, buộc Paul cùng mẹ là Lady Jessica phải chạy trốn vào sa mạc, nơi anh dần khám phá năng lực tiên tri và vai trò định mệnh của mình trong tương lai của Arrakis và các phe phái vũ trụ"
+  },
+  {
+    "id": 22,
+    "name": "Dune: Part Two",
+    "image": "https://images.openai.com/static-rsc-4/8EQ3JPu0TOySbkeULmMLMACPjyEIdb0aYk-Sa-Zw9_sKm5KS_9Ov-cC9RzOIoL7N8tAv9U3qs1TSB8wmQvjAII9a81xUKoA2w1fMokL6qG6OFMn3F9NaFjet545qA5IpfNRe0z3GrmkQWp1gxZGwpFcQfuu13yesu5IX7kuGrorCVgbcpqNAG07x0pH6BX60?purpose=fullsize",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Bình Dương",
+      "Cinema Thái Hòa",
+      "Cinema Tây Nguyên"
+    ],
+    "gio_chieu": [
+      "07:00",
+      "12:30",
+      "19:30"
+    ],
+    "filter": "popular",
+    "original_price": 120000,
+    "sale_price": 70000,
+    "age": "T18",
+    "duration": "166 phút",
+    "year": 2024,
+    "director": "Denis Villeneuve",
+    "trailer": "https://www.youtube.com/watch?v=Way9Dexny3w",
+    "description": "Dune: Part Two là phim khoa học viễn tưởng – sử thi của Denis Villeneuve, tiếp nối phần 1, nội dung xoay quanh Paul Atreides khi anh sống cùng người Fremen trên hành tinh sa mạc Arrakis và dần trở thành một thủ lĩnh của họ, đồng thời đối mặt với việc gia tộc Harkonnen quay lại kiểm soát hành tinh; trong hành trình đó, Paul phát triển sức mạnh tiên tri mạnh hơn và bị cuốn vào số phận chính trị – tôn giáo phức tạp, nơi anh phải lựa chọn giữa tình yêu với Chani và con đường trở thành “Messiah” có thể dẫn đến chiến tranh thánh trên toàn vũ trụ."
+  },
+  {
+    "id": 23,
+    "name": "Blade Runner 2049",
+    "image": "https://images.openai.com/static-rsc-4/QyZv4eRpBvndOIiUSgN9vCipx15KABrpjcEhXFKq0-3_yxEWbRLGXElTUUh7pBwWVQTM3H1olrku985u2Bwo3qZmirX4EaAaBq9VooeFDRszEIzHG5iCLUw59RSJWNxfijn_2y5sPumxSaCiNw0e7KxF_8s8m4kMLRzHtBgwxnH4i6FUK2nfxGzln4amv9cZ?purpose=fullsize",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Tây Ninh",
+      "Cinema Thanh Hóa",
+      "Cinema Đà Lạt"
+    ],
+    "gio_chieu": [
+      "14:00",
+      "19:00",
+      "22:30"
+    ],
+    "filter": "newest",
+    "original_price": 150000,
+    "sale_price": 80000,
+    "age": "T18",
+    "duration": "164 phút",
+    "year": 2017,
+    "director": "Denis Villeneuve",
+    "trailer": "https://www.youtube.com/watch?v=gCcx85zbxz4",
+    "description": "Blade Runner 2049 là phim khoa học viễn tưởng – neo-noir của Denis Villeneuve, nội dung diễn ra 30 năm sau phần phim gốc, khi K (do Ryan Gosling thủ vai), một “blade runner” là cảnh sát chuyên săn người máy sinh học (replicant), phát hiện ra một bí mật có thể làm thay đổi trật tự xã hội: một replicant có thể sinh sản tự nhiên; cuộc điều tra của anh dẫn đến việc truy tìm Rick Deckard (do Harrison Ford thủ vai), người mất tích nhiều năm, đồng thời K dần phải đối mặt với câu hỏi về bản thân, ký ức và ý nghĩa của việc “là con người” trong một thế giới đầy AI và kiểm soát."
+  },
+  {
+    "id": 24,
+    "name": "Ready Player One",
+    "image": "https://www.originalfilmart.com/cdn/shop/products/ready_player_one_2017_advance_original_film_art_5000x.jpg?v=1621459988",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Trương Trinh",
+      "Cinema Nha Trang",
+      "Cinema Thái Bình"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "17:30",
+      "20:30"
+    ],
+    "filter": "popular",
+    "original_price": 120000,
+    "sale_price": 80000,
+    "age": "T18",
+    "duration": "140 phút",
+    "year": 2018,
+    "director": "Steven Spielberg",
+    "trailer": "https://www.youtube.com/watch?v=cSp1dM2Vj48",
+    "description": "Ready Player One là phim khoa học viễn tưởng – phiêu lưu của Steven Spielberg, nội dung diễn ra trong tương lai khi thế giới thực trở nên khắc nghiệt và phần lớn con người sống trong một vũ trụ thực tế ảo tên OASIS; nhân vật chính Wade Watts (Parzival) tham gia cuộc thi do người tạo ra OASIS để lại, nơi người thắng sẽ giành quyền kiểm soát toàn bộ hệ thống, từ đó Wade cùng bạn bè phải giải các “easter egg” liên quan đến văn hóa pop thập niên 80–90, đồng thời đối đầu với tập đoàn IOI muốn chiếm OASIS bằng mọi giá, dẫn đến cuộc chiến giữa người dùng tự do và thế lực độc quyền trong thế giới ảo"
+  },
+  {
+    "id": 25,
+    "name": "Gravity",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjE5MzYwMzYxMF5BMl5BanBnXkFtZTcwOTk4MTk0OQ%40%40._V1_FMjpg_UX1000_.jpg",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Thái Hòa",
+      "Cinema TPHCM",
+      "Cinema Hà Thanh"
+    ],
+    "gio_chieu": [
+      "12:30",
+      "14:00",
+      "18:00"
+    ],
+    "filter": "newest",
+    "original_price": 380000,
+    "sale_price": 200000,
+    "age": "T13",
+    "duration": "91 phút",
+    "year": 2013,
+    "director": "Alfonso Cuarón",
+    "trailer": "https://www.youtube.com/watch?v=ufsrgE0BYf0",
+    "description": "Bộ phim Gravity (Cuộc Chiến Không Trọng Lực) là một tác phẩm sinh tồn không gian nghẹt thở. Nội dung phim tập trung vào cuộc chiến giành giật sự sống của hai phi hành gia bị cô lập ngoài vũ trụ."
+  },
+  {
+    "id": 26,
+    "name": "The Conjuring",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTM3NjA1NDMyMV5BMl5BanBnXkFtZTcwMDQzNDMzOQ%40%40._V1_FMjpg_UX1000_.jpg",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Ninh Bình",
+      "Cinema TPHCM",
+      "Cinema Quận 1"
+    ],
+    "gio_chieu": [
+      "9:00",
+      "13:00",
+      "17:00"
+    ],
+    "filter": "popular",
+    "original_price": 550000,
+    "sale_price": 300000,
+    "age": "T16",
+    "duration": "112 phút",
+    "year": 2013,
+    "director": "Michael Chaves",
+    "trailer": "https://www.youtube.com/watch?v=sbsNPOzdBg0",
+    "description": "The Conjuring (2013) xoay quanh hành trình giải cứu một gia đình bị các thế lực quỷ dữ quấy phá tại một trang trại hẻo lánh. Năm 1971, vợ chồng Roger và Carolyn Perron cùng 5 cô con gái chuyển đến sinh sống tại một trang trại cũ ở Harrisville, Rhode Island. Ngay lập tức, những hiện tượng tâm linh đáng sợ liên tục đổ ập xuống gia đình họ."
+  },
+  {
+    "id": 27,
+    "name": "A Quiet Place",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjI0MDMzNTQ0M15BMl5BanBnXkFtZTgwMTM5NzM3NDM%40._V1_FMjpg_UX1000_.jpg",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Bình Phước",
+      "Cinema Thanh Hóa",
+      "Cinema Hải Phòng"
+    ],
+    "gio_chieu": [
+      "13:30",
+      "15:30",
+      "18:00"
+    ],
+    "filter": "newest",
+    "original_price": 900000,
+    "sale_price": 500000,
+    "age": "T16",
+    "duration": "90 phút",
+    "year": 2018,
+    "director": "John Krasinski",
+    "trailer": "https://www.youtube.com/watch?v=fQwBaLkfUIo",
+    "description": "A Quiet Place (2018) xoay quanh cuộc chiến sinh tồn của gia đình Abbott trong bối cảnh hậu tận thế. Trái Đất lúc này đã bị xâm chiếm bởi các sinh vật ngoài hành tinh mù sinh sống bằng cách săn mồi qua thính giác siêu nhạy bén."
+  },
+  {
+    "id": 28,
+    "name": "A Quiet Place Part II",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjRiYjk4ZmItNGQ5NS00MmRhLTk4Y2EtMGQ1MTYxZWJhYjU0XkEyXkFqcGc%40._V1_.jpg",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Bình Định",
+      "Cinema Đà Nẵng",
+      "Cinema Điện Biên Phủ"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "15:00",
+      "17:00"
+    ],
+    "filter": "popular",
+    "original_price": 720000,
+    "sale_price": 400000,
+    "age": "T16",
+    "duration": "97 phút",
+    "year": 2021,
+    "director": "John Krasinski",
+    "trailer": "https://www.youtube.com/watch?v=OObI02klU6E",
+    "description": "A Quiet Place Part II tiếp nối ngay sau cái chết của người cha Lee Abbott ở phần một, xoay quanh hành trình sinh tồn của gia đình Abbott ngoài thế giới rộng lớn."
+  },
+  {
+    "id": 29,
+    "name": "Get Out",
+    "image": "https://images.openai.com/static-rsc-4/lGZtn1vkihc8CR7npSU5q3nPG8oN5H0RbrnXu49lujAUBeJmxrJw44I9MnRLpOL4BeX7C_Bcm_UnzbtMa4d8tgzkfT8d1v9cD0wxXgWutkNLGd4UaVp0NBX8jygMAoqcO0kYuBue__w39cQmha5vJgm7ArMuhmGFvmeEKSXCl-15p3pzGfkV46hS6o8I4Etj?purpose=fullsize",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Bình Dương",
+      "Cinema Nghệ An",
+      "Cinema Quận 2"
+    ],
+    "gio_chieu": [
+      "09:00",
+      "12:15",
+      "13:30"
+    ],
+    "filter": "newest",
+    "original_price": 850000,
+    "sale_price": null,
+    "age": "T18",
+    "duration": "104 phút",
+    "year": 2017,
+    "director": "Jordan Peele",
+    "trailer": "https://www.youtube.com/watch?v=DzfpyUB60YY",
+    "description": "Get Out (2017) là bộ phim kinh dị tâm lý giật gân, châm biếm sâu sắc về vấn đề phân biệt chủng tộc ẩn giấu trong xã hội Mỹ hiện đại. Bộ phim theo chân Chris Washington, một nhiếp ảnh gia người Mỹ gốc Phi, trong chuyến về thăm gia đình cô bạn trai da trắng Rose Armitage ở vùng ngoại ô. Dù ban đầu nhận được sự đón tiếp có vẻ thân thiện, Chris dần phát hiện ra những hành vi kỳ quặc, đáng sợ từ những người da đen làm việc tại đây và những vị khách trong bữa tiệc dòng họ. Sự thật kinh hoàng được phơi bày khi anh nhận ra mình đang là con mồi trong một âm mưu bắt cóc và hoán đổi ý thức đầy tàn nhẫn. Tác phẩm đầu tay của đạo diễn Jordan Peele đã gây tiếng vang lớn toàn cầu, mang về giải Oscar cho Kịch bản gốc xuất sắc nhất."
+  },
+  {
+    "id": 30,
+    "name": "Transformers",
+    "image": "https://images.openai.com/static-rsc-4/vBnfn_el7nyft4oXNwk6FcZz42Z54gIw01LvNMnc4-8cARpgqlqhtk8J6XuXiCsRktWV79bNj_oyQy5GG6dErGQRD8fW7-8Wg8YQ65mxmyDju1RAdba7VCDu27kcicT-KFlaZMsU8IjTnwd2tbfh3TkWWQSpOwz8uTwYcO2Z8LnqaJTKRzTQwqE3Y67hsVS-?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Quận 12",
+      "Cinema Thanh Hóa",
+      "Cinema Ninh Bình"
+    ],
+    "gio_chieu": [
+      "11:00",
+      "12:00",
+      "13:30"
+    ],
+    "filter": "popular",
+    "original_price": 400000,
+    "sale_price": 295000,
+    "age": "T13",
+    "duration": "144 phút",
+    "year": 2007,
+    "director": "Michael Bay",
+    "trailer": "https://www.youtube.com/watch?v=CbX_SIz_9fk",
+    "description": "Cốt truyện tổng thể của vũ trụ Transformers xoay quanh cuộc chiến thiên niên kỷ giữa hai phe robot sinh học có khả năng biến hình đến từ hành tinh Cybertron. Phe Autobots (Chính nghĩa) - Do Optimus Prime dẫn đầu, mang lý tưởng bảo vệ sự sống, hòa bình và tự do cho mọi sinh vật. Phe Decepticons (Phản diện) - Do Megatron cầm đầu, âm mưu thống trị vũ trụ, tàn sát và khai thác kiệt quệ các hành tinh khác để phục hồi Cybertron."
+  },
+  {
+    "id": 31,
+    "name": "Black Panther",
+    "image": "https://images.openai.com/static-rsc-4/K3NgVUR8aqg3hmmebnpvmVbYd0ou3usuRJHK2AdzfMytwyvJUv2DXhokz9RpFifdbwPD_YeaqvuIxBrJoI4954iiBiDaADNKm9Vy78tn71JzXSxV2aRfnrJTBQ8jryaees4F0bMBMyS63zKLCZLJMpRvDEgD19TlBHP7FQ8wgS8ZN4hlAl_n9yLNqkk2XOHY?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Bình Chánh",
+      "Cinema Đà Lạt",
+      "Cinema Khánh Hòa"
+    ],
+    "gio_chieu": [
+      "10:00",
+      "13:00",
+      "16:30"
+    ],
+    "filter": "newest",
+    "original_price": 100000,
+    "sale_price": 89000,
+    "age": "T13",
+    "duration": "135 phút",
+    "year": 2018,
+    "director": "Ryan Coogler",
+    "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+    "description": "Sau cái chết của vua cha, Thái tử T'Challa quay trở về quê hương Wakanda — một quốc gia Châu Phi cô lập nhưng có nền công nghệ siêu hiện đại nhờ sở hữu mỏ Vibranium — để làm lễ lên ngôi và tiếp nhận danh hiệu Black Panther. Ngai vàng của T'Challa bị đe dọa nghiêm trọng bởi sự xuất hiện của kẻ phản diện Erik Killmonger, một người anh em họ thất lạc mang dòng máu hoàng gia nhưng lớn lên trong sự thù hận tại Mỹ. Killmonger đánh bại T'Challa trong trận đấu tay đôi để cướp ngôi, với âm mưu dùng vũ khí công nghệ cao của Wakanda để phát động chiến tranh toàn cầu. Được cứu sống nhờ loại thảo dược hình trái tim, T'Challa tập hợp đồng minh để lật đổ Killmonger, giành lại ngai vàng và quyết định mở cửa Wakanda để giúp đỡ thế giới."
+  },
+  {
+    "id": 32,
+    "name": "Annabell",
+    "image": "https://images.openai.com/static-rsc-4/A3aztwSyl0Rq8NPW0pn-LhIECljp45ht_T9FP7M13jDXymEFR1Uxg0-4SuceyN6ouVI4o4LdGaAnIsbOnAh1tj9GJMX6KcGtoa2_uxFY_a6sxPnTq8_If7Y1dRadOsAjL70UTuQOIt1j9VWlcUMPUKmt0hL85GiGXgR8w9xpo1xomdniSuKyFzCZRxCdqfzq?purpose=fullsize",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Bình Dương",
+      "Cinema TPHCM",
+      "Cinema Hà Nội"
+    ],
+    "gio_chieu": [
+      "13:30",
+      "15:00",
+      "16:15"
+    ],
+    "filter": "popular",
+    "original_price": 150000,
+    "sale_price": 99000,
+    "age": "T17",
+    "duration": "99 phút",
+    "year": 2014,
+    "director": "John R. Leonetti",
+    "trailer": "https://www.youtube.com/watch?v=9eL4VvHGTQs",
+    "description": "bộ phim lấy bối cảnh năm 1943, vợ chồng người thợ làm búp bê Samuel Mullins đau đớn vì cô con gái nhỏ 7 tuổi (biệt danh là Bee) qua đời do tai nạn xe.  Vì quá thương nhớ con, họ cầu xin bất kỳ thế lực nào cho họ thấy lại con gái. Một thực thể giả danh linh hồn của Bee xin phép được nhập vào con búp bê sứ. Nhận ra đó là một con quỷ độc ác, hai vợ chồng đã nhốt con búp bê vào một tủ kính được dán đầy các trang Kinh Thánh, 12 năm sau, họ mở cửa nhà đón một nữ tu và nhóm trẻ mồ côi. Một cô bé tàn tật tên Janice vô tình giải thoát cho con quỷ. Con quỷ tàn sát hai vợ chồng và nhập xác thành công vào cơ thể cô bé Janice. Janice trốn thoát, đổi tên thành Annabelle và được một gia đình khác nhận nuôi."
+  },
+  {
+    "id": 33,
+    "name": "The Ring",
+    "image": "https://m.media-amazon.com/images/M/MV5BNDA2NTg2NjE4Ml5BMl5BanBnXkFtZTYwMjYxMDg5._V1_FMjpg_UX1000_.jpg",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Quận 3",
+      "Cinema TPHCM",
+      "Cinema Quận 4"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "14:30",
+      "15:30"
+    ],
+    "filter": "newest",
+    "original_price": 429000,
+    "sale_price": 269000,
+    "age": "T13",
+    "duration": "115 phút",
+    "year": 2002,
+    "director": " Gore Verbinski",
+    "trailer": "https://www.youtube.com/watch?v=CG7BAY6_hsw",
+    "description": "Bộ phim theo chân nữ nhà báo Rachel Keller (do Naomi Watts thủ vai) sinh sống tại thành phố Seattle. Rachel tiến hành điều tra cái chết đột ngột và đầy bí ẩn của người cháu gái Katie. Manh mối dẫn cô tới một cuộn băng VHS kỳ lạ tại một căn nhà gỗ vùng núi. Sau khi xem xong các hình ảnh siêu thực, rời rạc trong cuốn băng, điện thoại trong phòng đổ chuông và một giọng nói thì thầm cảnh báo cô sẽ chết sau đúng 7 ngày. Sự việc trở nên nguy cấp hơn bao giờ hết khi Noah (bạn trai cũ của Rachel) và Aidan (con trai nhỏ của cô) cũng vô tình xem phải cuộn băng này. Rachel và Noah buộc phải giải mã nguồn gốc các hình ảnh trong cuốn băng để tìm cách phá giải lời nguyền.  Cuộc điều tra dẫn họ tới một trang trại nuôi ngựa và phát hiện ra câu chuyện bi kịch về Samara Morgan — một cô bé có năng lực ngoại cảm đáng sợ đã bị chính mẹ nuôi dìm chết dưới giếng sâu."
+  },
+  {
+    "id": 34,
+    "name": "Smile",
+    "image": "https://images.openai.com/static-rsc-4/ryxqV5NGUBo7ISsQA1xCTc71umaNsEyeRm_5_Vf6TDBA-u4K1vvogV6jS-C48IU9yX4Kl8mvqR5mk9uhmV_maN-zR1kr9Ckx6a5P-Pre1SpGKF1JeyZSvSMZr24D9TdHoKjWIVuD3NWR8uUT1Kyxe--T1wKg2N6-s3ORXLeEOqYIjZWk0IA4chy5h2QdVY9k?purpose=fullsize",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Trường Trinh",
+      "Cinema Ninh Thuận",
+      "Cinema Hà Nội"
+    ],
+    "gio_chieu": [
+      "12:30",
+      "13:15",
+      "21:00"
+    ],
+    "filter": "popular",
+    "original_price": 449000,
+    "sale_price": 360000,
+    "age": "T18",
+    "duration": "115 phút",
+    "year": 2022,
+    "director": "Parker Finn",
+    "trailer": "https://www.youtube.com/watch?v=BcDK7lkzzsU",
+    "description": "Tiến sĩ tâm lý Rose Cotter chứng kiến một bệnh nhân tự sát với nụ cười bí ẩn. Sau đó, cô bị một thực thể tà ác đeo bám và tra tấn bằng các ảo giác kinh hoàng. Cô chỉ có một thời gian ngắn để tìm cách phá giải lời nguyền trước khi trở thành nạn nhân tiếp theo."
+  },
+  {
+    "id": 35,
+    "name": "The Hangover",
+    "image": "https://images.openai.com/static-rsc-4/jjvod5_VDMMO82F1dILGNT8r25Uu_3JGiYx6FOVzXMOzBwjoqnIIu9gaUqusdp2MbFfJI1q9tj176oEMzPIkd7O2JIW4ZQFrfvrrZCpMzL0_p771JTGSOFrNFMHi6-S2UwEXs8TtTkHuJNICrOmhZiSxE2Bc8DOH1f5tQGQAF_3RTOXZqo1ifyxwGdoseDaI?purpose=fullsize",
+    "category": "Hài",
+    "cinema_supported": [
+      "Cinema Bình Phước",
+      "Cinema Quận 12",
+      "Cinema Bến Tre"
+    ],
+    "gio_chieu": [
+      "14:30",
+      "16:00",
+      "17:00"
+    ],
+    "filter": "newest",
+    "original_price": 150000,
+    "sale_price": 89000,
+    "age": "T17",
+    "duration": "100 phút",
+    "year": 2009,
+    "director": "Todd Phillips",
+    "trailer": "https://www.youtube.com/watch?v=tcdUhdOlz9M",
+    "description": "The Hangover (Ba Chàng Ngự Lâm) xoay quanh hành trình tìm kiếm chú rể bị mất tích sau một đêm tiệc độc thân điên cuồng tại Las Vegas. Ba người bạn thân là Phil, Stu, Doug cùng em vợ tương lai của Doug là Alan lái xe đến Las Vegas. Họ tổ chức tiệc độc thân cho Doug trên sân thượng khách sạn Caesars Palace. Cả nhóm cùng uống một ly rượu mừng để bắt đầu đêm vui chơi. Ba người bạn tỉnh dậy vào sáng hôm sau trong căn phòng tổng thống tan hoang với tình trạng mất trí nhớ hoàn toàn. Vì đám cưới của Doug sẽ diễn ra vào ngày hôm sau tại Los Angeles, ba người còn lại phải tự lần mò lại ký ức đêm qua để tìm Doug.\n \n"
+  },
+  {
+    "id": 36,
+    "name": "Home Alone",
+    "image": "https://images.openai.com/static-rsc-4/4BlhFuTgK7W-YiLDS_hlnxYdjjWHRHhhhWC21lUDmPJNmv3MZj78MSP_nre4cq8KQWWnPugZBPreFwpgpqzXaZJgpcbxyNzG4sOLWCevkeaxwSc1yr7EGnfHmwqCFCEtuVL0nn7Lox6C4KdTybsTfsKibTiUBbYvf2k8rOL88fkgbfEo5lOCJFbhp1k_F8G2?purpose=fullsize",
+    "category": "Hài",
+    "cinema_supported": [
+      "Cinema Bình Định",
+      "Cinema Cát Lái",
+      "Cinema Điện Biên Phủ"
+    ],
+    "gio_chieu": [
+      "12:30",
+      "18:15",
+      "20:00"
+    ],
+    "filter": "popular",
+    "original_price": 140000,
+    "sale_price": 85000,
+    "age": "T7",
+    "duration": "103 phút",
+    "year": 1990,
+    "director": "Chris Columbus",
+    "trailer": "https://www.youtube.com/watch?v=jEDaVHmw7r4",
+    "description": "Bộ phim Home Alone (1990) xoay quanh câu chuyện hài hước và kịch tính của cậu bé Kevin McCallister. Gia đình McCallister chuẩn bị đi nghỉ Giáng sinh tại Paris, Pháp. Sáng hôm sau, cả nhà dậy muộn, vội vã ra sân bay và vô tình bỏ quên Kevin đang ngủ. Kevin thức dậy, nhận ra cả nhà đã biến mất và nghĩ rằng điều ước \"gia đình biến mất\" của mình thành sự thật. Cậu bé vô cùng sung sướng, tự do làm mọi điều mình thích: ăn kem vô độ, xem phim bạo lực, nhảy nhót trên giường. Hai tên trộm Harry và Marv (băng đảng \"Ướt nhẹp\") lên kế hoạch đột nhập ngôi nhà vào đêm Giáng sinh. Kevin phát hiện ra âm mưu và quyết định không trốn chạy mà ở lại bảo vệ ngôi nhà. Cậu bé tự tay thiết kế hàng loạt bẫy rập tinh vi, sáng tạo khắp nơi trong nhà (súng hơi, bàn là rơi, sơn đổ, đinh dính chân). Bọn trộm liên tiếp dính bẫy, bầm dập và sợ hãi trước sự thông minh của Kevin. và bị cảnh sát tóm gọn nhờ sự trợ giúp của ông lão hàng xóm tốt bụng Marley.\n"
+  },
+  {
+    "id": 37,
+    "name": "Central Intelligence",
+    "image": "https://m.media-amazon.com/images/M/MV5BMjA2NzEzNjIwNl5BMl5BanBnXkFtZTgwNzgwMTEzNzE%40._V1_FMjpg_UX1000_.jpg",
+    "category": "Hài",
+    "cinema_supported": [
+      "Cinema Trung Chánh",
+      "Cinema Ninh Bình",
+      "Cinema Tây Nguyên"
+    ],
+    "gio_chieu": [
+      "13:30",
+      "19:15",
+      "20:30"
+    ],
+    "filter": "newest",
+    "original_price": 280000,
+    "sale_price": 180000,
+    "age": "T13",
+    "duration": "116 phút",
+    "year": 2016,
+    "director": "Rawson Marshall Thurber",
+    "trailer": "https://www.youtube.com/watch?v=MxEw3elSJ8M",
+    "description": "Bob Stone từng là một cậu nhóc béo phì bị bắt nạt ở trường trung học, sau 20 năm đã lột xác thành đặc vụ CIA tinh nhuệ. Anh kéo người bạn học cũ Calvin vào một chiến dịch điệp viên quốc tế nguy hiểm để cứu thế giới."
+  },
+  {
+    "id": 38,
+    "name": "Johnny English",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTU0MGM4ZjQtNmQ3MC00NDE4LWEwYTItYWZiYzAxMGQwMDkzXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg",
+    "category": "Hài",
+    "cinema_supported": [
+      "Cinema Tây Ninh",
+      "Cinema Thanh Hóa",
+      "Cinema Hà Thanh"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "filter": "popular",
+    "original_price": 149000,
+    "sale_price": null,
+    "age": "T13",
+    "duration": "89 phút",
+    "year": 2003,
+    "director": "Peter Howitt",
+    "trailer": "https://www.youtube.com/watch?v=TFt6Pxe7AZg",
+    "description": "Johnny English ban đầu chỉ là một nhân viên văn phòng cấp thấp làm việc bàn giấy tại cơ quan tình báo MI7. Do sự bất cẩn của English, một vụ nổ bom đã xảy ra và sát hại toàn bộ các điệp viên thực lực của Anh Quốc. English bất ngờ trở thành điệp viên duy nhất còn sống sót và được thăng chức để nhận nhiệm vụ. Anh được giao bảo vệ báu vật Hoàng gia Anh (Crown Jewels) nhưng lại để chúng bị đánh cắp ngay trước mắt. Tỷ phú người Pháp Pascal Sauvage. Hắn lên kế hoạch chiếm đoạt ngai vàng để biến toàn bộ nước Anh thành một nhà tù khổng lồ. Dù liên tục đi sai hướng và phá hoại hiện trường, English (với sự trợ giúp của trợ lý Bough và nữ điệp viên Lorna Campbell) đã vô tình lật tẩy Sauvage ngay trong lễ đăng quang, lấy lại vương miện và được phong hiệp sĩ."
+  },
+  {
+    "id": 39,
+    "name": "Frozen",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_.jpg",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Bình Hưng Hòa",
+      "Cinema Nha Trang",
+      "Cinema Hà Nội"
+    ],
+    "gio_chieu": [
+      "19:00",
+      "20:30",
+      "22:00"
+    ],
+    "filter": "newest",
+    "original_price": 119000,
+    "sale_price": null,
+    "age": "T5",
+    "duration": "103 phút",
+    "year": 2013,
+    "director": "Jennifer Lee",
+    "trailer": "https://www.youtube.com/watch?v=TbQm5doF_Uc",
+    "description": "Câu chuyện diễn ra tại vương quốc giả tưởng Arendelle. Phim xoay quanh hai chị em công chúa: Elsa – người sở hữu phép thuật tạo ra băng giá từ nhỏ nhưng phải che giấu, và Anna – cô em gái vô tư, lạc quan. Trong ngày lễ đăng quang của mình, Elsa vô tình để lộ năng lượng chế ngự và làm đóng băng toàn bộ vương quốc. Vì quá hoảng sợ và không muốn làm hại ai, cô đã chạy trốn lên ngọn núi phía Bắc và tự xây dựng tòa lâu đài băng cho riêng mình. Công chúa Anna quyết định dấn thân vào một cuộc hành trình nguy hiểm để tìm chị gái. Đồng hành cùng cô là anh chàng tiều phu Kristoff, chú tuần lộc Sven và người tuyết vui nhộn Olaf."
+  },
+  {
+    "id": 40,
+    "name": "Toy Story",
+    "image": "https://images.openai.com/static-rsc-4/RhUn2QYaEIqlfQR9bdt0HwRAolxMDURP5r0__Snc4wrZeDod8bpO9IYGxlkyOXAxLvKkxm94igp-dZMOmIfUJvENAg11gBxtXEFWRcgFQGMYHN3NzIXh2C3GMF2yIiiYmqY3hYuNRYjqRIKemf1xY0rb0kKexc5d1FQrM1pe97GUUtGLxwWj3nIqIyfjXqFK?purpose=fullsize",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Bình Hưng Hòa",
+      "Cinema Cát Lái",
+      "Cinema Thủ Đức"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "17:00",
+      "18:30"
+    ],
+    "filter": "popular",
+    "original_price": 149000,
+    "sale_price": 99000,
+    "age": "T5",
+    "duration": "81 phút",
+    "year": 1995,
+    "director": "John Lasseter",
+    "trailer": "https://www.youtube.com/watch?v=v-PjgYDrg70",
+    "description": "Toy Story 1 (1995) là bộ phim hoạt hình máy tính mang tính cách mạng, xoay quanh thế giới bí mật nơi đồ chơi có cảm xúc và sự sống khi con người vắng mặt. Câu chuyện bắt đầu khi chàng cowboy Woody, món đồ chơi yêu thích nhất của cậu bé Andy, bị lung lay vị trí độc tôn bởi sự xuất hiện của cảnh sát vũ trụ hiện đại Buzz Lightyear. Sự đố kỵ và hiểu lầm khiến cả hai vô tình rơi khỏi nhà, lạc vào thế giới đầy hiểm nguy bên ngoài và bị rơi vào tay Sid, đứa trẻ hàng xóm chuyên phá hủy đồ chơi. Trong hành trình tìm đường trở về trước khi gia đình Andy chuyển nhà, Woody và Buzz buộc phải gạt bỏ mâu thuẫn để hỗ trợ nhau vượt qua thử thách. Qua đó, bộ phim ca ngợi một tình bạn đẹp đẽ, chân thành, đồng thời mở ra kỷ nguyên vàng cho hãng phim hoạt hình Pixar.\n"
+  },
+  {
+    "id": 41,
+    "name": "Finding Nemo",
+    "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31890_p_v10_bb.jpg",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Bình Định",
+      "Cinema Thanh Hóa",
+      "Cinema Hà Nội"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "filter": "newest",
+    "original_price": 169000,
+    "sale_price": 129000,
+    "age": "T5",
+    "duration": "100 phút",
+    "year": 2003,
+    "director": "Andrew Stanton",
+    "trailer": "https://www.youtube.com/watch?v=9oQ628Seb9w",
+    "description": "Sau bi kịch mất vợ, cá hề Marlin bao bọc quá mức chú cá con Nemo có chiếc vây tật nguyền. Khi Nemo bướng bỉnh bơi ra xa và bị thợ lặn bắt mất, Marlin dũng cảm lao vào đại dương bao la để tìm con. Trên đường đi, anh đồng hành cùng cô cá mất trí nhớ Dory, vượt qua cá mập, sứa độc và nhờ rùa biển đưa tới Sydney. Trong khi đó, Nemo dũng cảm tự giải thoát khỏi bể cá nha khoa nhờ sự trợ giúp của các bạn mới. Cuối cùng, hai cha con đoàn tụ, Marlin học được cách tin tưởng, cho phép con tự lập bước vào đời."
+  },
+  {
+    "id": 42,
+    "name": "The Lion King",
+    "image": "https://images.openai.com/static-rsc-4/trs-vkc-Zqibvtb19X8jSg0oFzJtDRkWPF8X62RXD5ey2hSh7nUJQHyRSqUfzhR_DLSmxUoWTdzbseEGwn_FsJcygPn93AhanswrQmwIuyrwfjbGdMYDHhQmyqZkZIIdwdB7mfR-ekJMPODoAO8n6mFeciVK6ZI00PnZhdp2KgHK2uswpyVpMIx41l_qrndx?purpose=fullsize",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Vũng Tàu",
+      "Cinema TPHCM",
+      "Cinema Nhà Bè"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "filter": "popular",
+    "original_price": 151000,
+    "sale_price": null,
+    "age": "T6",
+    "duration": "118 phút",
+    "year": 1994,
+    "director": "Jon Favreau",
+    "trailer": "https://www.youtube.com/watch?v=lFzVJEksoDY",
+    "description": "The Lion King (1994) là tác phẩm hoạt hình kinh điển kể về Simba, chú sư tử nhỏ phải trải qua hành trình trưởng thành đầy gian nan sau bi kịch gia đình. Vì âm mưu cướp ngôi tàn độc của người chú Scar dẫn đến cái chết của vua cha Mufasa, Simba phải bỏ trốn và sống lưu vong. Được sự giúp đỡ của hai người bạn hài hước Timon và Pumbaa, chú học cách đối mặt với quá khứ khốc liệt để tìm lại bản ngã. Cuối cùng, Simba quyết định trở về quê hương kiêu hãnh Pride Lands, chiến đấu giành lại ngai vàng và tiếp quản vòng quay kiêu hãnh của sự sống. Bộ phim đi vào lịch sử nhờ cốt truyện giàu tính nhân văn, hình ảnh vẽ tay xuất sắc và âm nhạc bất hủ."
+  },
+  {
+    "id": 43,
+    "name": "Spirited Away",
+    "image": "https://images.openai.com/static-rsc-4/km9EBUDub-YjJnddD0Mc4AXG8ONtFgFTDzuAYUz4YUXBYDQP13fDC8OCLoZ8THdgxTaACqOJsApph-AzHDO692sOqw79MyW3xMzGqCfmBl2TFc9V5C0zykyN7Ru-3XBvgMP4SgqsMeZtM9_CYoiWSQho35YnSsrVfUilQd6Gq2D-t82vzJbax64m00fkxOm-?purpose=fullsize",
+    "category": "Hoạt hình",
+    "cinema_supported": [
+      "Cinema Bình Hưng Hòa",
+      "Cinema Thanh Hóa",
+      "Cinema Bà Rịa"
+    ],
+    "gio_chieu": [
+      "15:00",
+      "18:00",
+      "21:00"
+    ],
+    "filter": "newest",
+    "original_price": 139000,
+    "sale_price": 59000,
+    "age": "T13",
+    "duration": "125 phút",
+    "director": "Miyazaki Hayao",
+    "trailer": "https://www.youtube.com/watch?v=j7_gGYifbiw",
+    "description": "Spirited Away (2001) là kiệt tác hoạt hình anime huyền thoại của đạo diễn Hayao Miyazaki và hãng phim Studio Ghibli. Bộ phim theo chân cô bé 10 tuổi Chihiro vô tình lạc vào thế giới linh hồn huyền bí khi bố mẹ cô bị biến thành heo vì ăn đồ cúng tế. Để tồn tại và tìm cách cứu bố mẹ, Chihiro phải ký hợp đồng làm việc tại nhà tắm công cộng của phù thủy Yubaba độc ác và bị đổi tên thành Sen. Tại đây, cô nhận được sự giúp đỡ của cậu bé rồng Haku, đối mặt với Vô Diện cô độc và trải qua hành trình trưởng thành đầy thử thách. Tác phẩm xuất sắc giành giải Oscar cho Phim hoạt hình hay nhất năm 2003, trở thành một trong những bộ phim hoạt hình vĩ đại nhất lịch sử điện ảnh thế giới.\n",
+    "year": 2001
+  },
+  {
+    "id": 44,
+    "name": "Parasite",
+    "image": "https://images.openai.com/static-rsc-4/QoIyQRAJ9uOTjm93aq3OUZfv_9I9UdoO3GqzIs8izTiDPZhFU1mqyF0hFuv2uzcz8X2dIK6RpOSsNWAXyiMsSzuorFZbdve1-epnx_pZkh8VmtSBNAXW7FUFAsfm_dQk9PeRym8Nd1cU49Msi1Eti9u0CDRhRcFYE9w6Wn8XPAExs5uNrFdTt3RPJQfot1QI?purpose=fullsize",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Hải Phòng",
+      "Cinema Quận 12",
+      "Cinema Bình Định"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "15:00",
+      "17:00"
+    ],
+    "filter": "popular",
+    "original_price": 449000,
+    "sale_price": 439000,
+    "age": "T18",
+    "duration": "132 phút",
+    "year": 2019,
+    "director": "Bong Joon-ho",
+    "trailer": "https://www.youtube.com/watch?v=isOGD_7hNIY",
+    "description": "Parasite (2019) là kiệt tác điện ảnh Hàn Quốc thuộc thể loại hài đen giật gân, bóc trần sự phân hóa giàu nghèo sâu sắc trong xã hội hiện đại. Bộ phim theo chân gia đình bốn người họ Kim nghèo khó, sống dưới căn bán hầm tồi tàn, dùng mưu kế thâm nhập làm thuê cho gia đình họ Park giàu có. Khi cuộc sống \"ký sinh\" của họ đang thuận lợi, một bí mật kinh hoàng dưới hầm sâu căn biệt thự bị phát lộ, đẩy tất cả vào chuỗi bi kịch không thể kiểm soát. Tác phẩm sử dụng chất liệu châm biếm sâu sắc cùng hình tượng \"mùi nghèo\" ám ảnh để vạch trần hố sâu giai cấp không thể khỏa lấp. Phim đi vào lịch sử với chiến thắng bốn giải Oscar danh giá, bao gồm cả giải Phim hay nhất, khẳng định vị thế của điện ảnh châu Á trên thế giới."
+  },
+  {
+    "id": 45,
+    "name": "Joker",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Joker_%282019_film%29_poster.jpg/250px-Joker_%282019_film%29_poster.jpg",
+    "category": "Kinh Dị",
+    "cinema_supported": [
+      "Cinema Quận 1",
+      "Cinema Quận 3",
+      "Cinema Thủ Đức"
+    ],
+    "gio_chieu": [
+      "15:30",
+      "17:00",
+      "20:00"
+    ],
+    "filter": "newest",
+    "original_price": 149000,
+    "sale_price": 66000,
+    "age": "T18",
+    "duration": "122 phút",
+    "year": 2019,
+    "director": "Todd Phillips",
+    "trailer": "https://www.youtube.com/watch?v=Lb-OjE2lEm0",
+    "description": "Joker (2019) là bộ phim tâm lý tội phạm giật gân, khai thác sâu sắc nguồn gốc đen tối của kẻ thù truyền kiếp của Batman. Bộ phim theo chân Arthur Fleck, một gã hề cô độc mang chứng bệnh tâm thần tiếng cười không kiểm soát, sống chật vật giữa thành phố Gotham mục nát. Bị xã hội ghẻ lạnh, đánh đập và đẩy đến tận cùng của sự tuyệt vọng, Arthur dần đánh mất nhân tính để giải phóng bản ngã điên loạn bên trong mình. Sự biến đổi của gã không chỉ tạo nên một sát nhân máu lạnh mà còn vô tình châm ngòi cho làn sóng bạo loạn hỗn loạn của tầng lớp nghèo khổ. Tác phẩm xuất sắc mang về giải Sư tử vàng và giúp Joaquin Phoenix đoạt giải Oscar nam chính, khẳng định tầm vóc của một kiệt tác điện ảnh độc lập."
+  },
+  {
+    "id": 46,
+    "name": "Doctor Strange",
+    "image": "https://images.openai.com/static-rsc-4/MXl2V0MbHnbt7dhEJhw-5_ljB6TrYN98a-PsWV94T8dOweLk-iQBVBDaP488VCHNGjK4VTPgnPBX0LwRkSpPj3u6GkPTWPvsXDLaeXQKWsHqNC0fl8QTC9RAqg_BJV3Mdium_zK-KeO4vrM1ERzquVPC9zK64Ef_rUoR8wuOKWx79EO3B1pBqZu5A_PmOjm1?purpose=fullsize",
+    "category": "Khoa Học Viễn Tưởng",
+    "cinema_supported": [
+      "Cinema Quận 4",
+      "Cinema Bính Chánh",
+      "Cinema Tân Bình"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "15:30",
+      "17:50"
+    ],
+    "filter": "popular",
+    "original_price": 649000,
+    "sale_price": 399000,
+    "age": "T16",
+    "duration": "115 phút",
+    "year": 2016,
+    "director": " Scott Derrickson",
+    "trailer": "https://www.youtube.com/watch?v=_IFZBdvzkl4",
+    "description": "Doctor Strange (2016) là bộ phim siêu anh hùng hoành tráng mở ra chiều không gian ma thuật huyền bí cho Vũ trụ Điện ảnh Marvel. Bộ phim theo chân Stephen Strange, một bác sĩ phẫu thuật thần kinh tài giỏi nhưng ngạo mạn, người đã mất đi đôi tay sau một tai nạn thảm khốc. Trong nỗ lực chữa trị, anh tìm đến Kamar-Taj và được Thượng Cổ Tôn Giả truyền dạy những quyền năng tối thượng cùng phép thuật thay đổi thực tại. Khi thế giới bị đe dọa bởi các thế lực bóng tối đến từ Đa vũ trụ, Strange buộc phải gánh vác trọng trách bảo vệ Trái Đất. Tác phẩm gây ấn tượng mạnh mẽ nhờ kỹ xảo bẻ cong không gian đỉnh cao và màn diễn xuất xuất sắc của Benedict Cumberbatch."
+  },
+  {
+    "id": 47,
+    "name": "Iron Man",
+    "image": "https://images.openai.com/static-rsc-4/kITZJAGq1_IMzzw3TbskXfmc8w6SZ8EmSB4C395fmSGtANWASmVEG8J3sIyhCbKCjDAl_jbXkpHbdzjOhq1RxgAjf2IsbW7B4D4vsgP34sRgzX1ZJ7m3nvgc_r_l2iJUS0o07AASi4zhOtkN2PabbJwoSGleNz-PalfxdXAF_sP0XaC-S4J1oeiOX83Jcjpt?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Bình Tân",
+      "Cinema Quận 5",
+      "Cinema Quận 10"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "17:00",
+      "20:00"
+    ],
+    "filter": "newest",
+    "original_price": 169000,
+    "sale_price": 119000,
+    "age": "T13",
+    "duration": "126 phút",
+    "year": 2008,
+    "director": "Jon Favreau",
+    "trailer": "https://www.youtube.com/watch?v=8ugaeA-nMTc",
+    "description": "Iron Man (2008) là phát súng mở màn lịch sử cho Vũ trụ Điện ảnh Marvel, xoay quanh cuộc đời của tỷ phú thiên tài kiêm nhà sản xuất vũ khí Stark Industries - Tony Stark. Sau khi bị một nhóm khủng bố bắt cóc và ép chế tạo tên lửa hủy diệt, anh đã tự chế tạo bộ giáp sắt thô sơ để trốn thoát. Trở về nhà, Tony nhận ra sự tàn phá của vũ khí do mình chế tạo nên đã quyết định cải tiến bộ giáp, đóng cửa mảng quốc phòng để bảo vệ thế giới. Anh phải đối đầu với Obadiah Stane, người cộng sự phản bội đã bí mật chế tạo bộ giáp khổng lồ Iron Monger để tiêu diệt anh. Bộ phim khép lại bằng lời tuyên bố bất hủ \"Tôi là Iron Man\", tạo nên cú hích phòng vé khổng lồ và hồi sinh sự nghiệp đỉnh cao của Robert Downey Jr."
+  },
+  {
+    "id": 48,
+    "name": "Deadpool",
+    "image": "https://images.openai.com/static-rsc-4/CDQX7bXQYhsk9N-P0mIy7RgZ-n51qOe5H97DOWhuVcMdveJCV2qdFuzEauoLsCR2kC7dR3jVZPy1hneLziezHgONOTl8dQfAP2cz9OQXg4WF66FqVeore_lL8tVX_kFnRv5QBOYIsx_AEALNRfliwkph9NVX3XxC0TIzrbAqsK5N2VUzAmI4dwXilGKQu-d5?purpose=fullsize",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Quận 12",
+      "Cinema Nhà Bè",
+      "Cinema Cát Lái"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "15:00",
+      "17:00"
+    ],
+    "filter": "popular",
+    "original_price": 469000,
+    "sale_price": null,
+    "age": "T18",
+    "duration": "108 phút",
+    "year": 2016,
+    "director": "Tim Miller",
+    "trailer": "https://www.youtube.com/watch?v=Xithigfg7dA",
+    "description": "Deadpool (2016) là bộ phim siêu anh hùng đột phá và lầy lội, xoay quanh Wade Wilson, một cựu lính đặc nhiệm chuyển sang làm lính đánh thuê. Sau khi phát hiện mình bị ung thư giai đoạn cuối, anh tham gia một thí nghiệm bất hợp pháp giúp chữa khỏi bệnh và ban cho anh khả năng tự phục hồi phi thường nhưng lại hủy hoại toàn bộ khuôn mặt. Với bộ trang phục đỏ đen, tính cách quái dị và biệt danh Deadpool, anh ráo riết săn lùng kẻ đứng sau thí nghiệm để bắt hắn chữa trị lại dung nhan cho mình. Bộ phim cực kỳ độc đáo nhờ yếu tố hài hước châm biếm, những pha hành động bạo lực nhãn R và việc nhân vật liên tục \"phá vỡ bức tường thứ tư\" để trò chuyện trực tiếp với khán giả. Tác phẩm đã gặt hái thành công vang dội về mặt doanh thu, biến Ryan Reynolds trở thành biểu tượng hoàn hảo cho gã phản anh hùng phản diện này."
+  },
+  {
+    "id": 49,
+    "name": "Captain America: Civil War",
+    "image": "https://static.posters.cz/image/750/30823.jpg",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Quận 10",
+      "Cinema Quận 11",
+      "Cinema Hà Nội"
+    ],
+    "gio_chieu": [
+      "13:00",
+      "15:00",
+      "17:30"
+    ],
+    "filter": "newest",
+    "original_price": 169000,
+    "sale_price": null,
+    "age": "T16",
+    "duration": "148 phút",
+    "year": 2016,
+    "director": " Anthony Russo",
+    "trailer": "https://www.youtube.com/watch?v=dKrVegVI0Us",
+    "description": "Captain America: Civil War (2016) là bộ phim siêu anh hùng hoành tráng bùng nổ xung đột, xoay quanh sự rạn nứt sâu sắc trong nội bộ nhóm Avengers. Sau những thiệt hại nặng nề từ các cuộc chiến trước, chính phủ ban hành Hiệp định Sokovia nhằm đặt các siêu anh hùng dưới sự kiểm soát của Liên Hợp Quốc. Iron Man (Tony Stark) ủng hộ vì cảm thấy tội lỗi, trong khi Captain America (Steve Rogers) kiên quyết từ chối vì không muốn bị chính trị chi phối. Mâu thuẫn lên đỉnh điểm khi chiến binh mùa đông Bucky Barnes, người bạn thân nhất của Steve, bị đổ tội đánh bom đại hội đồng, buộc hai phe phải lao vào cuộc nội chiến tàn khốc. Tác phẩm gây ấn tượng mạnh mẽ với trận chiến sân bay kinh điển và màn ra mắt bùng nổ của Black Panther cùng Spider-Man trong MCU."
+  },
+  {
+    "id": 50,
+    "name": "Fast & Furious 7",
+    "image": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10679969_p_v8_av.jpg",
+    "category": "Hành Động",
+    "cinema_supported": [
+      "Cinema Thái Bình",
+      "Cinema Thanh Hóa",
+      "Cinema Ninh Bình"
+    ],
+    "gio_chieu": [
+      "13:30",
+      "17:00",
+      "20:30"
+    ],
+    "filter": "popular",
+    "original_price": 200000,
+    "sale_price": null,
+    "age": "T13",
+    "duration": "140 phút",
+    "year": 2015,
+    "director": "James Wan",
+    "trailer": "https://www.youtube.com/watch?v=D9s0XZwLalQ",
+    "description": "Fast & Furious 7 (2015) là bộ phim hành động bom tấn nghẹt thở, xoay quanh cuộc đối đầu tàn khốc giữa gia đình Dominic Toretto và kẻ thù nguy hiểm Deckard Shaw. Sau khi tiêu diệt Owen Shaw ở phần trước, Dominic cùng đồng đội bị người anh trai Deckard lùng sục báo thù, bắt đầu bằng việc sát hại Han và đánh bom ngôi nhà của Dom. Để lật ngược thế cờ, cả đội phải hợp tác với một mật vụ chính phủ bảo mật để tìm kiếm thiết bị định vị toàn cầu \"Nhãn Thần\" và giải cứu nữ hacker Ramsey. Bộ phim cống hiến cho khán giả những pha hành động không tưởng vượt mọi giới hạn vật lý như ô tô nhảy dù từ máy bay hay phi xe bay qua ba tòa tháp chọc trời tại Abu Dhabi. Đây cũng là tác phẩm lấy đi nhiều nước mắt nhất toàn loạt phim khi khép lại bằng khúc nhạc tiễn biệt \"See You Again\" đầy xúc động dành cho nam diễn viên quá cố Paul Walker."
+  }
+]

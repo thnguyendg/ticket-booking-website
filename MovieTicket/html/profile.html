@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Account Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./layout/profile.css">
+    <link rel="stylesheet" href="./components/popup.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-circle-user"></i> QUẢN LÝ TÀI KHOẢN
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('profile')">
+                <i class="fas fa-user"></i> Hồ sơ
+            </li>
+            <li class="nav-item" onclick="showSection('deposit')">
+                <i class="fas fa-wallet"></i> Nạp tiền
+            </li>
+            <li class="nav-item" onclick="showSection('history')">
+                <i class="fas fa-history"></i> Lịch sử
+            </li>
+            <li class="nav-item" onclick="showSection('password')">
+                <i class="fas fa-lock"></i> Mật khẩu
+            </li>
+            <li class="nav-item" onclick="showSection('delete')">
+                <i class="fas fa-user-slash"></i> Xoá tài khoản
+            </li>             
+            <li class="nav-item" onclick="window.location.href='./trangchu.html'">
+                <i class="fas fa-home"></i> Quay về Trang chủ
+            </li>
+            <li class="nav-item" onclick="showSection('logout')" style="color: #ff4d4d; margin-top: auto;">
+                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        
+        <section id="profile" class="section active">
+            <h2>Thông tin cá nhân</h2>
+            <div class="card">
+                <div class="profile-header">
+                    <div class="avatar" style="position: relative; overflow: visible; cursor: pointer; display: flex; align-items: center; justify-content: center;" onclick="document.getElementById('avatar-input').click()">
+                        <img id="display-avatar" src="" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: none;">
+                        <i class="fas fa-user" id="default-avatar-icon"></i>
+                        
+                        <div style="position: absolute; bottom: -2px; right: -2px; background: #e50914; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; border: 2px solid #1a1a1a;">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <input type="file" id="avatar-input" accept="image/*" style="display: none;" onchange="uploadAvatar(this)">
+                    </div>
+                    <div>
+                        <h3 id="display-fullname">...</h3>
+                        <p id="display-role" style="color: var(--text-muted); font-weight: 500;">Khách hàng</p>
+                    </div>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Email</label>
+                        <p id="display-email">...</p> 
+                    </div>
+                    <div class="info-item">
+                        <label>Số điện thoại</label>
+                        <p id="display-phone">...</p> 
+                    </div>
+                    <div class="info-item">
+                        <label>Ngày sinh</label>
+                        <p id="display-dob">...</p> 
+                    </div>        
+                    <div class="info-item">
+                        <label>Giới tính</label>
+                        <p id="display-gender">...</p> 
+                    </div>
+                    
+                </div>
+                <button class="btn btn-outline" style="margin-top: 25px;" onclick="openModal()">
+                    <i class="fas fa-edit"></i> Chỉnh sửa thông tin
+                </button>
+            </div>
+        </section>
+
+        <section id="deposit" class="section">
+            <h2>Nạp tiền vào tài khoản</h2>
+            <div class="card balance-card">
+                <p>Số dư hiện tại</p>
+                <div class="balance-amount" id="profile-balance">0đ</div>
+                <i class="fas fa-coins" style="font-size: 30px; color: gold;"></i>
+            </div>
+            <div class="card">
+                <label>Nhập số tiền muốn nạp</label>
+                <input type="number" id="deposit-amount" placeholder="Ví dụ: 100000">
+                <button class="btn" id="confirm-deposit-btn" style="width: 100%; justify-content: center;">
+                    <i class="fas fa-credit-card"></i> Nạp tiền ngay
+                </button>
+            </div>
+        </section>
+
+        <section id="history" class="section">
+            <h2>Lịch sử giao dịch</h2>
+            <div class="card" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Sản phẩm</th>
+                            <th>Ngày mua</th>
+                            <th>Giá tiền</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="password" class="section">
+            <h2>Thay đổi mật khẩu</h2>
+            <div class="card">
+                <label><i class="fas fa-key"></i> Mật khẩu cũ</label>
+                <div style="position: relative;">
+                    <input type="password" id="oldPass">
+                    <i class="fas fa-eye-slash" style="position: absolute; right: 15px; top: 15px; cursor: pointer;" onclick="togglePass('oldPass')"></i>
+                </div>
+                <label><i class="fas fa-lock"></i> Mật khẩu mới</label>
+                <div style="position: relative;">
+                    <input type="password" id="newPass">
+                    <i class="fas fa-eye-slash" style="position: absolute; right: 15px; top: 15px; cursor: pointer;" onclick="togglePass('newPass')"></i>
+                </div>                    
+
+                <label><i class="fas fa-check-double"></i> Xác nhận mật khẩu</label>
+                <div style="position: relative;">
+                    <input type="password" id="confirmPass">
+                    <i class="fas fa-eye-slash" style="position: absolute; right: 15px; top: 15px; cursor: pointer;" onclick="togglePass('confirmPass')"></i>
+                </div>
+
+                <button class="btn">Cập nhật mật khẩu</button>
+            </div>
+        </section>
+
+        <section id="delete" class="section">
+            <h2 style="color: #dc3545;">Vùng nguy hiểm</h2>
+            <div class="card" style="border-color: #dc3545;">
+                <h3>Xoá tài khoản vĩnh viễn</h3>
+                <p style="color: var(--text-muted); margin: 15px 0;">
+                    Một khi bạn xoá tài khoản, toàn bộ dữ liệu, gói dịch vụ và số dư sẽ bị mất và không thể khôi phục lại.
+                </p>
+                <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="confirmDelete" style="width: auto; margin-bottom: 0;">
+                    <label for="confirmDelete">Tôi hiểu và đồng ý với rủi ro.</label>
+                </div>
+                <button class="btn btn-danger" onclick="handleDelete()">
+                    <i class="fas fa-trash-alt"></i> Xoá tài khoản ngay
+                </button>
+            </div>
+        </section>
+
+        <section id="logout" class="section">
+            <h2>Đăng xuất</h2>
+            <div class="card">
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    Bạn có chắc chắn muốn đăng xuất khỏi hệ thống không?
+                </p>
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn btn-danger" onclick="handleLogout()">
+                        <i class="fas fa-sign-out-alt"></i> Xác nhận đăng xuất
+                    </button>
+                    <button class="btn btn-outline" onclick="showSection('profile')">
+                        Hủy bỏ
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <script>
+        // Chuyển đổi các Section (Tabs)
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. Kiểm tra trạng thái đăng nhập
+            const storedUser = localStorage.getItem("currentUser");
+            if (!storedUser) {
+                window.location.href = "dangnhap.html";
+                return;
+            }
+            
+            const user = JSON.parse(storedUser);
+            // Lấy email an toàn từ object user hoặc sao lưu từ localStorage cũ
+            const email = user.Email || localStorage.getItem("userEmail") || "";
+
+            // Định nghĩa bảng ánh xạ vai trò
+            const roleMapping = {
+                1: "Quản trị viên",
+                2: "Nhân viên bán hàng",
+                3: "Khách hàng"
+            };
+
+            // 2. HIỂN THỊ NGAY DỮ LIỆU TỪ LOCALSTORAGE (Tránh giao diện hiển thị dấu "..." lúc chờ API)
+            if (document.getElementById("display-fullname")) {
+                document.getElementById("display-fullname").innerText = user.Hovaten || "Khách hàng";
+            }
+            if (document.getElementById("display-email")) {
+                document.getElementById("display-email").innerText = email || "Chưa cập nhật";
+            }
+            if (document.getElementById("display-phone")) {
+                document.getElementById("display-phone").innerText = user.SDT || localStorage.getItem("userPhone") || "Chưa cập nhật";
+            }
+            if (document.getElementById("display-dob")) {
+                document.getElementById("display-dob").innerText = user.Ngaysinh || localStorage.getItem("userDob") || "Chưa cập nhật";
+            }
+            if (document.getElementById("display-gender")) {
+                document.getElementById("display-gender").innerText = user.GioiTinh || localStorage.getItem("userGender") || "Chưa cập nhật";
+            }
+            if (document.getElementById("profile-balance")) {
+                const localBal = user.balance || localStorage.getItem("userBalance") || 0;
+                document.getElementById("profile-balance").innerText = Number(localBal).toLocaleString('vi-VN') + "đ";
+            }
+            if (document.getElementById("display-role")) {
+                document.getElementById("display-role").innerText = roleMapping[user.MaVaiTro] || "Khách hàng";
+            }
+
+            // Hiển thị Avatar lưu trong máy từ trước (nếu có)
+            const imgEl = document.getElementById("display-avatar");
+            const iconEl = document.getElementById("default-avatar-icon");
+            if (user.Avatar && user.Avatar !== "default-avatar.png") {
+                if (imgEl) {
+                    imgEl.src = `./static/uploads/avatars/${user.Avatar}`;
+                    imgEl.style.display = "block";
+                }
+                if (iconEl) iconEl.style.display = "none";
+            }
+
+            // 3. HÀM ĐỒNG BỘ DỮ LIỆU MỚI NHẤT TỪ DATABASE BACKEND
+            async function syncProfileFromDB() {
+                try {
+                    const response = await fetch(`http://127.0.0.1:5000/api/khachhang/${user.id}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        
+                        // Cập nhật nóng lên màn hình các dữ liệu vừa lấy từ SQL Server về
+                        if (document.getElementById("display-fullname")) document.getElementById("display-fullname").innerText = data.Hovaten || "Khách hàng";
+                        if (document.getElementById("display-email")) document.getElementById("display-email").innerText = data.Email || email;
+                        if (document.getElementById("display-phone")) document.getElementById("display-phone").innerText = data.SDT || "Chưa cập nhật";
+                        if (document.getElementById("display-dob")) document.getElementById("display-dob").innerText = data.Ngaysinh || "Chưa cập nhật";
+                        if (document.getElementById("display-gender")) document.getElementById("display-gender").innerText = data.GioiTinh || "Chưa cập nhật";
+                        if (document.getElementById("profile-balance")) document.getElementById("profile-balance").innerText = Number(data.SoDu).toLocaleString('vi-VN') + "đ";
+                        if (document.getElementById("display-role")) document.getElementById("display-role").innerText = roleMapping[data.MaVaiTro] || "Khách hàng";
+
+                        // Cập nhật Avatar mới kèm chuỗi thời gian chống dính Cache trình duyệt
+                        if (data.Avatar && data.Avatar !== "default-avatar.png") {
+                            if (imgEl) {
+                                imgEl.src = `./IMAGE/avatars/${data.Avatar}?t=${new Date().getTime()}`;
+                                imgEl.style.display = "block";
+                            }
+                            if (iconEl) iconEl.style.display = "none";
+                        }
+
+                        // Đồng bộ ghi đè lại vào bộ nhớ LocalStorage làm phương án dự phòng
+                        localStorage.setItem("userBalance", data.SoDu);
+                        localStorage.setItem("userFullname", data.Hovaten);
+                        localStorage.setItem("userPhone", data.SDT);
+                        localStorage.setItem("userDob", data.Ngaysinh);
+                        localStorage.setItem("userGender", data.GioiTinh);
+                        
+                        const updatedUser = { ...user, ...data, balance: data.SoDu };
+                        localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+                    }
+                } catch (error) {
+                    console.error("Lỗi đồng bộ dữ liệu với máy chủ:", error);
+                }
+            }
+
+            // Kích hoạt chạy các tiến trình tải dữ liệu
+            syncProfileFromDB();
+            renderHistory();
+            
+            // 4. HÀM TẠO GIAO DIỆN LỊCH SỬ GIAO DỊCH
+            function renderHistory() {
+                const history = JSON.parse(localStorage.getItem('userTransactionHistory') || '[]');
+                const tbody = document.getElementById("history-table-body");
+                if (!tbody) return;
+                
+                if (history.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Chưa có giao dịch nào</td></tr>';
+                    return;
+                }
+                
+                tbody.innerHTML = history.map(item => `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.product}</td>
+                        <td>${item.date}</td>
+                        <td>${item.amount}</td>
+                        <td><span class="badge status-success">${item.status}</span></td>
+                    </tr>
+                `).join('');
+            }
+
+            // 5. LOGIC XỬ LÝ SỰ KIỆN NẠP TIỀN
+            const depositBtn = document.getElementById("confirm-deposit-btn");
+            if (depositBtn) {
+                depositBtn.onclick = async function() {
+                    const amountInput = document.getElementById("deposit-amount");
+                    const amount = amountInput ? amountInput.value : 0;
+                    
+                    if (!amount || amount <= 0) {
+                        alert("Vui lòng nhập số tiền hợp lệ");
+                        return;
+                    }
+
+                    depositBtn.disabled = true;
+                    depositBtn.innerText = "Đang xử lý...";
+
+                    try {
+                        const response = await fetch("http://127.0.0.1:5000/deposit", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ email: email, amount: Number(amount) })
+                        });
+
+                        const result = await response.json();
+                        if (result.success) {
+                            alert(result.msg);
+                            
+                            // Lưu lại số dư mới vào LocalStorage
+                            localStorage.setItem("userBalance", result.new_balance);
+                            const freshUserObj = JSON.parse(localStorage.getItem("currentUser") || "{}");
+                            freshUserObj.balance = result.new_balance;
+                            localStorage.setItem("currentUser", JSON.stringify(freshUserObj));
+                            
+                            // Đổi số hiển thị trên giao diện nạp tiền tiền
+                            if (document.getElementById("profile-balance")) {
+                                document.getElementById("profile-balance").innerText = result.new_balance.toLocaleString('vi-VN') + "đ";
+                            }
+                            
+                            // Đồng bộ lại lên thanh tiêu đề header dùng chung (nếu có)
+                            if (window.syncHeaderBalance) window.syncHeaderBalance();
+                            if (amountInput) amountInput.value = "";
+                        } else {
+                            alert("Lỗi: " + result.msg);
+                        }
+                    } catch (err) {
+                        console.error(err);
+                        alert("Không thể kết nối máy chủ");
+                    } finally {
+                        depositBtn.disabled = false;
+                        depositBtn.innerHTML = '<i class="fas fa-credit-card"></i> Nạp tiền ngay';
+                    }
+                };
+            }
+        });
+
+        // THAY ĐỔI 2: Thêm hàm xử lý Upload File ảnh lên Backend Flask
+        async function uploadAvatar(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const storedUser = localStorage.getItem("currentUser");
+            if (!storedUser) {
+                alert("Vui lòng đăng nhập lại!");
+                return;
+            }
+            const user = JSON.parse(storedUser);
+
+            // Chuẩn bị FormData đóng gói file gửi lên Server
+            const formData = new FormData();
+            formData.append("user_id", user.id);
+            formData.append("avatar", file);
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/api/upload-avatar", {
+                    method: "POST",
+                    body: formData // Không điền Header Content-Type khi gửi FormData, trình duyệt sẽ tự định nghĩa boundary
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    alert("Cập nhật ảnh đại diện thành công!");
+                    
+                    const imgEl = document.getElementById("display-avatar");
+                    const iconEl = document.getElementById("default-avatar-icon");
+                    
+                    // Hiển thị ảnh mới lên giao diện cùng mẹo chống dính cache (?t=...)
+                    if (imgEl) {
+                        imgEl.src = `./static/uploads/avatars/${result.avatar_url}?t=${new Date().getTime()}`;
+                        imgEl.style.display = "block";
+                    }
+                    if (iconEl) iconEl.style.display = "none";
+
+                    // Đồng bộ lại tên file ảnh vào LocalStorage
+                    user.Avatar = result.avatar_url;
+                    localStorage.setItem("currentUser", JSON.stringify(user));
+                } else {
+                    alert("Lỗi: " + result.msg);
+                }
+            } catch (error) {
+                console.error("Lỗi upload avatar:", error);
+                alert("Không thể kết nối máy chủ để upload ảnh.");
+            }
+        }
+
+        function setAmount(val) {
+            document.getElementById('deposit-amount').value = val;
+        }
+
+        function togglePass(id) {
+            const input = document.getElementById(id);
+            const icon = event.target;
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            }
+        }
+
+        async function handleDelete() {
+            const isChecked = document.getElementById('confirmDelete').checked;
+            if (!isChecked) {
+                alert("Vui lòng tích vào ô xác nhận trước khi xoá!");
+                return;
+            }
+            
+            const confirmAction = confirm("BẠN CÓ CHẮC CHẮN MUỐN XOÁ TÀI KHOẢN? Hành động này không thể hoàn tác.");
+            if (confirmAction) {
+                const email = localStorage.getItem("userEmail");
+
+                try {
+                    const response = await fetch("http://127.0.0.1:5000/delete-account", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email: email })
+                    });
+
+                    const result = await response.json();
+                    if (result.success) {
+                        alert(result.msg);
+                        localStorage.clear();
+                        window.location.href = "trangchu.html";
+                    }
+                } catch (err) {
+                    alert("Lỗi kết nối khi xóa tài khoản");
+                }
+            }
+        }
+  
+        async function updatePassword() {
+            const email = localStorage.getItem("userEmail");
+            const oldPassword = document.getElementById('oldPass').value;
+            const newPassword = document.getElementById('newPass').value;
+            const confirmPassword = document.getElementById('confirmPass').value;
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/change-password", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        email: email,
+                        old_password: oldPassword,
+                        new_password: newPassword
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert("Đổi mật khẩu thành công! Vui lòng đăng nhập lại.");
+                    localStorage.clear();
+                    window.location.href = "dangnhap.html";
+                } else {
+                    alert("Lỗi: " + result.message);
+                }
+            } catch (err) {
+                alert("Không thể kết nối máy chủ để đổi mật khẩu");
+            }
+        }
+
+        document.querySelector('#password .btn').onclick = updatePassword;
+        
+        function handleLogout() {
+            localStorage.clear();
+            window.location.href = "trangchu.html";
+        }
+
+        const originalShowSection = showSection;
+        showSection = function(id) {
+            originalShowSection(id);
+        };
+    </script>
+
+<div id="editModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Chỉnh sửa thông tin</h3>
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <label>Họ và tên</label>
+            <input type="text" id="editName" value="Nguyễn Văn A">
+            
+            <label>Số điện thoại</label>
+            <input type="text" id="editPhone" value="0901 234 567">
+            
+            <label>Email</label>
+            <input type="email" id="editEmail" value="nguyenvana@example.com">
+
+            <label>Ngày sinh</label>
+            <input type="date" id="editDob">
+
+            <label>Giới tính</label>
+            <select id="editGender" style="width: 100%; padding: 12px; border-radius: 8px; background: #1a1a1a; border: 1px solid #333; color: white; margin-bottom: 15px;">
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+                <option value="other">Khác</option>
+            </select>
+            
+            <button class="btn" style="width: 100%; margin-top: 10px;" onclick="saveProfile()">Lưu thay đổi</button>
+        </div>
+    </div>
+</div>
+<script src="./script/gethistory.js"></script>
+<script src="./script/modal.js"></script>
+</body>
+</html>

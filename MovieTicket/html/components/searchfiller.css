@@ -1,0 +1,128 @@
+/* --- Cấu trúc tổng thể --- */
+body {
+    background-color: #0D0D0D; /* Màu nền rạp phim của bạn */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* --- Search Bar (Booking Container) --- */
+.booking-container {
+    width: 100%;
+    max-width: 1200px; /* Độ rộng tối đa để cân đối */
+    margin: -20px auto 40px; /* Đẩy lên nhẹ để chồng lên slider một chút (nếu muốn) hoặc để 30px auto nếu muốn tách rời */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10; /* Đảm bảo luôn nằm trên Slider */
+}
+
+.booking-bar {
+    background: #1A1A1A; /* Màu bg-card của bạn */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    gap: 15px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    /* Mẹo: Sử dụng filter để chuyển icon sang màu trắng */
+    filter: invert(100%) brightness(100%);
+}
+
+/* Cấu trúc bên trong các nhóm input */
+.input-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-content select option {
+    background-color: #FFFFFF; /* Nền trắng cho dropdown list */
+    color: #000000;            /* Màu chữ đen */
+}
+
+/* Đảm bảo màu chữ hiển thị tốt trên các trình duyệt cũ hơn */
+select option {
+    color: #000000;
+}
+
+.input-content label {
+    font-size: 11px;
+    color: #B3B3B3;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.input-content select, 
+.input-content input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+}
+
+/* Phân cách giữa các cột */
+.divider {
+    width: 1px;
+    height: 40px;
+    background: #333;
+}
+
+/* Nút mua vé */
+.btn-booking {
+    background: #E50914; /* Màu primary đỏ cinema */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-booking:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* --- Responsive (Mobile & Tablet) --- */
+@media (max-width: 992px) {
+    .booking-container {
+        margin-top: 20px; /* Không chồng lên slider trên mobile */
+    }
+    
+    .booking-bar {
+        flex-direction: column; /* Chuyển thành hàng dọc */
+        align-items: stretch;
+    }
+    
+    .divider {
+        width: 100%;
+        height: 1px;
+        margin: 5px 0;
+    }
+    
+    .hero-slider {
+        height: 50vh; /* Thu nhỏ slider trên mobile */
+    }
+}

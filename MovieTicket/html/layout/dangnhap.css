@@ -1,0 +1,469 @@
+:root {
+    --bg-main: #0D0D0D;
+    --bg-card: #1A1A1A;
+    --primary: rgb(229, 9, 20); /* Màu đỏ Cinema đặc trưng */
+    --error-color: rgb(247, 84, 92);
+    --text-main: #FFFFFF;
+    --text-sub: #B3B3B3;
+    --radius: 12px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+}
+
+/* Cột bên trái: Form */
+.login-left {
+    flex: 1;
+    padding: 50px 60px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.logo-icon {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.logo-box {
+    width: 30px;
+    height: 30px;
+    background: var(--primary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dot { color: var(--primary); }
+
+.header-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.header-text p {
+    color: var(--text-sub);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+.input-container { margin-bottom: 20px; }
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Container bao quanh input và các icon */
+.input-field {
+    position: relative; /* Bắt buộc để làm mốc cho con mắt */
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.input-field i{
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900; 
+    font-style: normal;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+/* Tinh chỉnh Input */
+.input-field input {
+    width: 100%;
+    padding: 14px 45px 14px 45px; /* Cách lề trái/phải 45px để không đè lên icon */
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+.toggle-password {
+    position: absolute; /* Ghim vị trí */
+    right: 15px;       /* Cách lề phải của khung input 15px */
+    top: 50%;          /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Fix lệch tâm */
+    
+    background: none;
+    border: none;
+    color: #B3B3B3;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 5;        /* Đảm bảo nằm trên lớp input */
+}
+
+.toggle-password:hover {
+    color: #FFFFFF;    /* Hiệu ứng khi rê chuột vào */
+}
+
+/* Icon ổ khóa đầu tiên */
+.input-field > i:not(.toggle-password i) {
+    position: absolute;
+    left: 15px;
+    color: #B3B3B3;
+    pointer-events: none;
+}
+
+.input-field input:focus {
+    border-color: var(--primary);
+    background: #333;
+    outline: none;
+}
+/* Options & Checkbox */
+.form-options {
+    margin-bottom: 25px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-sub);
+}
+
+.checkbox-wrapper input { display: none; }
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.checkbox-wrapper input:checked + .checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox-wrapper input:checked + .checkmark::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    left: 2px;
+    top: -2px;
+}
+
+.forgot-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(229, 9, 20, 0.3);
+}
+
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #333;
+}
+
+.divider span {
+    background: var(--bg-card);
+    padding: 0 15px;
+    position: relative;
+    font-size: 0.8rem;
+    color: var(--text-sub);
+}
+
+.social-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.btn-social {
+    padding: 12px;
+    background: #2b2b2b;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-social:hover {
+    background: #333;
+    border-color: var(--text-sub);
+}
+
+.footer-link {
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 0.9rem;
+}
+
+.footer-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+}
+
+/* Cột bên phải: Banner */
+.login-right {
+    flex: 1;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 50px;
+}
+
+.overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(13,13,13,0.2) 100%);
+}
+
+.content-banner {
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.content-banner h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.content-banner p {
+    font-size: 1rem;
+    color: var(--text-sub);
+    line-height: 1.5;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 13px;
+    margin-top: 5px;
+    display: none; /* Mặc định ẩn */
+    align-items: center;
+    gap: 5px; /* Khoảng cách giữa icon và chữ */
+}
+
+.general-box {
+    text-align: center;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Khi input có lỗi, có thể đổi màu viền cho đẹp */
+input.invalid {
+    border-color: #ff4d4d;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-6px); }
+}
+
+.input-error {
+    border: 1px solid var(--error-color) !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Định dạng icon trong thông báo lỗi */
+.error-message i {
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .login-right { display: none; }
+    .login-card { max-width: 450px; }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    border: 1px solid #333;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.modal-desc {
+    text-align: center;
+    color: var(--text-sub);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--primary);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    color: var(--text-sub);
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+.modal-step button {
+    margin-top: 15px;
+}
+

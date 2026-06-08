@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<link rel="stylesheet" href="./ui.css">
+<link rel="stylesheet" href="./layout/product.css">
+<link rel="stylesheet" href="./layout/footer.css">
+<title>Rạp Phim Rỗ</title>
+</head>
+<body>
+<header class="header">
+    <div class="logo"><img src="./IMAGE/logo.png" style="max-width: 50px;"></div>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="has-dropdown">
+                <a href="#">Phim <span class="arrow">&#9662;</span></a>
+                <ul class="dropdown" id="movie-dropdown-list">
+                    <li><a href="#">Đang tải...</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#">Star Shop <span class="arrow">&#9662;</span></a>
+                <ul class="dropdown" id="food-dropdown-list">
+                    <li><a href="#">Combo Solo</a></li>
+                    <li><a href="#">Combo Couple</a></li>
+                    <li><a href="#">Combo Gia Đình</a></li>
+                    <li><a href="#">Nước uống</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#">
+                    Góc Điện Ảnh 
+                    <span class="arrow">&#9662;</span>
+                </a>
+
+                <ul class="dropdown">
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Review</a></li>
+                </ul>
+            </li>
+
+            <li><a href="../vechungtoi.html">Sự Kiện</a></li>
+            <li><a href="../quychehoatdong.html">Rạp/Giá Vé</a></li>
+        </ul>
+    </nav>
+    <div class="nav-right">
+        <li class="has-dropdown" style="list-style: none;">
+            <a href="#" class="user-menu-wrapper">
+                <i class="fa-duotone fa-regular fa-user"></i>
+                <span id="user-display">Tài khoản</span>
+            </a>
+            
+            <ul class="dropdown">
+                <li><a href="./dangnhap.html">Đăng nhập</a></li>
+                <li><a href="./dangky.html">Đăng ký</a></li>
+            </ul>
+        </li>
+    </div>
+</header>
+<!-- Slider -->
+<div class="hero-slider">
+    <div class="slide active">
+        <div class="slide-bg" style="background-image: url('https://iguov8nhvyobj.vcdn.cloud/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980x448_56__2.jpg')"></div>
+        <div class="hero-content">
+            <div class="btn-wrapper"></div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-bg" style="background-image: url('https://iguov8nhvyobj.vcdn.cloud/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980x448_59_.jpg')"></div>
+        <div class="hero-content">
+            <div class="btn-wrapper">
+                <a href="#services" class="btn"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-bg" style="background-image: url('https://iguov8nhvyobj.vcdn.cloud/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/m/e/member79.jpg')"></div>
+        <div class="hero-content">
+            <div class="btn-wrapper">
+                <a href="#services" class="btn"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow arrow-prev" onclick="changeSlide(-1)" aria-label="Previous slide">&#10094;</div>
+    <div class="arrow arrow-next" onclick="changeSlide(1)" aria-label="Next slide">&#10095;</div>
+
+    <div class="slider-nav">
+        <div class="dot active" onclick="currentSlide(0)"></div>
+        <div class="dot" onclick="currentSlide(1)"></div>
+        <div class="dot" onclick="currentSlide(2)"></div>
+    </div>
+</div>
+<div class="booking-container">
+    <form class="booking-bar" id="quick-booking-form">
+        <div class="input-group">
+            <i class="fa-solid fa-film icon"></i>
+            <div class="input-content">
+                <label for="movie-select">Chọn phim</label>
+                <select id="movie-select" required>
+                    <option value="" disabled selected>Bạn muốn xem gì?</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="input-group">
+            <i class="fa-solid fa-location-dot icon"></i>
+            <div class="input-content">
+                <label for="cinema-select">Rạp chiếu</label>
+                <select id="cinema-select" required disabled>
+                    <option value="" disabled selected>Chọn rạp</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="input-group">
+            <i class="fa-solid fa-calendar-days icon"></i>
+            <div class="input-content">
+                <label for="booking-date">Ngày chiếu</label>
+                <input type="date" id="booking-date" required disabled>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="input-group">
+            <i class="fa-solid fa-clock icon"></i>
+            <div class="input-content">
+                <label for="booking-time">Giờ chiếu</label>
+                <select id="booking-time" required disabled>
+                    <option value="" disabled selected>Chọn suất</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-booking">
+            <span>MUA VÉ NHANH</span>
+            <i class="fa-solid fa-ticket"></i>
+        </button>
+    </form>
+</div>
+
+<div class="container">
+    <div class="section-header">
+        <h2 class="title">PHIM</h2>
+        <nav class="filter-nav">
+            <a class="filter-link active" data-filter="popular">Phổ biến</a>
+            <a class="filter-link" data-filter="newest">Mới nhất</a>
+            <a class="filter-link" data-filter="sale">Giảm giá</a>
+        </nav>
+    </div>
+
+    <div id="product-grid" class="product-grid">
+        </div>
+</div>
+
+<!-- index.html -->
+<nav class="pagination-container" aria-label="Product pagination">
+    <button id="prev-page" class="page-btn" aria-label="Previous page">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    
+    <div id="page-numbers" class="page-numbers-wrapper">
+        
+    </div>
+
+    <button id="next-page" class="page-btn" aria-label="Next page">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</nav>
+
+<!--End-->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-column brand-info">
+                <h2 class="footer-logo">RẠP PHIM RỖ</h2>
+                <p class="brand-description">
+                    Trải nghiệm điện ảnh đỉnh cao với chất lượng hình ảnh và âm thanh sống động nhất. 
+                    Kết nối đam mê, chia sẻ cảm xúc.
+                </p>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="footer-column">
+                <h3>GIỚI THIỆU</h3>
+                <ul>
+                    <li><a href="../vechungtoi.html">Về chúng tôi</a></li>
+                    <li><a href="../quychehoatdong.html">Quy chế hoạt động</a></li>
+                    <li><a href="../gopy.html">Góp ý</a></li>
+                </ul>
+            </div>
+
+            <!-- Policy Column -->
+            <div class="footer-column">
+                <h3>ĐIỀU KHOẢN</h3>
+                <ul>
+                    <li><a href="../chinhsachbaomat.html">Chính sách Bảo Mật</a></li>
+                    <li><a href="../chinhsachthanhtoan.html">Chính sách Thanh toán</a></li>
+                    <li><a href="../thoathuansudung.html">Thoả Thuận Sử Dụng</a></li>
+                    <li><a href="../chinhsachhoanve.html">Chính sách hoàn vé</a></li>
+                </ul>
+            </div>
+
+           <div class="footer-column social-column">
+                <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
+                <ul class="social-links-list">
+                    <li>
+                        <a href="https://www.facebook.com/anhh.lee.569424" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/messages/e2ee/t/27125538810378280/" class="social-link messenger" aria-label="Messenger">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@nhom3" class="social-link youtube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://zalo.me/0365970914" class="social-link zalo" aria-label="Zalo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/3840px-Icon_of_Zalo.svg.png" alt="Zalo" class="zalo-icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                <div class="contact-info">
+                    <p>Hotline: <span>1900 3636</span></p>
+                    <p>Giờ làm việc: 8:00 - 22:00</p>
+                    <p>Email: <a href="mailto:Nhom3@gmail.com">Nhom3@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p>©Nhom3@2026</p>
+        </div>
+    </div>
+</footer>
+<script src="./script/slider.js"></script>
+<script src="./script/getproduct.js"></script>
+<script src="./script/pagination.js"></script>
+<script src="./script/product.js"></script>
+<script>
+const links = document.querySelectorAll('.filter-link');
+links.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Ngăn trình duyệt load lại trang nếu bạn dùng thẻ a
+        e.preventDefault(); 
+
+        // Xóa class 'active' của tất cả các thẻ
+        links.forEach(item => item.classList.remove('active'));
+
+        // Thêm class 'active' vào thẻ vừa bấm
+        this.classList.add('active');
+    });
+});
+
+// Giả sử data của bạn có thêm trường 'id' cho mỗi sản phẩm
+const productsData = Array.from({ length: 50 }, (_, i) => ({
+    id: i + 1, // Thêm ID để định danh sản phẩm
+    name: `Premium Item ${i + 1}`,
+    image: `https://picsum.photos/seed/${i + 10}/400/225`,
+    original_price: (Math.random() * 100 + 50).toFixed(2),
+    sale_price: i % 3 === 0 ? (Math.random() * 40 + 10).toFixed(2) : null
+}));
+
+const renderProducts = (products) => {
+    const grid = document.getElementById('product-grid');
+    const template = document.getElementById('product-card-template');
+
+    products.forEach(product => {
+        const clone = template.content.cloneNode(true);
+        const card = clone.querySelector('.product-card');
+        const imageWrapper = clone.querySelector('.image-wrapper');
+        
+        // Gán dữ liệu cơ bản
+        clone.querySelector('.product-name').textContent = product.name;
+        const img = clone.querySelector('.product-image');
+        img.src = product.image;
+        img.alt = product.name;
+
+        // Xử lý giá... (giữ nguyên logic cũ của bạn)
+
+        // --- PHẦN QUAN TRỌNG: XỬ LÝ CLICK ---
+        
+        // Cách 1: Click vào toàn bộ thẻ Card
+        card.addEventListener('click', () => {
+            // Chuyển hướng sang trang detail.html kèm ID sản phẩm
+            window.location.href = `product-detail.html?id=${product.id}`;
+        });
+
+        // Nếu bạn chỉ muốn click vào ẢNH mới chuyển trang, dùng:
+        // imageWrapper.addEventListener('click', (e) => { ... });
+
+        grid.appendChild(clone);
+    });
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    // --- LOGIC MUA VÉ NHANH ---
+    const movieSelect = document.getElementById('movie-select');
+    const cinemaSelect = document.getElementById('cinema-select');
+    const dateInput = document.getElementById('booking-date');
+    const timeSelect = document.getElementById('booking-time');
+    const bookingForm = document.getElementById('quick-booking-form');
+
+    // Thiết lập giới hạn ngày chiếu (Hôm nay + 3 ngày)
+    const now = new Date();
+    const offset = now.getTimezoneOffset() * 60000;
+    const localISOTime = new Date(now - offset).toISOString().split('T')[0];
+    dateInput.min = localISOTime;
+    
+    const maxDate = new Date();
+    maxDate.setDate(now.getDate() + 3);
+    dateInput.max = new Date(maxDate - offset).toISOString().split('T')[0];
+
+    let moviesData = [];
+
+    // Tải dữ liệu phim
+    fetch('./products.json')
+        .then(res => res.json())
+        .then(data => {
+            moviesData = data;
+            movieSelect.innerHTML = '<option value="" disabled selected>Bạn muốn xem gì?</option>';
+            data.forEach(movie => {
+                const opt = document.createElement('option');
+                opt.value = movie.id;
+                opt.textContent = movie.name;
+                movieSelect.appendChild(opt);
+            });
+        });
+
+    // Xử lý chọn phim -> Mở rạp
+    movieSelect.addEventListener('change', function() {
+        const movie = moviesData.find(m => m.id == this.value);
+        cinemaSelect.innerHTML = '<option value="" disabled selected>Chọn rạp</option>';
+        if (movie && movie.cinema_supported) {
+            movie.cinema_supported.forEach(cinema => {
+                const opt = document.createElement('option');
+                opt.value = cinema; opt.textContent = cinema;
+                cinemaSelect.appendChild(opt);
+            });
+            cinemaSelect.disabled = false;
+        }
+        dateInput.disabled = true;
+        timeSelect.disabled = true;
+    });
+
+    // Xử lý chọn rạp -> Mở ngày
+    cinemaSelect.addEventListener('change', () => {
+        dateInput.disabled = false;
+        timeSelect.disabled = true;
+    });
+
+    // Xử lý chọn ngày -> Mở giờ (Lấy từ gio_chieu trong JSON)
+    dateInput.addEventListener('change', () => {
+        const movie = moviesData.find(m => m.id == movieSelect.value);
+        timeSelect.innerHTML = '<option value="" disabled selected>Chọn suất</option>';
+        if (movie && movie.gio_chieu) {
+            movie.gio_chieu.forEach(time => {
+                const opt = document.createElement('option');
+                opt.value = time; opt.textContent = time;
+                timeSelect.appendChild(opt);
+            });
+            timeSelect.disabled = false;
+        }
+    });
+
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const movieId = movieSelect.value;
+        const date = dateInput.value;
+        const time = timeSelect.value;
+        window.location.href = `product.html?id=${movieId}&date=${date}&time=${time}`;
+    });
+
+    const userEmail = localStorage.getItem("userEmail");
+    const userBalance = localStorage.getItem("userBalance") || 0;
+    const userSpan = document.getElementById("user-display");
+
+    if (userEmail && userSpan) {
+        // Cập nhật tên hiển thị (Email)
+        userSpan.innerText = userEmail;
+
+        const parentLi = userSpan.closest(".has-dropdown");
+        if (parentLi) {
+            const dropdown = parentLi.querySelector(".dropdown");
+            if (dropdown) {
+                // Định dạng số tiền: 50000 -> 50.000
+                const formattedBalance = Number(userBalance).toLocaleString('vi-VN');
+
+                dropdown.innerHTML = `
+                    <li><a href="#" style="color: #ffc107; font-weight: bold;">
+                        Số dư: ${formattedBalance}đ
+                    </a></li>
+                    <li><a href="./profile.html">Thông tin cá nhân</a></li>
+                    <li id="admin-menu-section"></li>
+                    <li><a href="#" id="logoutBtn" style="color: #ff4d4d;">Đăng xuất</a></li>
+                `;
+
+                // Xử lý đăng xuất
+                const logoutBtn = document.getElementById("logoutBtn");
+                if (logoutBtn) {
+                    logoutBtn.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        localStorage.clear();
+                        // Chuyển hướng về trang chủ
+                        window.location.href = "trangchu.html";
+                    });
+                }
+            }
+        }
+    }
+
+    // Gọi hàm đồng bộ từ header-footer.js nếu có
+    if (window.syncHeaderBalance) window.syncHeaderBalance();
+
+    // Lấy role từ localStorage và kiểm tra hiển thị menu quản trị
+    const roleId = Number(localStorage.getItem("userRole"));
+    const adminSection = document.getElementById("admin-menu-section");
+
+    // Nếu là Admin (1) hoặc Nhân viên (2) thì hiện nút quản lý
+    // --- LOGIC LOAD MOVIE DROPDOWN ---
+    async function loadFoodDropdown() {
+        const dropdown = document.getElementById('food-dropdown-list');
+        try {
+            const res = await fetch('http://127.0.0.1:5000/api/food');
+            const foods = await res.json();
+            // Lọc lấy 4 combo đầu tiên để hiển thị nhanh
+            dropdown.innerHTML = foods.slice(0, 4).map(f => 
+                `<li><a href="#">${f.name} - ${f.sale_price ? f.sale_price.toLocaleString() : f.original_price.toLocaleString()}đ</a></li>`
+            ).join('') + `<li><a href="#" style="border-top: 1px solid #333; color: #e50914;">Xem tất cả đồ ăn</a></li>`;
+        } catch (err) {
+            console.log("Không tải được menu đồ ăn");
+        }
+    }
+
+    async function loadMovieDropdown() {
+        const dropdown = document.getElementById('movie-dropdown-list');
+        try {
+            const res = await fetch('./products.json');
+            const movies = await res.json();
+            
+            // Hiển thị danh sách phim vào menu dropdown
+            dropdown.innerHTML = movies.map(m => 
+                `<li><a href="product.html?id=${m.id}">${m.name}</a></li>`
+            ).join('');
+        } catch (err) {
+            dropdown.innerHTML = '<li><a href="#">Không thể tải danh sách</a></li>';
+        }
+    }
+    loadMovieDropdown();
+    loadFoodDropdown();
+
+    if (roleId === 1 || roleId === 2) {
+        if (adminSection) {
+            // Chèn trực tiếp thẻ <a> vào trong <li>
+            adminSection.innerHTML = `<a href="admin.html" style="color: var(--primary); font-weight: bold;"><i class="fa-solid fa-gear"></i> Trang quản lý</a>`;
+            adminSection.style.display = "block"; // Đảm bảo nó hiển thị
+        }
+    } else if (adminSection) {
+        adminSection.style.display = "none";
+    }
+    syncHeaderBalance();
+});
+</script>
+</body>
+</html>

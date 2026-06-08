@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Login | Future Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./layout/dangnhap.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="login-left">
+                <div class="brand-logo">
+                    <a href="./trangchu.html"><i class="fa-notdog fa-solid fa-house" style="color: rgb(255, 0, 0);"></i></a>  
+                    <span>ĐĂNG NHẬP</span>
+                </div>
+
+                <div class="header-text">
+                    <h1>Chào mừng trở lại</h1>
+                    <p>Vui lòng nhập thông tin để truy cập hệ thống.</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="input-container">
+                        <label for="email">Email</label>
+                        <div class="input-field">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="text" id="email" placeholder="name@company.com" required>
+                        </div>
+                        <span id="email-error" class="error-message">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span class="error-text"></span>
+                        </span>
+                    </div>
+
+                    <div class="input-container">
+                        <div class="label-row">
+                            <label for="password">Mật khẩu</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-regular fa-lock" style="color: #B3B3B3;"></i>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fa-regular fa-eye toggle-pwd" id="toggleIcon"></i>
+                            </button>
+                        </div>
+                        <a href="#" class="forgot-link" onclick="openForgotModal(event)">Quên mật khẩu?</a>
+                        <span id="password-error" class="error-message">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                        <span class="error-text"></span>     
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            <span class="label-text">Ghi nhớ đăng nhập</span>
+                        </label>
+                    </div>
+                    <div id="general-error" class="error-message general-box"></div>
+                    <button type="button" onclick="login()" class="btn-primary"><a href="./trangchu.html"></a>Đăng nhập</button>
+                    <div class="divider">
+                        <span>hoặc đăng nhập bằng</span>
+                    </div>
+                </form>
+
+                <p class="footer-link">
+                    Chưa có tài khoản? <a href="./dangky.html">Đăng ký ngay</a>
+                </p>
+            </div>
+
+            <div class="login-right">
+                <div class="overlay-content">
+                    <h3>Trải nghiệm sức mạnh công nghệ mới</h3>
+                    <p>Hệ thống quản lý thông minh giúp tối ưu hóa 40% hiệu suất làm việc của doanh nghiệp bạn.</p>
+                </div>
+                <div class="floating-blobs">
+                    <div class="blob blob-1"></div>
+                    <div class="blob blob-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="forgotModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeForgotModal()">&times;</span>
+        <h2>Quên mật khẩu</h2>
+        
+        <div id="step-email" class="modal-step">
+            <p class="modal-desc">Nhập email đã đăng ký để lấy mã OTP</p>
+            <div class="input-container">
+                <label for="forgot-email">Email</label>
+                <div class="input-field">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="forgot-email" placeholder="name@company.com">
+                </div>
+                <span id="forgot-email-error" class="error-message">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                </span>
+            </div>
+            <button type="button" onclick="sendOTP()" class="btn-primary">Gửi mã OTP</button>
+        </div>
+
+        <div id="step-otp" class="modal-step" style="display: none;">
+            <p class="modal-desc">Nhập mã OTP 6 số đã được gửi</p>
+            <div class="input-container">
+                <label for="forgot-otp">Mã OTP</label>
+                <div class="input-field">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="text" id="forgot-otp" placeholder="123456" maxlength="6">
+                </div>
+                <span id="forgot-otp-error" class="error-message">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                </span>
+            </div>
+            <button type="button" onclick="verifyOTP()" class="btn-primary">Xác nhận OTP</button>
+            <button type="button" onclick="backToEmail()" class="btn-secondary">Quay lại</button>
+        </div>
+
+        <div id="step-password" class="modal-step" style="display: none;">
+            <p class="modal-desc">Nhập mật khẩu mới</p>
+            <div class="input-container">
+                <label for="new-password">Mật khẩu mới</label>
+                <div class="input-field">
+                    <i class="fa-regular fa-lock"></i>
+                    <input type="password" id="new-password" placeholder="Nhập mật khẩu mới">
+                </div>
+            </div>
+            <div class="input-container">
+                <label for="confirm-password">Xác nhận mật khẩu</label>
+                <div class="input-field">
+                    <i class="fa-regular fa-lock"></i>
+                    <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu">
+                </div>
+                <span id="forgot-password-error" class="error-message">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                </span>
+            </div>
+            <button type="button" onclick="resetPassword()" class="btn-primary">Đổi mật khẩu</button>
+            <button type="button" onclick="backToOTP()" class="btn-secondary">Quay lại</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function login() {
+        const emailInput = document.getElementById("email");
+        const passInput = document.getElementById("password");
+
+        function showError(input, errorElement, message) {
+            const textSpan = errorElement.querySelector(".error-text");
+            textSpan.innerText = message;
+            errorElement.style.display = "flex"; 
+            input.classList.add("input-error");
+
+            setTimeout(() => {
+                input.classList.remove("input-error");
+                input.style.borderColor = "rgb(229, 9, 20)";
+            }, 300);
+        }
+
+        document.querySelectorAll(".error-message").forEach(el => el.style.display = "none");
+        emailInput.style.borderColor = "";
+        passInput.style.borderColor = "";
+
+        let isValid = true;
+
+        if (emailInput.value.trim() === "") {
+            showError(emailInput, document.getElementById("email-error"), "Email không được để trống");
+            isValid = false;
+        }
+
+        if (passInput.value.trim() === "") {
+            showError(passInput, document.getElementById("password-error"), "Mật khẩu không được để trống");
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        fetch('http://127.0.0.1:5000/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: emailInput.value,
+                password: passInput.value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Đóng gói Object dữ liệu chuẩn theo cấu trúc đồng bộ toàn hệ thống
+                const userObj = {
+                    id: data.id,             // Khớp chính xác với trường 'id' từ API mới cập nhật
+                    email: data.email,
+                    fullname: data.fullname,
+                    balance: data.balance || 0,
+                    role: data.role,
+                    phone: data.phone,
+                    dob: data.dob,
+                    gender: data.gender
+                };  
+                
+                localStorage.setItem("currentUser", JSON.stringify(userObj));
+                
+                // Đồng bộ thêm các key riêng lẻ để đảm bảo Trang chủ và Hồ sơ cũng nhận diện được trạng thái đăng nhập
+                localStorage.setItem("userEmail", data.email);
+                localStorage.setItem("userFullname", data.fullname);
+                localStorage.setItem("userBalance", data.balance || 0);
+                localStorage.setItem("userRole", data.role);
+                localStorage.setItem("userPhone", data.phone || "Chưa cập nhật");
+                localStorage.setItem("userDob", data.dob || "Chưa cập nhật");
+                localStorage.setItem("userGender", data.gender || "Chưa cập nhật");
+                
+                window.location.href = "trangchu.html";
+            } else {
+                if (typeof showError === "function") {
+                    showError(passInput, document.getElementById("password-error"), data.message);
+                }
+
+                const errorElement = document.getElementById('error-display');
+                if (errorElement) {
+                    errorElement.innerText = data.message; 
+                    errorElement.style.display = 'block';
+                }
+            }
+        })
+        .catch(err => {
+            console.error("Lỗi kết nối server:", err);
+            alert("Không thể kết nối đến máy chủ. Vui lòng kiểm tra lại!");
+        });
+    }
+document.getElementById("toggleIcon").addEventListener("click", function () {
+    const passwordInput = document.getElementById("password");
+    const icon = this;
+
+    // Kiểm tra loại input hiện tại
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        // Đổi từ eye sang eye-slash
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        passwordInput.type = "password";
+        // Đổi ngược lại
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+});
+
+let currentForgotEmail = "";
+
+function openForgotModal(e) {
+    if (e) e.preventDefault();
+    document.getElementById("forgotModal").style.display = "flex";
+    showStep("step-email");
+    clearForgotModal();
+}
+
+function closeForgotModal() {
+    document.getElementById("forgotModal").style.display = "none";
+    clearForgotModal();
+}
+
+function showStep(stepId) {
+    document.querySelectorAll(".modal-step").forEach(el => el.style.display = "none");
+    document.getElementById(stepId).style.display = "block";
+}
+
+function clearForgotModal() {
+    document.getElementById("forgot-email").value = "";
+    document.getElementById("forgot-otp").value = "";
+    document.getElementById("new-password").value = "";
+    document.getElementById("confirm-password").value = "";
+    currentForgotEmail = "";
+    document.querySelectorAll(".modal .error-message").forEach(el => el.style.display = "none");
+}
+
+function showForgotError(elementId, message) {
+    const el = document.getElementById(elementId);
+    el.querySelector(".error-text").innerText = message;
+    el.style.display = "flex";
+}
+
+function hideForgotError(elementId) {
+    document.getElementById(elementId).style.display = "none";
+}
+
+function sendOTP() {
+    const emailInput = document.getElementById("forgot-email");
+    const email = emailInput.value.trim();
+
+    hideForgotError("forgot-email-error");
+
+    if (!email) {
+        showForgotError("forgot-email-error", "Email không được để trống");
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showForgotError("forgot-email-error", "Email không hợp lệ");
+        return;
+    }
+
+    fetch("http://127.0.0.1:5000/forgot-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            currentForgotEmail = email;
+            alert("Mã OTP của bạn là: " + data.otp);
+            showStep("step-otp");
+        } else {
+            showForgotError("forgot-email-error", data.msg);
+        }
+    })
+    .catch(err => {
+        console.error("Lỗi kết nối server:", err);
+        alert("Không thể kết nối đến máy chủ!");
+    });
+}
+
+function backToEmail() {
+    showStep("step-email");
+}
+
+function verifyOTP() {
+    const otpInput = document.getElementById("forgot-otp");
+    const otp = otpInput.value.trim();
+
+    hideForgotError("forgot-otp-error");
+
+    if (!otp) {
+        showForgotError("forgot-otp-error", "Mã OTP không được để trống");
+        return;
+    }
+
+    if (otp.length !== 6) {
+        showForgotError("forgot-otp-error", "Mã OTP phải có 6 chữ số");
+        return;
+    }
+
+    fetch("http://127.0.0.1:5000/verify-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: currentForgotEmail, otp: otp })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            showStep("step-password");
+        } else {
+            showForgotError("forgot-otp-error", data.msg);
+        }
+    })
+    .catch(err => {
+        console.error("Lỗi kết nối server:", err);
+        alert("Không thể kết nối đến máy chủ!");
+    });
+}
+
+function backToOTP() {
+    showStep("step-otp");
+}
+
+function resetPassword() {
+    const newPass = document.getElementById("new-password").value;
+    const confirmPass = document.getElementById("confirm-password").value;
+
+    hideForgotError("forgot-password-error");
+
+    if (!newPass) {
+        showForgotError("forgot-password-error", "Mật khẩu mới không được để trống");
+        return;
+    }
+
+    if (newPass.length < 6) {
+        showForgotError("forgot-password-error", "Mật khẩu phải có ít nhất 6 ký tự");
+        return;
+    }
+
+    if (newPass !== confirmPass) {
+        showForgotError("forgot-password-error", "Mật khẩu xác nhận không khớp");
+        return;
+    }
+
+    fetch("http://127.0.0.1:5000/reset-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: currentForgotEmail, new_password: newPass })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert("Đổi mật khẩu thành công! Vui lòng đăng nhập với mật khẩu mới.");
+            closeForgotModal();
+        } else {
+            showForgotError("forgot-password-error", data.msg);
+        }
+    })
+    .catch(err => {
+        console.error("Lỗi kết nối server:", err);
+        alert("Không thể kết nối đến máy chủ!");
+    });
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("forgotModal");
+    if (event.target === modal) {
+        closeForgotModal();
+    }
+};
+
+</script>
+</body>
+</html>

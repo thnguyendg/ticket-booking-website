@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản | Premium System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./layout/dangky.css">
+</head>
+<body>
+    <div class="signup-card">
+        <div class="signup-left">
+            <div class="header">
+                <div class="title-group">
+                    <a href="./trangchu.html">
+                        <i class="fa-solid fa-house" style="color: rgb(255, 0, 0); font-size: 24px;"></i>
+                    </a>
+                    <h1>Đăng ký thành viên</h1>
+                </div>
+                <p>Thỏa sức trải nghiệm hàng ngàn bộ phim bom tấn.</p>
+            </div>
+
+            <form id="signupForm" novalidate>
+                <div class="input-grid">
+                    <div class="form-group">
+                        <label>Họ và tên</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" id="fullname" placeholder="Nhập tên của bạn">
+                        </div>
+                        <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; Vui lòng nhập họ tên</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email (Gmail)</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="email" placeholder="example@gmail.com">
+                        </div>
+                        <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; Email không hợp lệ</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="090 123 4567">
+                        </div>
+                        <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; Số điện thoại không hợp lệ</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Giới tính</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-venus-mars"></i>
+                            <select id="gender">
+                                <option value="" disabled selected>Chọn giới tính</option>
+                                <option value="male">Nam</option>
+                                <option value="female">Nữ</option>
+                            </select>
+                        </div>
+                        <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; Vui lòng chọn giới tính</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ngày sinh</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <input type="date" id="dob">
+                        </div>
+                        <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; Vui lòng chọn ngày sinh</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" placeholder="Tối thiểu 6 ký tự">
+                            <i class="fa-regular fa-eye toggle-pwd" onclick="togglePassword('password', this)"></i>
+                        </div>
+                        <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; Mật khẩu ít nhất 6 ký tự</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Xác nhận mật khẩu</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-check-double"></i>
+                            <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                            <i class="fa-regular fa-eye toggle-pwd" onclick="togglePassword('confirmPassword', this)"></i>
+                        </div>
+                        <span class="error-msg"><i class="fa-solid fa-circle-exclamation"></i>&nbsp; Mật khẩu không trùng khớp</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="registerBtn">
+                    <span>ĐĂNG KÝ NGAY</span>
+                    <i class="fa-solid fa-ticket"></i>
+                </button>
+            </form>
+
+            <p class="footer-text">Đã có tài khoản? <a href="dangnhap.html">Đăng nhập ngay</a></p>
+        </div>
+
+        <div class="signup-right">
+            <div>
+                <i class="fa-solid fa-clapperboard" style="font-size: 50px; margin-bottom: 20px; color: white;"></i>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">ĐẶT VÉ TRONG 30S</h3>
+                <p style="color: #eee;">Nhận ngay ưu đãi bắp nước cho thành viên mới.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 24px;"></i>
+        <div>
+            <div id="toast-title" style="font-weight: 700;">Thành công!</div>
+            <div id="toast-desc" style="font-size: 13px; color: var(--text-sub)">Chào mừng bạn gia nhập Cinema Premium.</div>
+        </div>
+    </div>
+
+<script>
+    const signupForm = document.getElementById('signupForm');
+    const btn = document.getElementById("registerBtn");
+    const toast = document.getElementById('toast');
+
+    // =========================
+    // HELPER
+    // =========================
+
+    const setError = (id) => {
+
+        const element = document.getElementById(id);
+        const parent = element.closest('.form-group');
+
+        parent.classList.add('error');
+        parent.classList.remove('success');
+    };
+
+    const setSuccess = (id) => {
+
+        const element = document.getElementById(id);
+        const parent = element.closest('.form-group');
+
+        parent.classList.add('success');
+        parent.classList.remove('error');
+    };
+
+    // =========================
+    // VALIDATE
+    // =========================
+
+    const validationRules = {
+
+        fullname: (v) => {
+
+            const trimmed = v.trim();
+
+            if (trimmed.length < 2) return false;
+
+            const regex = /^[a-zA-ZÀ-ỹ\s]+$/;
+
+            return regex.test(trimmed);
+        },
+
+        email: (v) =>
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+
+        phone: (v) =>
+            /^[0-9]{10,11}$/.test(v),
+
+        gender: (v) =>
+            v !== "",
+
+        dob: (v) =>
+            v !== "",
+
+        password: (v) =>
+            v.length >= 6,
+
+        confirmPassword: (v) => {
+
+            const pwd =
+                document.getElementById('password').value;
+
+            return v === pwd && v !== "";
+        }
+    };
+
+    // =========================
+    // CHECK INPUT
+    // =========================
+
+    const checkInput = (inputElement) => {
+
+        const id = inputElement.id;
+        const value = inputElement.value;
+
+        if (validationRules[id]) {
+
+            const isValid =
+                validationRules[id](value);
+
+            if (isValid) {
+
+                setSuccess(id);
+
+            } else {
+
+                setError(id);
+            }
+
+            return isValid;
+        }
+
+        return true;
+    };
+
+    // =========================
+    // EVENT INPUT
+    // =========================
+
+    document
+        .querySelectorAll('.form-group input, .form-group select')
+        .forEach(input => {
+
+            input.addEventListener('blur', function () {
+
+                checkInput(this);
+            });
+
+            input.addEventListener('input', function () {
+
+                const parent =
+                    this.closest('.form-group');
+
+                parent.classList.remove('error');
+            });
+        });
+
+    // =========================
+    // SUBMIT
+    // =========================
+
+    signupForm.addEventListener('submit', async function (e) {
+
+        e.preventDefault();
+
+        let isFormValid = true;
+
+        document
+            .querySelectorAll('.form-group input, .form-group select')
+            .forEach(input => {
+
+                const isValid = checkInput(input);
+
+                if (!isValid) {
+
+                    isFormValid = false;
+                }
+            });
+
+        if (!isFormValid) return;
+
+        // LOADING
+        btn.disabled = true;
+
+        btn.innerHTML = `
+            <span>ĐANG XỬ LÝ...</span>
+            <i class="fa-solid fa-spinner fa-spin"></i>
+        `;
+
+        try {
+
+            const response = await fetch(
+                "http://127.0.0.1:5000/register",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        hovaten:
+                            document.getElementById('fullname').value,
+
+                        email:
+                            document.getElementById('email').value,
+
+                        sdt:
+                            document.getElementById('phone').value,
+
+                        gioitinh:
+                            document.getElementById('gender').value,
+
+                        ngaysinh:
+                            document.getElementById('dob').value,
+
+                        password:
+                            document.getElementById('password').value
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            // SUCCESS
+            if (data.success) {
+
+                toast.classList.add("show");
+
+                document.getElementById("toast-title")
+                    .innerText = "Thành công!";
+
+                document.getElementById("toast-desc")
+                    .innerText = data.msg;
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "dangnhap.html";
+
+                }, 2000);
+
+            } else {
+
+                alert(data.msg);
+
+                btn.disabled = false;
+
+                btn.innerHTML = `
+                    <span>ĐĂNG KÝ NGAY</span>
+                    <i class="fa-solid fa-ticket"></i>
+                `;
+            }
+
+        } catch (err) {
+
+            console.log(err);
+
+            alert("Lỗi kết nối Server!");
+
+            btn.disabled = false;
+
+            btn.innerHTML = `
+                <span>ĐĂNG KÝ NGAY</span>
+                <i class="fa-solid fa-ticket"></i>
+            `;
+        }
+    });
+
+    function togglePassword(inputId, icon) {
+
+        const input =
+            document.getElementById(inputId);
+
+        if (input.type === "password") {
+
+            input.type = "text";
+
+            icon.classList.remove("fa-eye");
+
+            icon.classList.add("fa-eye-slash");
+
+        } else {
+
+            input.type = "password";
+
+            icon.classList.remove("fa-eye-slash");
+
+            icon.classList.add("fa-eye");
+        }
+    }
+</script>
+</body>
+</html>

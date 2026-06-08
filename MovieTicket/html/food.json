@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "name": "Combo Solo",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtiTkp8oOwoR-ZxSHe7VqhgAj-d9Mz3GwBxA&s",
+    "description": "1 Bắp lớn (Ngọt/Mặn) + 1 Nước ngọt Pepsi cỡ vừa",
+    "original_price": 95000,
+    "sale_price": 85000,
+    "status": true
+  },
+  {
+    "id": 2,
+    "name": "Combo Couple",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1gi8juhMBuPkgEd4YzzqR8JfERJ8iX4AMyw&s",
+    "description": "2 Bắp lớn (Ngọt/Mặn/Phô mai) + 2 Nước ngọt Pepsi lớn",
+    "original_price": 130000,
+    "sale_price": 120000,
+    "status": true
+  },
+  {
+    "id": 3,
+    "name": "Shisha",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtnbUxAHfccSaKgp9gd6516I1Ef9SYdKfaXQ&s",
+    "description": "Sử dụng trực tiếp tại rạp",
+    "original_price": 300000,
+    "sale_price": null,
+    "status": true
+  },
+  {
+    "id": 4,
+    "name": "Combo Gia Đình",
+    "image": "https://mms.img.susercontent.com/vn-11134259-7ras8-m1grwl3an58zcd@resize_ss1242x600!@crop_w1242_h600_cT",
+    "description": "4 Gà rán + 4 Nước ngọt",
+    "original_price": 450000,
+    "sale_price": 320000,
+    "status": true
+  },
+
+  {
+  "id": 5,
+    "name": "Combo Bộ PC",
+    "image": "https://yt3.googleusercontent.com/zfeksykSTKMg5Ok-QtqiCifkWheDCMBR3qkZy2l3rLXldoaWEaPnf5LE5aAZglpUsK3Phfa9ww=s900-c-k-c0x00ffffff-no-rj",
+    "description": "1 Khô gà bã mía + 36 lon Pepsi",
+    "original_price": 670000,
+    "sale_price": 360000,
+    "status": true
+  }
+  
+]

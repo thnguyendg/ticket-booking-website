@@ -1,0 +1,408 @@
+:root {
+--primary-bg: #0b0b0d;
+--panel-bg: #161618;
+--red-accent: #e50914;
+--text-main: #ffffff;
+--text-muted: #8c8c8c;
+--border-color: #2a2a2a;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 50px;
+background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+position: absolute;
+top: 0;
+width: 100%;
+z-index: 100;
+}
+
+.logo {
+color: var(--red-accent);
+font-size: 24px;
+font-weight: 900;
+font-style: italic;
+letter-spacing: 2px;
+}
+
+nav a {
+color: var(--text-muted);
+text-decoration: none;
+margin: 0 15px;
+font-size: 14px;
+text-transform: uppercase;
+}
+
+.btn-signin {
+background-color: var(--red-accent);
+color: white;
+border: none;
+padding: 8px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-weight: bold;
+}
+
+/* Hero Section - Đã sửa lỗi chiều cao quá lớn */
+.hero {
+min-height: auto; /* Bỏ kích thước cố định vh */
+background-size: cover;
+background-position: center top; /* Đẩy tâm ảnh lên phía trên */
+position: relative;
+display: flex;
+align-items: center;
+/* Tăng padding-top để không bị thanh Header đè lên chữ, padding-bottom vừa phải để ôm sát */
+padding: 120px 50px 60px 50px; 
+}
+
+.hero::before {
+content: '';
+position: absolute;
+inset: 0;
+/* Đổ màu đen đậm dần về các cạnh để làm nổi bật hình nền trung tâm */
+background: linear-gradient(to top, var(--primary-bg) 0%, rgba(11,11,13,0.4) 50%, rgba(11,11,13,0.85) 100%),
+        linear-gradient(to right, rgba(11,11,13,0.9) 0%, rgba(11,11,13,0.2) 100%);
+}
+
+.hero-content {
+position: relative;
+z-index: 10;
+max-width: 750px; /* Nới rộng khung nội dung một chút */
+}
+
+.tags span {
+background-color: var(--red-accent);
+padding: 3px 8px;
+border-radius: 3px;
+font-size: 11px;
+font-weight: bold;
+margin-right: 10px;
+}
+
+h1 {
+font-size: 48px;
+font-style: italic;
+text-transform: uppercase;
+margin: 10px 0;
+letter-spacing: 1px;
+font-weight: 800;
+}
+
+.movie-meta {
+color: var(--text-muted);
+font-size: 14px;
+margin-bottom: 15px;
+}
+
+.movie-meta span { margin-right: 15px; }
+
+.description {
+color: #cccccc;
+font-size: 14px;
+margin-bottom: 25px;
+text-align: justify;
+}
+
+.action-btns button {
+padding: 12px 24px;
+border-radius: 6px;
+font-weight: bold;
+cursor: pointer;
+margin-right: 15px;
+}
+
+.btn-primary { background-color: var(--red-accent); color: white; border: none; }
+
+/* Booking Section Layout */
+.booking-container {
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 20px;
+padding: 30px 50px 50px;
+max-width: 1400px;
+margin: 0 auto;
+}
+
+.panel {
+background-color: var(--panel-bg);
+border-radius: 12px;
+padding: 25px;
+border: 1px solid var(--border-color);
+margin-bottom: 20px;
+}
+
+h3 {
+font-size: 14px;
+margin-bottom: 20px;
+color: #fff;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+/* Sơ đồ ghế */
+.screen-curve {
+width: 80%;
+height: 20px;
+border-top: 2px solid #333;
+border-radius: 50% 50% 0 0;
+margin: 0 auto 30px;
+text-align: center;
+color: var(--text-muted);
+font-size: 10px;
+letter-spacing: 5px;
+padding-top: 10px;
+}
+
+.seats-grid {
+    display: flex;
+    flex-direction: column; /* Xếp các hàng ghế từ trên xuống dưới */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.seat-row { 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 6px; /* Khoảng cách sát nhau, gọn gàng giữa các ghế trong cùng 1 khu */
+    width: 100%;
+}
+
+/* XÓA BỎ HOÀN TOÀN ĐOẠN .seat-row .seat:nth-child CŨ */
+
+.seat {
+    width: 28px;  /* Tăng nhẹ kích thước lên một chút cho dễ click */
+    height: 28px;
+    background-color: #333;
+    border-radius: 6px 6px 4px 4px; /* Bo góc vát nhẹ giống hình dáng chiếc ghế rạp phim */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* Đảm bảo ghế không bị bóp méo khi thu nhỏ màn hình */
+}
+
+.seat:hover { 
+    background-color: #555; 
+    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi di chuột vào trông rất mượt */
+}
+
+.seat.selected { 
+    background-color: #e50914; /* Ép cứng màu đỏ thương hiệu của CINEPLEX */
+}
+
+.seat.booked { 
+    background-color: #1a1a1a; 
+    cursor: not-allowed; 
+    opacity: 0.4;
+}
+
+.seat-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 12px;
+    color: #8c8c8c;
+    margin-top: 15px;
+}
+.legend-item { display: flex; align-items: center; gap: 8px; }
+.legend-box { width: 12px; height: 12px; border-radius: 2px; }
+
+/* Khung phát Trailer */
+.trailer-wrapper {
+position: relative;
+border-radius: 12px;
+overflow: hidden;
+background: #000;
+aspect-ratio: 16/9;
+border: 1px solid var(--border-color);
+}
+
+.trailer-wrapper iframe {
+width: 100%;
+height: 100%;
+border: none;
+}
+
+/* Khung Lịch chiếu & Suất chiếu */
+.date-list, .time-list { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.date-btn, .time-btn {
+background: transparent;
+border: 1px solid #333;
+color: white;
+padding: 10px 15px;
+border-radius: 8px;
+cursor: pointer;
+text-align: center;
+flex: 1;
+min-width: 65px;
+}
+
+.date-btn span { display: block; font-size: 11px; color: var(--text-muted); }
+.date-btn strong { font-size: 16px; }
+
+.date-btn.active, .time-btn.active {
+background-color: var(--red-accent);
+border-color: var(--red-accent);
+}
+
+/* Khung tính tiền */
+.summary-row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 15px;
+font-size: 14px;
+color: var(--text-muted);
+}
+.summary-row strong { color: white; }
+.total-row {
+border-top: 1px solid #333;
+padding-top: 15px;
+margin-top: 15px;
+color: var(--red-accent);
+font-size: 20px;
+font-weight: bold;
+}
+.btn-checkout {
+width: 100%;
+background-color: var(--red-accent);
+color: white;
+border: none;
+padding: 15px;
+border-radius: 8px;
+font-size: 14px;
+font-weight: bold;
+cursor: pointer;
+margin-top: 20px;
+}
+
+/* Khung Side-Menu ẩn mặc định ở rìa phải */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Ẩn ngoài màn hình */
+    width: 350px;
+    height: 100%;
+    background-color: #161618;
+    border-left: 1px solid #2a2a2a;
+    z-index: 999;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Khi kích hoạt sẽ trượt vào */
+.side-menu.open {
+    right: 0;
+}
+
+.side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #8c8c8c;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.side-menu-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.combo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.combo-info h4 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.combo-info p { font-size: 12px; color: #8c8c8c; margin-bottom: 4px; }
+.combo-info span { font-size: 14px; color: #e50914; font-weight: bold; }
+
+.side-menu-footer {
+    padding: 20px;
+    border-top: 1px solid #2a2a2a;
+}
+
+/* Style cho ảnh poster của Combo */
+.combo-poster {
+    width: 65px;
+    height: 65px;
+    object-fit: cover; /* Giúp ảnh không bị méo khi thay đổi kích thước */
+    border-radius: 6px;
+    background: #2a2a2a;
+    margin-right: 15px; /* Tạo khoảng cách với phần chữ thông tin */
+    flex-shrink: 0; /* Ngăn ảnh bị bóp méo khi màn hình thu nhỏ */
+}
+
+/* Cập nhật lại khung bọc để các thành phần thẳng hàng theo chiều ngang */
+.combo-item {
+    display: flex;
+    align-items: center; /* Căn giữa tất cả các thành phần theo chiều dọc */
+    padding: 15px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+/* Cho phép phần thông tin chiếm trọn khoảng trống ở giữa */
+.combo-info {
+    flex: 1;
+}
+
+/* Style cho ô nhập số lượng */
+.combo-qty {
+    width: 50px; 
+    padding: 6px; 
+    background: #222; 
+    border: 1px solid #444; 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* Lớp phủ mờ nền đen đằng sau */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    display: none;
+}
+.menu-overlay.open {
+    display: block;
+}
+
+#open-combo-btn:hover {
+    background-color: #3a3a3c !important;
+    border-color: #e50914 !important; /* Đổi viền sang màu đỏ rạp phim khi hover */
+    color: #e50914 !important;
+}
+

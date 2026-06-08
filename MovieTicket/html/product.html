@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineplex - Chi Tiết Phim & Đặt Vé</title>
+    <link rel="stylesheet" href="./layout/product-details.css">
+    <link rel="stylesheet" href="./layout/header.css">
+    <link rel="stylesheet" href="./layout/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        :root {
+            --red-accent: #E50914;
+        }
+        /* Tối ưu background để fit với khung, xử lý hình quá khổ */
+        .hero {
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            position: relative;
+            min-height: 550px;  
+            display: flex;
+            align-items: center;
+        }
+        /* Lớp phủ tối để text nổi bật trên nền ảnh */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .comment-item {
+            padding-bottom: 15px;
+            border-bottom: 1px solid #222;
+        }
+        .comment-item:last-child {
+            border-bottom: none;
+        }
+        .star-input {
+            color: #444; /* Màu mặc định (Xám) khi không làm gì */
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        /* Chỉ giữ lại duy nhất class này để nhận màu vàng từ JS */
+        .star-input.active {
+            color: #f1c40f;
+        }
+        .star-display { color: #f1c40f; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <section class="hero" id="movie-banner">
+        <div class="hero-content">
+            <div class="tags">
+                <span id="movie-category-tag"></span>
+                <span style="background: #333;" id="movie-age">--</span>
+            </div>
+            
+            <h1 id="movie-title">Đang tải...</h1>
+            
+            <div class="movie-meta" style="display: flex; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <span id="movie-rating-summary" style="display: inline-flex; align-items: center; gap: 5px; color: #fff;">
+                    </span>
+                <span>|</span> <span id="movie-duration"><i class="fa-regular fa-clock"></i> -- phút</span>
+                <span>|</span>
+                <span id="movie-category">--</span>
+                <span>|</span>
+                <span id="movie-director">--</span>
+            </div>
+            
+            <p class="description" id="movie-desc">Đang tải nội dung mô tả phim...</p>
+            
+            <div class="action-btns">
+                <button class="btn-primary" onclick="document.getElementById('booking-zone').scrollIntoView({behavior: 'smooth'});">
+                    <i class="fa-solid fa-ticket"></i> Đặt vé ngay
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-container" id="booking-zone">
+        <div class="left-col">
+            <div class="panel">
+                <h3><i class="fa-solid fa-clapperboard"></i> Sơ đồ ghế ngồi</h3>
+                <div class="screen-curve">MÀN HÌNH</div>
+                <div class="seats-grid" id="seats-container"></div>
+                <div class="seat-legend">
+                    <div class="legend-item"><div class="legend-box" style="background: #333;"></div> Trống</div>
+                    <div class="legend-item"><div class="legend-box" style="background: var(--red-accent);"></div> Đang chọn</div>
+                    <div class="legend-item"><div class="legend-box" style="background: #1a1a1a;"></div> Đã đặt</div>
+                </div>
+            </div>
+
+            <div class="panel" style="padding: 15px;">
+                <h3 style="margin-bottom: 12px;"><i class="fa-solid fa-video"></i> Trailer Chính Thức</h3>
+                <div class="trailer-wrapper">
+                    <iframe id="movie-trailer-embed" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div class="panel">
+                <h3>Chọn ngày chiếu</h3>
+                <div class="date-list" id="date-container">
+                    <!-- Ngày chiếu sẽ được render động từ JS -->
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Suất chiếu</h3>
+                <div class="time-list" id="time-container"></div>
+            </div>
+
+            <div class="panel">
+                <div class="summary-row">
+                    <span>Vé (<span id="ticket-count">0</span>x)</span>
+                    <strong id="ticket-price">0 VND</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Combo Đã Chọn</span>
+                    <strong id="combo-price">0 VND</strong>
+                </div>
+
+                <button id="open-combo-btn" type="button" style="width: 100%; background: #2a2a2a; color: #fff; border: 1px dashed #444; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; margin: 15px 0; transition: 0.2s;">
+                    + THÊM COMBO BẮP NƯỚC / ĐỒ ĂN
+                </button>
+
+                <div class="summary-row total-row" style="border-top: 1px solid #333; padding-top: 15px;">
+                    <span>TỔNG CỘNG</span>
+                    <strong id="total-price">0 VND</strong>
+                </div>
+                <button class="btn-checkout" id="btn-proceed-checkout">TIẾP TỤC THANH TOÁN</button>
+            </div>
+        </div>
+
+        <div id="combo-side-menu" class="side-menu">
+            <div class="side-menu-header">
+                <h3>CHỌN COMBO ĐỒ ĂN</h3>
+                <button id="close-combo-btn" class="close-btn">&times;</button>
+            </div>
+            <div class="side-menu-content" id="combo-list-container">
+                <p style="color: #8c8c8c; text-align: center; padding: 20px;">Đang tải danh sách combo...</p>
+            </div>
+            <div class="side-menu-footer">
+                <button id="confirm-combo-btn" class="btn-primary" style="width: 100%; padding: 12px; border-radius: 6px;">XÁC NHẬN</button>
+            </div>
+        </div>
+        <div id="menu-overlay" class="menu-overlay"></div>
+    </section>
+
+
+    <!-- Phần Nhận xét & Bình luận -->
+    <section class="booking-container" style="margin-top: 30px; margin-bottom: 50px;">
+        <div class="panel" style="width: 100%;">
+            <h3><i class="fa-solid fa-comments"></i> Nhận xét từ khán giả</h3>
+            <div style="margin-top: 20px;">
+                <div class="star-rating" id="rating-input-group" style="margin-bottom: 10px; font-size: 1.2rem; color: #444;">
+                    <i class="fa-solid fa-star star-input" data-value="1"></i>
+                    <i class="fa-solid fa-star star-input" data-value="2"></i>
+                    <i class="fa-solid fa-star star-input" data-value="3"></i>
+                    <i class="fa-solid fa-star star-input" data-value="4"></i>
+                    <i class="fa-solid fa-star star-input" data-value="5"></i>
+                    <span id="rating-label" style="margin-left: 10px; font-size: 0.9rem; color: #888;">(Chọn đánh giá)</span>
+                </div>
+                <textarea id="user-comment" placeholder="Cảm nghĩ của bạn về bộ phim..." style="width: 100%; height: 100px; padding: 15px; border-radius: 8px; background: #1a1a1a; border: 1px solid #333; color: white; resize: none; margin-bottom: 15px; outline: none;"></textarea>
+                <div style="text-align: right;">
+                    <button class="btn-primary" onclick="submitComment()" style="padding: 12px 30px;">Gửi bình luận</button>
+                </div>
+            </div>
+            <!-- Thêm thẻ này để JavaScript có chỗ đổ bình luận vào -->
+            <div id="comments-list" style="margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hàm định dạng tiền tệ Việt Nam
+        const formatCurrency = (amount) => {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        };
+
+        // Hàm chuyển đổi link Youtube thường thành link nhúng Embed Code để chạy được trong <iframe>
+        function getYoutubeEmbedUrl(url) {
+            if(!url) return '';
+            let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            let match = url.match(regExp);
+            return (match && match[2].length === 11) ? `https://www.youtube.com/embed/${match[2]}` : url;
+        }
+
+        let ticketPrice = 120000; // Đưa ra global để dùng chung cho mọi hàm tính toán
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 1. Phân tích URL để lấy ID phim (Ví dụ: product.html?id=2)
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id')) || 1; 
+            const preSelectedDate = urlParams.get('date');
+            const preSelectedTime = urlParams.get('time');
+
+            let selectedMovie = null;
+
+            // 2. Fetch toàn bộ danh sách từ file products.json của bạn
+            try {
+                const response = await fetch('./products.json?v=1.0');
+                if (response.ok) {
+                    const allMovies = await response.json();
+                    // Tìm phim có ID trùng khớp với ID nhận trên URL
+                    selectedMovie = allMovies.find(m => m.id === productId);
+                }
+            } catch (error) {
+                console.error("Lỗi đọc file JSON gốc:", error);
+            }
+
+            // Fallback phòng khi mất file JSON hoặc chạy offline không qua server
+            if (!selectedMovie) {
+                const backupData = [
+                    {id: 1, name: "Khóa Xanh", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqD8SmKVSQN-p4D28bdmvQ3-Zx0X53sA6anQ&s", original_price: 120000, sale_price: null, category: "Hoạt hình", gio_chieu: ["15:00", "18:00", "21:00"], year: 2022, duration: "103 phút", description: "Powerpoint animation", trailer: "https://www.youtube.com/watch?v=7wA0ANokCJM", age: "T16", rating: 8.0},
+                    {id: 2, name: "Kung Fu Panda 4", image: "https://upload.wikimedia.org/wikipedia/en/7/7f/Kung_Fu_Panda_4_poster.jpg", original_price: 100000, sale_price: 85000, category: "Hoạt hình", gio_chieu: ["14:20", "17:45", "20:10"], year: 2024, duration: "94 phút", description: "Gấu trúc Po trở lại.", trailer: "https://www.youtube.com/watch?v=_inKs4eeHiI", age: "P", rating: 7.5}
+                ];
+                selectedMovie = backupData.find(m => m.id === productId) || backupData[0];
+            }
+
+            // 3. Gán giá vé thực tế từ dữ liệu phim đã tìm thấy
+            ticketPrice = selectedMovie.sale_price || selectedMovie.original_price;
+
+            // 4. Đổ dữ liệu động của phim lên giao diện HTML
+            document.getElementById('movie-title').textContent = selectedMovie.name;
+            document.getElementById('movie-age').textContent = selectedMovie.age || 'T16';
+            document.getElementById('movie-category-tag').textContent = selectedMovie.category || 'Phim';
+            document.getElementById('movie-duration').textContent = selectedMovie.duration || '120 phút';
+            document.getElementById('movie-category').textContent = selectedMovie.category || 'Phim';
+            document.getElementById('movie-director').textContent = selectedMovie.director || 'Chưa cập nhật';
+            document.getElementById('movie-desc').textContent = selectedMovie.description || '';
+            
+            // Gọi hàm tải điểm đánh giá thực tế từ Database (từ file getratingscore.js)
+            if (typeof loadMovieRatingSummary === 'function') {
+                loadMovieRatingSummary(productId);
+            }
+            
+            // Đổi hình nền Background dựa trên ảnh phim
+            document.getElementById('movie-banner').style.backgroundImage = `url('${selectedMovie.image}')`;
+
+            // Xử lý nhúng trực tiếp Video Trailer vào Iframe rạp phim của bạn
+            document.getElementById('movie-trailer-embed').src = getYoutubeEmbedUrl(selectedMovie.trailer);
+
+            // 5. Đổ danh sách suất chiếu động
+            const timeContainer = document.getElementById('time-container');
+            timeContainer.innerHTML = ''; // Xóa sạch dữ liệu mẫu
+            const listGioChieu = selectedMovie.gio_chieu || ["14:20", "17:45", "20:10", "22:30"];
+            
+            listGioChieu.forEach((time, idx) => {
+                const btn = document.createElement('button');
+                const isSelected = preSelectedTime ? (time === preSelectedTime) : (idx === 1);
+                btn.className = `time-btn ${isSelected ? 'active' : ''}`;
+                btn.textContent = time;
+                btn.onclick = () => {
+                    document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                };
+                timeContainer.appendChild(btn);
+            });
+
+            // 5.1 Đổ danh sách ngày chiếu (hôm nay + 3 ngày)
+            const dateContainer = document.getElementById('date-container');
+            dateContainer.innerHTML = '';
+
+            const getYYYYMMDD = (date) => {
+                const offset = date.getTimezoneOffset() * 60000;
+                return new Date(date - offset).toISOString().split('T')[0];
+            };
+
+            const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            for (let i = 0; i < 4; i++) {
+                const d = new Date();
+                d.setDate(d.getDate() + i);
+                const dayName = days[d.getDay()];
+                const dateNum = d.getDate();
+                const dateISO = getYYYYMMDD(d);
+                
+                const btn = document.createElement('button');
+                const isSelected = preSelectedDate ? (dateISO === preSelectedDate) : (i === 0);
+                btn.className = `date-btn ${isSelected ? 'active' : ''}`;
+                btn.innerHTML = `<span>${dayName}</span><strong>${dateNum}</strong>`;
+                btn.onclick = () => {
+                    document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                };
+                dateContainer.appendChild(btn);
+            }
+        });
+
+        // 1. Khai báo các biến toàn cục quản lý trạng thái
+        let totalComboPrice = 0;
+        let allCombos = []; // Mảng này sẽ lưu danh sách combo sau khi fetch
+        let selectedCombosState = {}; // Lưu số lượng combo theo ID (Ví dụ: { "1": 2 })
+
+        const openComboBtn = document.getElementById('open-combo-btn');
+        const closeComboBtn = document.getElementById('close-combo-btn');
+        const confirmComboBtn = document.getElementById('confirm-combo-btn');
+        const comboSideMenu = document.getElementById('combo-side-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const comboListContainer = document.getElementById('combo-list-container');
+
+        // 2. Hàm Tải danh sách combo từ file JSON (Chạy ngay khi vào trang)
+        async function loadCombosData() {
+            try {
+                const response = await fetch('./food.json?v=1.0');
+                if (response.ok) {
+                    allCombos = await response.json();
+                    console.log("Đã tải thành công danh sách combo đồ ăn:", allCombos.length);
+                }
+            } catch (error) {
+                console.error("Lỗi khi tải trước file food.json:", error);
+                // Dữ liệu dự phòng nếu file json bị lỗi hoặc chạy offline không qua server
+                allCombos = [
+                    {id: 1, name: "Combo Solo", original_price: 95000, sale_price: 85000, status: true},
+                    {id: 2, name: "Combo Couple", original_price: 130000, sale_price: 120000, status: true},
+                    {id: 3, name: "Shisha", original_price: 300000, sale_price: null, status: true},
+                    {id: 4, name: "Combo Gia Đình", original_price: 450000, sale_price: 320000, status: true}
+                ];
+            }
+        }
+
+        // 3. Hàm Render (đổ dữ liệu) ra giao diện Side-Menu dựa trên allCombos đã có
+        function renderCombosToMenu() {
+            if (!comboListContainer) return;
+            
+            comboListContainer.innerHTML = '';
+
+            if (allCombos.length === 0) {
+                comboListContainer.innerHTML = `<p style="color: #8c8c8c; text-align: center; padding: 20px;">Không có dữ liệu combo.</p>`;
+                return;
+            }
+
+            allCombos.forEach(combo => {
+                if (combo.status === false) return; 
+
+                const priceToShow = combo.sale_price || combo.original_price;
+                const hasDiscount = combo.sale_price && combo.original_price > combo.sale_price;
+                const savedQty = selectedCombosState[combo.id] || 0;
+
+                const itemHtml = `
+                    <div class="combo-item" data-id="${combo.id}" data-price="${priceToShow}">
+                        <img src="${combo.image}" alt="${combo.name}" class="combo-poster" onerror="this.src='https://via.placeholder.com/65?text=Food'">
+                        <div class="combo-info">
+                            <h4>${combo.name}</h4>
+                            <p>${combo.description || ''}</p>
+                            <div>
+                                ${hasDiscount ? `<span style="text-decoration: line-through; color: #8c8c8c; font-size: 12px; margin-right: 5px;">${formatCurrency(combo.original_price)}</span>` : ''}
+                                <span style="font-size: 14px; color: #e50914; font-weight: bold;">${formatCurrency(priceToShow)}</span>
+                            </div>
+                        </div>
+                        <input type="number" class="combo-qty" value="${savedQty}" min="0">
+                    </div>
+                `;
+                comboListContainer.insertAdjacentHTML('beforeend', itemHtml);
+            });
+        }
+
+        // 4. Điều khiển Đóng / Mở Side-Menu
+        openComboBtn.addEventListener('click', () => {
+            comboSideMenu.classList.add('open');
+            menuOverlay.classList.add('open');
+            renderCombosToMenu(); // Bấm nút chỉ việc dựng lại giao diện từ mảng đã có sẵn
+        });
+
+        const closeMenu = () => {
+            comboSideMenu.classList.remove('open');
+            menuOverlay.classList.remove('open');
+        };
+        closeComboBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // 5. Khi nhấn nút XÁC NHẬN trong Side-Menu
+        confirmComboBtn.addEventListener('click', () => {
+            const comboElements = document.querySelectorAll('.combo-item');
+            
+            comboElements.forEach(item => {
+                const comboId = item.getAttribute('data-id');
+                const qty = parseInt(item.querySelector('.combo-qty').value) || 0;
+                
+                // Cập nhật chuẩn vào trạng thái bộ nhớ số lượng
+                selectedCombosState[comboId] = qty;
+            });
+
+            // Gọi hàm tính toán lại tổng tiền để cập nhật giao diện chính
+            calculateTotal();
+            closeMenu();
+        });
+        
+
+        // 7. GỌI NGAY KHI ĐANG LOAD TRANG: Tải dữ liệu combo đồ ăn sẵn sàng
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCombosData();
+        });
+
+        // Bắt sự kiện khi bấm nút thanh toán
+        document.getElementById('btn-proceed-checkout').addEventListener('click', () => {
+            // Tìm tất cả các ghế đang được chọn
+            const selectedSeatElements = document.querySelectorAll('.seat.selected');
+            
+            if (selectedSeatElements.length === 0) {
+                alert("Vui lòng chọn ít nhất 1 ghế trước khi thanh toán!");
+                return;
+            }
+
+            // Gôm toàn bộ mã ghế lại thành một mảng (Ví dụ: ["A3:1", "B2:4"])
+            const selectedSeatsArray = [];
+            selectedSeatElements.forEach(seat => {
+                selectedSeatsArray.push(seat.getAttribute('data-seat'));
+            });
+
+            let bgImage = document.getElementById('movie-banner')?.style.backgroundImage || '';
+            bgImage = bgImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+
+            const activeDateSpan = document.querySelector('.date-btn.active span')?.textContent || 'MON';
+            const activeDateStrong = document.querySelector('.date-btn.active strong')?.textContent || '15';
+            const activeTime = document.querySelector('.time-btn.active')?.textContent || '17:45';
+
+            const checkoutData = {
+                title: document.getElementById('movie-title')?.textContent || 'NEON RECKONING',
+                image: bgImage,
+                category: document.getElementById('movie-category')?.textContent || 'Action',
+                date: `${activeDateSpan}, Oct ${activeDateStrong}`,
+                time: activeTime,
+                seats: selectedSeatsArray, // QUAN TRỌNG: Lưu mảng mã ghế cụ thể thay vì chỉ lưu số lượng
+                ticketQty: selectedSeatElements.length,
+                ticketTotal: document.getElementById('ticket-price').textContent,
+                comboTotal: document.getElementById('combo-price').textContent,
+                subTotal: document.getElementById('total-price').textContent
+            };
+
+            sessionStorage.setItem('CineplexCheckout', JSON.stringify(checkoutData));
+            window.location.href = 'thanhtoan.html';
+        });
+    </script>
+    <script src="./script/getcomment.js"></script>
+    <script src="./script/getseat.js"></script>
+    <script src="./script/getratingscore.js"></script>
+    <script src="./script/ratinglogic.js">       </script>
+    <script src="./script/header-footer.js"></script>
+</body>
+</html>

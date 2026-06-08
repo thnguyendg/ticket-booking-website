@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./gopy.css">
+    <link rel="stylesheet" href="./html/ui.css">
+    <title>Góp Ý - Rạp Phim Rỗ</title>
+</head>
+<body>
+<main class="container">
+    <div class="feedback-wrapper" style="margin-top: 120px">
+        <div class="feedback-header">
+            <h1>Gửi Góp Ý</h1>
+            <p>Mọi ý kiến đóng góp của bạn đều giúp Rạp Phim Rỗ trở nên hoàn thiện hơn.</p>
+        </div>
+
+        <div class="contact-info-dark">
+            <div><i class="fa-solid fa-phone"></i> 1900 2224 (9:00 - 22:00)</div>
+            <div><i class="fa-solid fa-envelope"></i> nhom3@gmail.com</div>
+        </div>
+
+        <form class="dark-form" id="feedbackForm" onsubmit="submitFeedback(event)">
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fb-name">Họ và tên</label>
+                    <input type="text" id="fb-name" name="fullname" placeholder="Nhập họ và tên của bạn..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fb-email">Email liên hệ</label>
+                    <input type="email" id="fb-email" name="email" placeholder="Nhập địa chỉ email..." required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="fb-phone">Số điện thoại</label>
+                    <input type="tel" id="fb-phone" name="phone" placeholder="Nhập số điện thoại..." required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="fb-content">Nội dung góp ý</label>
+                    <textarea id="fb-content" name="content" placeholder="Chia sẻ trải nghiệm hoặc vấn đề bạn gặp phải..." required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit-dark">
+                <i class="fa-solid fa-paper-plane"></i> Gửi Đánh Giá Tới Ban Quản Trị
+            </button>
+            
+        </form>
+
+    </div>
+</main>
+
+<script>
+    async function submitFeedback(event) {
+        event.preventDefault(); // Chặn load lại trang
+
+        // Lấy dữ liệu từ Form
+        const feedbackData = {
+            fullname: document.getElementById('fb-name').value,
+            email: document.getElementById('fb-email').value,
+            phone: document.getElementById('fb-phone').value,
+            content: document.getElementById('fb-content').value
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(feedbackData)
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                alert("Cảm ơn bạn! Góp ý đã được gửi tới Ban Quản Trị thành công.");
+                document.getElementById('feedbackForm').reset(); // Xóa sạch form sau khi gửi
+            } else {
+                alert("Có lỗi xảy ra: " + result.msg);
+            }
+        } catch (error) {
+            console.error("Lỗi kết nối API:", error);
+            alert("Không thể kết nối tới server backend!");
+        }
+    }
+    
+</script>
+<script src="./html/script/header-footer.js"></script>
+
+</body>
+</html>

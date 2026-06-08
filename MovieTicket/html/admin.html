@@ -1,0 +1,1329 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineAdmin | Movie Dashboard</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./layout/admin.css">
+    <style>
+        /* Logic ẩn hiện các Tab */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-film logo-icon"></i>
+                <h1 class="logo-text">Trang quản lý</h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="./trangchu.html" class="nav-link">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Trang chủ</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" data-tab="tab-info">
+                            <i class="fa-solid fa-film"></i>
+                            <span>Thông tin phim</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-tab="tab-add">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <span>Thêm phim</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-tab="tab-edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>Sửa phim</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-tab="tab-food-management">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>Quản lý đồ ăn</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-tab="tab-feedback">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <span>Quản lý góp ý</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" id="accountMenuItem" style="display: none;">
+                        <a href="#" class="nav-link" data-tab="tab-account-management">
+                            <i class="fa-solid fa-user-gear"></i>
+                            <span>Quản lý tài khoản</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link logout-btn" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="movieSearch" class="search-input" placeholder="Tìm kiếm phim..." oninput="filterMovies()">
+                </div>
+                <div class="user-profile">
+                    <span class="user-greeting">Chào mừng, <strong id="adminName">Admin</strong></span>
+                    <div class="avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                
+                <!-- Quick Form Card (Glassmorphism + Card UI) -->
+                <section id="tab-add" class="card-section tab-content">
+                    <div class="card form-card">
+                        <h2 class="card-title">Thêm Phim Mới</h2>
+                        <form id="addForm" class="two-col-form" onsubmit="event.preventDefault(); addMovie();">
+                            <div class="form-group">
+                                <label for="newName">Tên Phim</label>
+                                <input type="text" id="newName" placeholder="Nhập tên phim..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newCategory">Thể Loại</label>
+                                <select id="newCategory" required>
+                                    <option value="" disabled selected>Chọn thể loại...</option>
+                                    <option value="Hành động">Hành động</option>
+                                    <option value="Hoạt hình">Hoạt hình</option>
+                                    <option value="Kinh Dị">Kinh Dị</option>
+                                    <option value="Khoa Học Viễn Tưởng">Khoa Học Viễn Tưởng</option>                                
+                                    <option value="Khác">Khác</option>
+                                </select>
+                                <input type="text" id="otherCategoryInput" placeholder="Nhập thể loại khác..." style="display: none; margin-top: 10px; width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #333; background: #1a1a1a; color: white; outline: none;">
+                            </div>
+                            <div class="form-group">
+                                <label for="newImage">Link Ảnh Poster</label>
+                                <input type="text" id="newImage" placeholder="https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="newOriginalPrice">Giá Gốc</label>
+                                <input type="number" id="newOriginalPrice" placeholder="VND">
+                            </div>               
+                            <div class="form-group">
+                                <label for="newSalePrice">Giá Giảm</label>
+                                <input type="number" id="newSalePrice" placeholder="VND">
+                            </div>         
+                            <div class="form-group">
+                                <label for="newTrailer">Link Trailer (YouTube)</label>
+                                <input type="text" id="newTrailer" placeholder="https://www.youtube.com/watch?v=...">
+                            </div>
+                            <div class="form-group">
+                                <label for="newShowtimes">Giờ chiếu</label>
+                                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                    <input type="time" id="newShowtimes" style="padding: 8px; border-radius: 4px; border: 1px solid #333; background: #1a1a1a; color: white;">
+                                    <button type="button" id="addTimeBtn" style="padding: 8px 15px; background: #E50914; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+                                        Thêm
+                                    </button>
+                                </div>
+                                <input type="text" id="newShowtimesList" placeholder="Ví dụ: 19:00, 21:30 (Cách nhau bằng dấu phẩy)" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #333; background: #1a1a1a; color: white; outline: none;">
+                            </div>
+                            <div class="form-group">
+                                <label for="newCinema">Rạp chiếu</label>
+                                <input type="text" id="newCinema" placeholder="Ví dụ: Rạp 1, Rạp 2, Rạp 3">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newYear">Năm sản xuất</label>
+                                <input type="number" id="newYear" placeholder="Ví dụ: 2024">
+                            </div>
+                            <div class="form-group">
+                                <label for="newDuration">Thời lượng</label>
+                                <input type="text" id="newDuration" placeholder="Ví dụ: 120 phút">
+                            </div>
+                            <div class="form-group">
+                                <label for="newDirector">Đạo diễn</label>
+                                <input type="text" id="newDirector" placeholder="Tên đạo diễn...">
+                            </div>
+                            <div class="form-group">
+                                <label for="newAge">Độ tuổi</label>
+                                <input type="text" id="newAge" placeholder="Ví dụ: T13, T16, T18">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="newDescription">Nội dung phim</label>
+                                <textarea id="newDescription" rows="3" placeholder="Nhập tóm tắt nội dung phim..." style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;"></textarea>
+                            </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fa-solid fa-circle-plus"></i> Thêm Phim Mới
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Tab Chỉnh Sửa Phim -->
+                <section id="tab-edit" class="card-section tab-content">
+                    <div class="card form-card">
+                        <h2 class="card-title">Chỉnh Sửa Phim</h2>
+                        <form class="two-col-form" onsubmit="event.preventDefault(); updateMovie();">
+                            <input type="hidden" id="editId">
+                            <div class="form-group">
+                                <label for="editName">Tên Phim</label>
+                                <input type="text" id="editName" placeholder="Tên phim...">
+                            </div>
+                            <div class="form-group">
+                                <label for="editCategory">Thể Loại</label>
+                                <input type="text" id="editCategory" placeholder="Thể loại...">
+                            </div>
+                            <div class="form-group">
+                                <label for="editImage">Link Ảnh Poster</label>
+                                <input type="text" id="editImage" placeholder="https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="editOriginalPrice">Giá Gốc</label>
+                                <input type="number" id="editOriginalPrice" placeholder="VND">
+                            </div>
+                            <div class="form-group">
+                                <label for="editSalePrice">Giá Giảm (Nếu không có để trống)</label>
+                                <input type="number" id="editSalePrice" placeholder="VND">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAge">Độ tuổi (Age)</label>
+                                <input type="text" id="editAge" placeholder="Ví dụ: 16, 18...">
+                            </div>            
+
+                             <div class="form-group">
+                                <label for="editShowtimes">Giờ chiếu</label>                            
+                                <input type="time" id="editShowtimesInput" class="form-input" style="margin-bottom: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px; border-radius: 4px;">
+                                <input type="text" id="editShowtimes" placeholder="Danh sách giờ chiếu (Cách nhau bằng dấu phẩy)..." style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; margin-bottom: 10px;">
+                                <button type="button" onclick="addShowtimeToList()" class="btn-secondary" style="padding: 5px 15px; font-size: 12px;">+ Thêm giờ</button>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editDuration">Thời lượng</label>
+                                <input type="text" id="editDuration" placeholder="Ví dụ: 2h 15m">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editYear">Năm sản xuất</label>
+                                <input type="number" id="editYear" placeholder="Ví dụ: 2024">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="editDirector">Đạo diễn</label>
+                                <input type="text" id="editDirector" placeholder="Tên đạo diễn...">
+                            </div>
+                            <div class="form-group">
+                                <label for="editTrailer">Link Trailer (YouTube)</label>
+                                <input type="text" id="editTrailer" placeholder="https://www.youtube.com/watch?v=...">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="editDescription">Mô tả phim</label>
+                                <textarea id="editDescription" rows="4" placeholder="Nhập nội dung tóm tắt phim..." style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;"></textarea>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn-primary" style="background: #f39c12;">
+                                    <i class="fa-solid fa-floppy-disk"></i> Lưu Thay Đổi
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Tab Danh Sách Phim -->
+                <section id="tab-info" class="card-section tab-content active">
+                    <div class="card table-card">
+                        <div class="table-header">
+                            <h2 class="card-title">Danh Sách Phim</h2>
+                            <div class="filter-dropdown">
+                                <button class="btn-secondary">
+                                    <i class="fa-solid fa-filter"></i> <span id="filterLabel">Lọc</span>
+                                </button>
+                                <div class="filter-options">
+                                    <div class="filter-item" onclick="applyFilter('az')"><i class="fa-solid fa-sort-alpha-down"></i> Tên A-Z</div>
+                                    <div class="filter-item" onclick="applyFilter('id')"><i class="fa-solid fa-sort-numeric-down"></i> Theo ID</div>
+                                    <div class="filter-item" onclick="applyFilter('year')"><i class="fa-solid fa-calendar-days"></i> Theo năm SX</div>
+                                    <div class="filter-item" onclick="applyFilter('reset')"><i class="fa-solid fa-xmark"></i> Huỷ lọc</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="movie-table">
+                                <thead>
+                                    <tr>
+                                        <th>Poster</th>
+                                        <th>Tên Phim</th>
+                                        <th>Đạo Diễn</th>
+                                        <th>Thể Loại</th>
+                                        <th>Năm SX</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="movieTableBody">
+                                    <!-- Dữ liệu sẽ được đổ vào đây từ products.json -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tab Quản Lý Đồ Ăn -->
+                <section id="tab-food-management" class="card-section tab-content">
+                    <div class="card form-card" id="foodFormSection">
+                        <h2 class="card-title" id="foodFormTitle">Thêm Combo Đồ Ăn</h2>
+                        <form id="foodForm" class="two-col-form" onsubmit="event.preventDefault(); saveFood();">
+                            <input type="hidden" id="foodId">
+                            <div class="form-group">
+                                <label for="foodName">Tên Combo</label>
+                                <input type="text" id="foodName" placeholder="Nhập tên combo..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="foodImage">Link Ảnh</label>
+                                <input type="text" id="foodImage" placeholder="https://...">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="foodDesc">Mô tả</label>
+                                <textarea id="foodDesc" rows="2" placeholder="Nhập mô tả combo..." style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="foodOriginalPrice">Giá Gốc</label>
+                                <input type="number" id="foodOriginalPrice" placeholder="VND" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="foodSalePrice">Giá Giảm</label>
+                                <input type="number" id="foodSalePrice" placeholder="VND">
+                            </div>
+                            <div class="form-group">
+                                <label for="foodStatus">Trạng thái</label>
+                                <select id="foodStatus">
+                                    <option value="true">Đang bán</option>
+                                    <option value="false">Ngừng bán</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width" style="display: flex; gap: 10px;">
+                                <button type="submit" class="btn-primary" id="btnSaveFood">
+                                    <i class="fa-solid fa-circle-plus"></i> Lưu Combo
+                                </button>
+                                <button type="button" class="btn-secondary" onclick="resetFoodForm()" id="btnResetFood" style="display:none;">Hủy</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card table-card" style="margin-top: 30px;">
+                        <h2 class="card-title">Danh Sách Đồ Ăn</h2>
+                        <div class="table-responsive">
+                            <table class="movie-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ảnh</th>
+                                        <th>Tên Combo</th>
+                                        <th>Giá Gốc</th>
+                                        <th>Giá Giảm</th>
+                                        <th>Trạng thái</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="foodTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tab Quản Lý Tài Khoản -->
+                <section id="tab-account-management" class="card-section tab-content">
+                    <div class="card table-card">
+                        <div class="table-header">
+                            <h2 class="card-title">Quản Lý Tài Khoản</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="movie-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Họ và Tên</th>
+                                        <th>Email</th>
+                                        <th>Quyền</th>
+                                        <th>Trạng thái</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userTableBody">
+                                    <!-- Dữ liệu người dùng sẽ được đổ vào đây -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tab-feedback" class="card-section tab-content">
+                    <div class="card table-card">
+                        <div class="table-header">
+                            <h2 class="card-title">Quản Lý Góp Ý & Liên Hệ</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="movie-table">
+                                <thead>
+                                    <tr>
+                                        <th style="padding: 12px; border: 1px solid #333;">Thời gian</th>
+                                        <th style="padding: 12px; border: 1px solid #333;">Khách hàng</th>
+                                        <th style="padding: 12px; border: 1px solid #333;">Liên hệ</th>
+                                        <th style="padding: 12px; border: 1px solid #333;">Nội dung góp ý</th>
+                                        <th class="text-center" style="padding: 12px; border: 1px solid #333; width: 120px;">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="feedbackTableBody">
+                                    <tr>
+                                        <td colspan="5" style="text-align: center; padding: 20px; color: #888;">
+                                            <i class="fa-solid fa-spinner fa-spin"></i> Đang tải danh sách góp ý...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Xem Thông Tin Tài Khoản -->
+    <div id="userDetailModal" style="display:none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center; padding: 20px;">
+        <div class="card" style="max-width: 500px; width: 100%; position: relative; background: #1a1a1a; color: white;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                <h3 style="margin: 0; color: #e50914;">Thông tin tài khoản</h3>
+                <span style="cursor: pointer; font-size: 24px;" onclick="closeUserModal()">&times;</span>
+            </div>
+            <div id="userDetailContent" style="line-height: 1.8;">
+                <!-- Nội dung thông tin user -->
+            </div>
+            <div style="margin-top: 20px; text-align: right;">
+                <button class="btn-secondary" onclick="closeUserModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="banReasonModal" class="modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.75); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(4px);">
+    <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius); width: 420px; box-shadow: var(--shadow); border: 1px solid var(--border-color); color: var(--text-main);">
+        <h4 style="margin-top: 0; color: var(--primary); font-size: 1.2rem; display: flex; align-items: center; gap: 10px; text-shadow: var(--glow);">
+            <i class="fa-solid fa-user-slash"></i> Chọn lý do cấm tài khoản
+        </h4>
+        <div style="margin: 20px 0;">
+            <label for="banReasonSelect" style="display:block; margin-bottom: 10px; font-weight: 500; color: var(--text-sub);">Lý do vi phạm:</label>
+            <select id="banReasonSelect" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); outline: none; transition: var(--transition);">
+                <option value="Spam hoặc gửi nội dung rác">Spam hoặc gửi nội dung rác</option>
+                <option value="Sử dụng phần mềm can thiệp hệ thống (Hack/Cheat)">Sử dụng phần mềm can thiệp hệ thống (Hack/Cheat)</option>
+                <option value="Gian lận trong giao dịch nạp/rút">Gian lận trong giao dịch nạp/rút</option>
+                <option value="Ngôn từ kích động, gây chia rẽ, xúc phạm người khác">Ngôn từ kích động, gây chia rẽ, xúc phạm người khác</option>
+                <option value="Ảnh đại diện vi phạm chuẩn mực, quy định cộng đồng">Ảnh đại diện vi phạm chuẩn mực, quy định cộng đồng</option>
+                <option value="custom">Lý do khác (Tự nhập)...</option>
+            </select>
+            
+            <input type="text" id="banReasonCustom" placeholder="Nhập lý do cụ thể tại đây..." style="display: none; width: calc(100%); padding: 10px; margin-top: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); outline: none;">
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+            <button onclick="closeBanModal()" style="background: transparent; color: var(--text-sub); border: 1px solid var(--border-color); padding: 10px 18px; border-radius: 8px; cursor: pointer; transition: var(--transition); font-weight: 500;">Hủy</button>
+            <button onclick="submitBanAction()" style="background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: var(--transition); font-weight: 500; box-shadow: var(--glow);">Xác nhận cấm</button>
+        </div>
+    </div>
+</div>
+
+<div id="unbanModal" class="modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.75); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(4px);">
+    <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius); width: 420px; box-shadow: var(--shadow); border: 1px solid var(--border-color); color: var(--text-main);">
+        <h4 style="margin-top: 0; color: #28a745; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; text-shadow: 0 0 15px rgba(40, 167, 69, 0.4);">
+            <i class="fa-solid fa-user-check"></i> Xác nhận gỡ lệnh cấm
+        </h4>
+        <div style="margin: 20px 0; line-height: 1.6;">
+            <p style="margin: 0; color: var(--text-sub);">Bạn có chắc chắn muốn khôi phục quyền truy cập cho tài khoản này không?</p>
+            <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #28a745;"><i class="fa-solid fa-circle-info"></i> Người dùng có thể đăng nhập lại ngay lập tức.</p>
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+            <button onclick="closeUnbanModal()" style="background: transparent; color: var(--text-sub); border: 1px solid var(--border-color); padding: 10px 18px; border-radius: 8px; cursor: pointer; transition: var(--transition); font-weight: 500;">Hủy</button>
+            <button onclick="submitUnbanAction()" style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: var(--transition); font-weight: 500; box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);">Mở khóa</button>
+        </div>
+    </div>
+</div>
+
+<div id="roleModal" class="modal" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.75); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(4px);">
+    <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius); width: 420px; box-shadow: var(--shadow); border: 1px solid var(--border-color); color: var(--text-main);">
+        <h4 style="margin-top: 0; color: #9b59b6; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; text-shadow: 0 0 15px rgba(155, 89, 182, 0.4);">
+            <i class="fa-solid fa-user-gear"></i> Phân quyền tài khoản
+        </h4>
+        <div style="margin: 20px 0;">
+            <p style="margin: 0 0 10px 0; color: var(--text-sub);">Chọn quyền hạn cho tài khoản:</p>
+            <select id="roleSelect" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); outline: none; transition: var(--transition);">
+                <option value="3">Khách hàng</option>
+                <option value="2">Nhân viên</option>
+            </select>
+        </div>
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+            <button onclick="closeRoleModal()" style="background: transparent; color: var(--text-sub); border: 1px solid var(--border-color); padding: 10px 18px; border-radius: 8px; cursor: pointer; transition: var(--transition); font-weight: 500;">Hủy</button>
+            <button onclick="submitRoleChange()" style="background: #9b59b6; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: var(--transition); font-weight: 500; box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);">Lưu</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Container cho Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script>
+        // Mocking products.json initial data
+       let movies = [];
+       let allUsers = [];
+       let foods = [];
+
+        // 1. Kết nối và lấy dữ liệu từ file products.json
+        async function loadMovies() {
+            try {
+                const response = await fetch('products.json');
+                if (!response.ok) throw new Error('Không thể tải file JSON');
+                movies = await response.json();
+                renderTable();
+            } catch (error) {
+                console.error("Lỗi:", error);
+                // Fallback nếu không tìm thấy file
+                document.getElementById('movieTableBody').innerHTML = `<tr><td colspan="4" style="text-align:center">Vui lòng chạy code qua Live Server để load file JSON</td></tr>`;
+            }
+        }
+
+        async function loadFoods() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/api/food');
+                foods = await response.json();
+                renderFoodTable();
+            } catch (error) {
+                console.error("Lỗi tải đồ ăn:", error);
+            }
+        }
+
+        function renderFoodTable(data = foods) {
+            const tbody = document.getElementById('foodTableBody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+            data.forEach(item => {
+                const tr = document.createElement('tr');
+                const statusBadge = item.status 
+                    ? '<span class="badge" style="background: #28a745; color: #fff;">Đang bán</span>' 
+                    : '<span class="badge" style="background: #6c757d; color: #fff;">Ngừng bán</span>';
+                
+                tr.innerHTML = `
+                    <td>
+                        <div class="movie-thumb">
+                            <img src="${item.image}" alt="${item.name}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;">
+                        </div>
+                    </td>
+                    <td class="fw-bold">${item.name}</td>
+                    <td>${formatVND(item.original_price)}</td>
+                    <td>${item.sale_price ? formatVND(item.sale_price) : '-'}</td>
+                    <td>${statusBadge}</td>
+                    <td class="action-cell">
+                        <div class="action-group" style="display: flex; gap: 10px; justify-content: center;">
+                            <button class="icon-btn" title="Sửa combo" onclick="prepareEditFood(${item.id})" style="color: #f39c12;">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button class="icon-btn" title="Xoá combo" onclick="deleteFood(${item.id})" style="color: #e74c3c;">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function prepareEditFood(id) {
+            const item = foods.find(f => f.id === id);
+            if (!item) return;
+            
+            document.getElementById('foodId').value = item.id;
+            document.getElementById('foodName').value = item.name;
+            document.getElementById('foodImage').value = item.image;
+            document.getElementById('foodDesc').value = item.description || '';
+            document.getElementById('foodOriginalPrice').value = item.original_price;
+            document.getElementById('foodSalePrice').value = item.sale_price || '';
+            document.getElementById('foodStatus').value = String(item.status);
+            
+            document.getElementById('foodFormTitle').innerText = "Sửa Combo Đồ Ăn";
+            document.getElementById('btnSaveFood').innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Lưu Thay Đổi';
+            document.getElementById('btnResetFood').style.display = 'block';
+            document.getElementById('foodFormSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetFoodForm() {
+            document.getElementById('foodForm').reset();
+            document.getElementById('foodId').value = '';
+            document.getElementById('foodFormTitle').innerText = "Thêm Combo Đồ Ăn";
+            document.getElementById('btnSaveFood').innerHTML = '<i class="fa-solid fa-circle-plus"></i> Thêm Combo Mới';
+            document.getElementById('btnResetFood').style.display = 'none';
+        }
+
+        async function saveFood() {
+            const id = document.getElementById('foodId').value;
+            const name = document.getElementById('foodName').value;
+            const image = document.getElementById('foodImage').value;
+            const description = document.getElementById('foodDesc').value;
+            const original_price = parseInt(document.getElementById('foodOriginalPrice').value);
+            const sale_price = document.getElementById('foodSalePrice').value ? parseInt(document.getElementById('foodSalePrice').value) : null;
+            const status = document.getElementById('foodStatus').value === 'true';
+
+            if (id) {
+                const index = foods.findIndex(f => f.id == id);
+                if (index !== -1) foods[index] = { ...foods[index], name, image, description, original_price, sale_price, status };
+            } else {
+                const newId = foods.length > 0 ? Math.max(...foods.map(f => f.id)) + 1 : 1;
+                foods.push({ id: newId, name, image, description, original_price, sale_price, status });
+            }
+            await syncFoodToJSON();
+        }
+
+        async function deleteFood(id) {
+            if (!confirm("Bạn có chắc chắn muốn xoá combo này?")) return;
+            foods = foods.filter(f => f.id !== id);
+            await syncFoodToJSON();
+        }
+
+        async function syncFoodToJSON() {
+            try {
+                const response = await fetch("http://127.0.0.1:5000/update-food", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(foods)
+                });
+                const result = await response.json();
+                if (result.success) {
+                    showToast(result.message, 'success');
+                    renderFoodTable();
+                    resetFoodForm();
+                } else {
+                    showToast(result.message, 'error');
+                }
+            } catch (error) {
+                showToast("Lỗi kết nối máy chủ", 'error');
+            }
+        }
+
+        // 2. Lấy dữ liệu người dùng từ Database qua Flask API
+        async function loadUsers() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/get-users');
+                allUsers = await response.json();
+                renderUserTable();
+            } catch (error) {
+                console.error("Lỗi tải người dùng:", error);
+            }
+        }
+
+        // Thêm tham số role vào hàm
+       // Bỏ tham số 'role' ở định nghĩa hàm để tránh lỗi quên truyền tham số
+        function renderUserTable(data = allUsers) { 
+            const tbody = document.getElementById('userTableBody');
+            tbody.innerHTML = '';
+            
+            // Đọc trực tiếp quyền từ localStorage và chuyển thành kiểu Số
+            const currentLoginRole = Number(localStorage.getItem("userRole"));
+            const currentLoginEmail = localStorage.getItem("userEmail");
+            
+            // Lọc bỏ tài khoản admin hiện tại (nếu đang đăng nhập là admin)
+            let displayData = data;
+            if (currentLoginRole === 1) {
+                displayData = data.filter(user => user.role !== 1);
+            }
+            
+            displayData.forEach(user => {
+                const tr = document.createElement('tr');
+                
+                const statusBadge = user.isBanned
+                    ? '<span class="badge" style="background: #dc3545; color: #fff;">Bị cấm</span>' 
+                    : '<span class="badge" style="background: #28a745; color: #fff;">Hoạt động</span>';
+                
+                const roleBadge = user.role === 1 
+                    ? '<span class="badge" style="background: #9b59b6; color: #fff;">Admin</span>'
+                    : (user.role === 2 
+                        ? '<span class="badge" style="background: #3498db; color: #fff;">Nhân viên</span>'
+                        : '<span class="badge" style="background: #6c757d; color: #fff;">Khách hàng</span>');
+                
+                tr.innerHTML = `
+                    <td>${user.id}</td>
+                    <td class="fw-bold">${user.fullname}</td>
+                    <td>${user.email}</td>
+                    <td>${roleBadge}</td>
+                    <td>${statusBadge}</td>
+                    <td class="action-cell">
+                        <div class="action-group" style="display: flex; gap: 10px; justify-content: center;">
+                            <button class="icon-btn" title="Xem chi tiết" onclick="viewUserDetails(${user.id})" style="color: #3498db;">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                            
+                            ${currentLoginRole === 1 ? `
+                                <button class="icon-btn" title="Phân quyền" onclick="openRoleModal(${user.id}, ${user.role})" style="color: #9b59b6;">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </button>
+                                <button class="icon-btn" title="${user.isBanned ? 'Mở cấm' : 'Cấm tài khoản'}" 
+                                        onclick="toggleUserStatus(${user.id}, ${user.isBanned})" 
+                                        style="color: ${user.isBanned ? '#28a745' : '#e74c3c'};">
+                                    <i class="fa-solid ${user.isBanned ? 'fa-user-check' : 'fa-user-slash'}"></i>
+                                </button>
+                            ` : ''}
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Tạo 1 biến toàn cục ở đầu thẻ <script> để lưu ID tạm thời khi bấm nút cấm
+        // Biến toàn cục để ghi nhớ ID tài khoản đang được Admin click chọn
+        let currentTargetUserId = null;
+
+        // Hàm bắt sự kiện click từ danh sách hàng của bảng
+        async function toggleUserStatus(userId, currentStatus) {
+            currentTargetUserId = userId; // Ghi nhớ ID tài khoản lại
+            const statusNum = Number(currentStatus);
+
+            if (statusNum === 1) {
+                // NẾU ĐANG BỊ CẤM (1) -> Bật Modal mở cấm lên
+                document.getElementById('unbanModal').style.display = 'flex';
+            } else {
+                // NẾU ĐANG HOẠT ĐỘNG (0) -> Bật Modal chọn lý do cấm lên
+                document.getElementById('banReasonModal').style.display = 'flex';
+                document.getElementById('banReasonSelect').value = "Spam hoặc gửi nội dung rác";
+                document.getElementById('banReasonCustom').style.display = 'none';
+                document.getElementById('banReasonCustom').value = "";
+            }
+        }
+
+        // Lắng nghe sự kiện thay đổi của Select ô lý do cấm (Nếu chọn Lý do khác thì hiện Input nhập tay)
+        document.getElementById('banReasonSelect').addEventListener('change', function() {
+            const customInput = document.getElementById('banReasonCustom');
+            if (this.value === 'custom') {
+                customInput.style.display = 'block';
+            } else {
+                customInput.style.display = 'none';
+            }
+        });
+
+        // Xử lý khi bấm nút "Xác nhận cấm"
+        function submitBanAction() {
+            const selectVal = document.getElementById('banReasonSelect').value;
+            const customVal = document.getElementById('banReasonCustom').value.trim();
+            
+            let finalReason = selectVal;
+            if (selectVal === 'custom') {
+                if (!customVal) {
+                    showToast("Vui lòng nhập lý do cấm cụ thể!", 'warning');
+                    return;
+                }
+                finalReason = customVal;
+            }
+            
+            // Gửi lệnh cấm (status = 1) kèm lý do vi phạm
+            executeToggleStatus(currentTargetUserId, 1, finalReason);
+            closeBanModal();
+        }
+
+        // Xử lý khi bấm nút "Mở khóa" trên Unban Modal
+        function submitUnbanAction() {
+            // Gửi lệnh mở cấm (status = 0), không cần lý do
+            executeToggleStatus(currentTargetUserId, 0, "");
+            closeUnbanModal();
+        }
+
+        // Hàm Fetch dữ liệu chung xuống Backend Server
+        async function executeToggleStatus(userId, status, reason) {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/toggle-user-status', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: userId, status: status, reason: reason })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    showToast(result.message, 'success');
+                    loadUsers();
+                } else {
+                    showToast(result.message || 'Lỗi cập nhật trạng thái!', 'error');
+                }
+            } catch (error) {
+                showToast('Lỗi kết nối hệ thống!', 'error');
+            }
+        }
+
+        // Các hàm phụ hỗ trợ đóng Modal nhanh chóng
+        function closeBanModal() {
+            document.getElementById('banReasonModal').style.display = 'none';
+            currentTargetUserId = null;
+        }
+
+        function closeUnbanModal() {
+            document.getElementById('unbanModal').style.display = 'none';
+            currentTargetUserId = null;
+        }
+
+        let currentRoleUserId = null;
+        let currentRoleValue = null;
+
+        function openRoleModal(userId, currentRole) {
+            currentRoleUserId = userId;
+            currentRoleValue = currentRole;
+            document.getElementById('roleSelect').value = String(currentRole);
+            document.getElementById('roleModal').style.display = 'flex';
+        }
+
+        function closeRoleModal() {
+            document.getElementById('roleModal').style.display = 'none';
+            currentRoleUserId = null;
+            currentRoleValue = null;
+        }
+
+        async function submitRoleChange() {
+            const newRole = parseInt(document.getElementById('roleSelect').value);
+            if (newRole === currentRoleValue) {
+                closeRoleModal();
+                return;
+            }
+            try {
+                const response = await fetch('http://127.0.0.1:5000/update-user-role', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: currentRoleUserId, role: newRole })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    showToast(result.message || 'Cập nhật quyền thành công!', 'success');
+                    await loadUsers();
+                    closeRoleModal();
+                } else {
+                    showToast(result.message || 'Lỗi cập nhật quyền!', 'error');
+                    closeRoleModal();
+                }
+            } catch (error) {
+                showToast('Lỗi kết nối hệ thống!', 'error');
+                closeRoleModal();
+            }
+        }
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            let icon = 'fa-circle-check';
+            if (type === 'error') icon = 'fa-circle-xmark';
+            if (type === 'warning') icon = 'fa-triangle-exclamation';
+
+            toast.innerHTML = `
+                <i class="fa-solid ${icon}"></i>
+                <span>${message}</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Tự động xóa toast sau khi hiệu ứng fadeOut kết thúc
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Hàm xem chi tiết cũng sửa lại chỗ hiển thị trạng thái cấm
+        function viewUserDetails(id) {
+            const user = allUsers.find(u => u.id === id);
+            if (!user) return;
+
+            const content = document.getElementById('userDetailContent');
+            content.innerHTML = `
+                <p><strong>Họ và tên:</strong> ${user.fullname}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Số điện thoại:</strong> ${user.phone}</p>
+                <p><strong>Giới tính:</strong> ${user.gender || 'Chưa cập nhật'}</p>
+                <p><strong>Ngày sinh:</strong> ${user.dob || 'Chưa cập nhật'}</p>
+                <p><strong>Số dư:</strong> ${formatVND(user.balance)}</p>
+                <p><strong>Trạng thái:</strong> ${user.isBanned ? 'Bị cấm' : 'Đang hoạt động'}</p>
+            `;
+            document.getElementById('userDetailModal').style.display = 'flex';
+        }
+
+        function closeUserModal() {
+            document.getElementById('userDetailModal').style.display = 'none';
+        }
+
+        // Format currency
+        const formatVND = (amount) => {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        };
+
+        // Render table
+        function renderTable(data = movies) {
+            const tbody = document.getElementById('movieTableBody');
+            tbody.innerHTML = '';
+            
+            data.forEach(movie => {
+                const tr = document.createElement('tr');
+                tr.id = `movie-row-${movie.id}`; // Gán ID duy nhất cho mỗi dòng phim
+                tr.innerHTML = `
+                    <td>
+                        <div class="movie-thumb">
+                            <img src="${movie.image}" alt="${movie.name}" style="width: 40px; height: 60px; object-fit: cover; border-radius: 4px;">
+                        </div>
+                    </td>
+                    <td class="fw-bold">${movie.name}</td>
+                    <td>${movie.director || 'Chưa cập nhật'}</td>
+                    <td><span class="badge">${movie.category}</span></td>
+                    <td>${movie.year || 'Chưa cập nhật'}</td>
+                    <td class="action-cell">
+                        <div class="action-group" style="display: flex; gap: 10px; justify-content: center;">
+                            <button class="icon-btn edit-btn" title="Sửa phim" onclick="prepareEdit('${movie.name}')">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button class="icon-btn delete-btn" title="Xóa phim" onclick="deleteMovie(${movie.id})">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Hàm chuyển đổi Tab
+        function switchTab(tabId) {
+            // Cập nhật trạng thái Active trên Sidebar
+            const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+            navLinks.forEach(link => {
+                if(link.getAttribute('data-tab') === tabId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Hiển thị/Ẩn các section nội dung
+            document.querySelectorAll('.tab-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            const target = document.getElementById(tabId);
+            if(target) target.classList.add('active');
+
+            if (tabId === 'tab-account-management') {
+                loadUsers();
+            }
+            if (tabId === 'tab-food-management') {
+                loadFoods();
+            }
+            if (tabId === 'tab-feedback') {
+                loadAdminFeedbacks();
+            }
+        }
+
+        // Search Filter
+        function filterMovies() {
+            const term = document.getElementById('movieSearch').value.toLowerCase();
+            const filtered = movies.filter(m => m.name.toLowerCase().includes(term));
+            renderTable(filtered);
+        }
+
+        // Chỉnh sửa phim: Đổ dữ liệu vào Form và chuyển sang Tab Sửa
+        function prepareEdit(name) {
+            const movie = movies.find(m => m.name === name);
+            if (movie) {
+                document.getElementById('editId').value = movie.id;
+                document.getElementById('editName').value = movie.name;
+                document.getElementById('editCategory').value = movie.category;
+                document.getElementById('editImage').value = movie.image;
+                document.getElementById('editOriginalPrice').value = movie.original_price;
+                document.getElementById('editSalePrice').value = movie.sale_price;
+                document.getElementById('editAge').value = movie.age;
+                // Chuyển mảng ["15:00", "18:00"] thành chuỗi "15:00, 18:00" để hiển thị
+                document.getElementById('editShowtimes').value = Array.isArray(movie.gio_chieu) ? movie.gio_chieu.join(', ') : (movie.gio_chieu || '');
+                document.getElementById('editYear').value = movie.year;
+                document.getElementById('editDuration').value = movie.duration;
+                document.getElementById('editDirector').value = movie.director;
+                document.getElementById('editTrailer').value = movie.trailer;
+                document.getElementById('editDescription').value = movie.description;
+                switchTab('tab-edit');
+            }
+        }
+
+        // Lưu thay đổi khi sửa
+        function updateMovie() {
+            const id = parseInt(document.getElementById('editId').value);
+            const index = movies.findIndex(m => m.id === id);
+            
+            if (index !== -1) {
+                movies[index] = {
+                    ...movies[index],
+                    category: document.getElementById('editCategory').value,
+                    image: document.getElementById('editImage').value,
+                    original_price: parseInt(document.getElementById('editOriginalPrice').value),
+                    sale_price: parseInt(document.getElementById('editSalePrice').value),
+                    age: document.getElementById('editAge').value.startsWith('T') 
+                         ? document.getElementById('editAge').value 
+                         : 'T' + document.getElementById('editAge').value,         
+                    duration: (() => {
+                        const val = document.getElementById('editDuration').value.trim();
+                        
+                        // 1. Nếu người dùng chỉ nhập số (ví dụ: "90")
+                        if (/^\d+$/.test(val)) {
+                            return val + " phút";
+                        }
+
+                        // 2. Phân tích nếu có chữ h/giờ hoặc m/phút
+                        const hoursMatch = val.match(/(\d+)\s*(h|giờ|giờ)/i);
+                        const minsMatch = val.match(/(\d+)\s*(m|phút)/i);
+                        
+                        let totalMinutes = 0;
+                        if (hoursMatch) totalMinutes += parseInt(hoursMatch[1]) * 60;
+                        if (minsMatch) totalMinutes += parseInt(minsMatch[1]);
+
+                        // Trả về kết quả cuối cùng
+                        return totalMinutes > 0 ? totalMinutes + " phút" : val;
+                    })(),
+                    gio_chieu: document.getElementById('editShowtimes').value ? document.getElementById('editShowtimes').value.split(',').map(t => t.trim()).filter(t => t) : [],
+                    year: parseInt(document.getElementById('editYear').value) || 0,
+                    director: document.getElementById('editDirector').value,
+                    trailer: document.getElementById('editTrailer').value,
+                    description: document.getElementById('editDescription').value
+                };
+
+                // Cập nhật lại giao diện (giữ nguyên kết quả tìm kiếm/lọc hiện tại)
+                filterMovies(); 
+                
+                saveMoviesToJSON();
+                switchTab('tab-info');
+
+                // Cuộn tới dòng vừa sửa để không bị nhảy về đầu trang
+                // Dùng setTimeout để đảm bảo tab đã chuyển và DOM đã render xong
+                setTimeout(() => {
+                    const updatedRow = document.getElementById(`movie-row-${id}`);
+                    if (updatedRow) {
+                        updatedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Hiệu ứng highlight nhẹ để người dùng dễ nhận biết dòng vừa sửa
+                        updatedRow.style.transition = 'background-color 0.5s';
+                        updatedRow.style.backgroundColor = 'rgba(243, 156, 18, 0.3)'; // Màu cam nhạt
+                        setTimeout(() => updatedRow.style.backgroundColor = '', 2000); // Xóa highlight sau 2 giây
+                    }
+                }, 300); // Đợi 300ms
+            }
+        }
+
+        // Delete Movie
+        function deleteMovie(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa phim này?')) {
+                movies = movies.filter(m => m.id !== id);
+                renderTable();
+                saveMoviesToJSON();
+            }
+        }
+
+        // Add Movie
+        function addMovie() {
+            // Xử lý logic thể loại: Nếu chọn "Khác", lấy giá trị từ ô nhập văn bản (text input)
+            let categoryValue = document.getElementById('newCategory').value;
+            if (categoryValue === 'Khác') {
+                categoryValue = document.getElementById('otherCategoryInput').value.trim();
+            }
+
+            const newMovie = {
+                id: Date.now(),
+                id: movies.length > 0 ? Math.max(...movies.map(m => m.id)) + 1 : 1,
+                name: document.getElementById('newName').value,
+                category: document.getElementById('newCategory').value,
+                category: categoryValue,
+                image: document.getElementById('newImage').value,
+                original_price: parseInt(document.getElementById('newOriginalPrice').value),
+                sale_price: parseInt(document.getElementById('newSalePrice').value),
+                original_price: parseInt(document.getElementById('newOriginalPrice').value) || 0,
+                sale_price: document.getElementById('newSalePrice').value ? parseInt(document.getElementById('newSalePrice').value) : null,
+                trailer: document.getElementById('newTrailer').value,
+                cinema_supported: document.getElementById('newCinema').value 
+                    ? document.getElementById('newCinema').value.split(',').map(c => c.trim()).filter(c => c) 
+                    : [],
+                gio_chieu: document.getElementById('newShowtimesList').value 
+                
+                    ? document.getElementById('newShowtimesList').value.split(',').map(t => t.trim()).filter(t => t) 
+                    : [],
+                gio_chieu: document.getElementById('newShowtimesList').value 
+                    ? document.getElementById('newShowtimesList').value.split(',').map(t => t.trim()).filter(t => t) 
+                    : [],
+                year: parseInt(document.getElementById('newYear').value) || new Date().getFullYear(),
+                duration: document.getElementById('newDuration').value,
+                director: document.getElementById('newDirector').value,
+                age: document.getElementById('newAge').value,
+                description: document.getElementById('newDescription').value
+            };
+
+            movies.push(newMovie);
+            document.getElementById('addForm').reset();
+            // Ẩn lại ô nhập thể loại khác sau khi đã thêm xong
+            document.getElementById('otherCategoryInput').style.display = 'none';
+            renderTable();
+            showToast('Thêm phim mới thành công!', 'success');
+            saveMoviesToJSON();
+        }
+
+        // Hàm đồng bộ dữ liệu hiện tại trong mảng 'movies' vào file products.json
+        async function saveMoviesToJSON() {
+            try {
+                const response = await fetch("http://127.0.0.1:5000/update-movies", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(movies)
+                });
+                const data = await response.json();
+                if (data.success) {
+                    console.log("Đã đồng bộ file products.json thành công.");
+                } else {
+                    console.error("Lỗi từ server:", data.message);
+                }
+            } catch (err) {
+                console.error("Lỗi kết nối server khi lưu file:", err);
+            }
+        }
+
+        function applyFilter(type) {
+            const filterLabel = document.getElementById('filterLabel');
+            const filterBtn = document.querySelector('.btn-secondary');
+
+            if (type === 'az') {
+                const sortedAZ = [...movies].sort((a, b) => a.name.localeCompare(b.name));
+                renderTable(sortedAZ);
+                filterLabel.innerText = "Tên A-Z";
+            } 
+            else if (type === 'id') {
+                const sortedID = [...movies].sort((a, b) => a.id - b.id);
+                renderTable(sortedID);
+                filterLabel.innerText = "Theo ID";
+            } 
+            else if (type === 'year') {
+                const sortedID = [...movies].sort((a, b) => Number(a.year) - Number(b.year));
+                renderTable(sortedID);
+                filterLabel.innerText = "Theo năm SX";
+            } 
+            else {
+                renderTable(movies);
+                filterLabel.innerText = "Lọc";
+            }
+        }  
+        function addShowtimeToList() {      
+            const input = document.getElementById('editShowtimesInput');
+            const timeValue = input.value;
+            
+            if (!timeValue) {
+                showToast("Vui lòng chọn giờ!", 'warning');
+                return;
+            }
+
+            const editShowtimesField = document.getElementById('editShowtimes');
+            let currentTimes = editShowtimesField.value.trim();
+            
+            if (currentTimes) {
+                // Kiểm tra xem giờ đã tồn tại chưa
+                const timesArray = currentTimes.split(',').map(t => t.trim());
+                if (timesArray.includes(timeValue)) {
+                    showToast("Giờ chiếu này đã tồn tại!", 'warning');
+                    return;
+                }
+                editShowtimesField.value = currentTimes + ", " + timeValue;
+            } else {
+                editShowtimesField.value = timeValue;
+            }
+            
+            input.value = ""; // Reset input sau khi thêm
+    
+        }
+
+        (function checkPrivacy() {
+            const role = Number(localStorage.getItem("userRole"));
+            // Nếu không phải là nhân viên (2) và cũng không phải admin (1) -> Đá văng ra trang chủ
+            if (role !== 1 && role !== 2) {
+                showToast("Bạn không có quyền truy cập vào trang này!", 'error');
+                setTimeout(() => {
+                    window.location.href = "trangchu.html";
+                }, 1500);
+            }
+        })();
+
+        async function loadAdminFeedbacks() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/api/admin/feedbacks');
+                const result = await response.json();
+                
+                // Đã đổi ID thành feedbackTableBody cho khớp với HTML của bạn
+                const tbody = document.getElementById('feedbackTableBody');
+                if (!tbody) return;
+
+                if (result.success) {
+                    const listGopY = result.data;
+                    
+                    if (listGopY.length === 0) {
+                        tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; padding: 20px; color: #aaa;">Hiện tại chưa có góp ý nào từ khách hàng.</td></tr>`;
+                        return;
+                    }
+
+                    let htmlRows = "";
+                    listGopY.forEach(item => {
+                        htmlRows += `
+                            <tr style="border-bottom: 1px solid #333;">
+                                <td style="padding: 12px; border: 1px solid #333; color: #ffc107; font-size: 0.9rem;">${item.NgayGui}</td>
+                                <td style="padding: 12px; border: 1px solid #333;"><strong>${item.Hovaten}</strong></td>
+                                <td style="padding: 12px; border: 1px solid #333; font-size: 0.9rem; color: #aaa;">
+                                    <div><i class="fa-regular fa-envelope"></i> ${item.Email}</div>
+                                    <div><i class="fa-solid fa-phone" style="font-size:0.8rem;"></i> ${item.Sodt}</div>
+                                </td>
+                                <td style="padding: 12px; border: 1px solid #333; max-width: 300px; white-space: pre-wrap; line-height: 1.4;">${item.NoiDung}</td>
+                                <td style="padding: 12px; border: 1px solid #333; text-align: center;">
+                                    <button onclick="deleteFeedback(${item.MAGY})" style="background: #e50914; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+                                        <i class="fa-solid fa-trash"></i> Xóa
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                    
+                    tbody.innerHTML = htmlRows;
+                } else {
+                    tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #e50914; padding: 20px;">Lỗi: ${result.msg}</td></tr>`;
+                }
+            } catch (error) {
+                console.error("Lỗi fetch feedback admin:", error);
+                document.getElementById('feedbackTableBody').innerHTML = `<tr><td colspan="5" style="text-align: center; color: #e50914; padding: 20px;">Không thể kết nối đến server backend!</td></tr>`;
+            }
+        }
+
+        // Hàm xử lý khi Admin ấn nút Xóa góp ý (Tính năng mở rộng giúp đồ án hoàn thiện hơn)
+        async function deleteFeedback(id) {
+            if (confirm("Bạn có chắc chắn muốn xóa góp ý này không?")) {
+                try {
+                    const response = await fetch(`http://127.0.0.1:5000/api/admin/feedbacks/${id}`, {
+                        method: 'DELETE'
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        alert("Xóa thành công!");
+                        loadAdminFeedbacks(); // Tải lại danh sách sau khi xóa
+                    } else {
+                        alert("Xóa thất bại: " + result.msg);
+                    }
+                } catch (error) {
+                    alert("Lỗi kết nối server!");
+                }
+            }
+        }
+
+        // Initial Load
+        window.onload = () => {
+            loadMovies();
+
+            // Hiển thị tên admin
+            const adminName = localStorage.getItem("userFullname");
+            if (adminName) {
+                document.getElementById("adminName").textContent = adminName;
+            }
+
+            // Ẩn menu Quản lý tài khoản nếu không phải Admin (role = 1)
+            const currentRole = Number(localStorage.getItem("userRole"));
+            if (currentRole === 1) {
+                document.getElementById("accountMenuItem").style.display = "block";
+            }
+
+            // Add event listener for sidebar navigation
+            const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    const tabId = this.getAttribute('data-tab');
+                    if(tabId) {
+                        event.preventDefault();
+                        switchTab(tabId);
+                    }
+                });
+            });
+        };
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = "./trangchu.html";
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const categorySelect = document.getElementById('newCategory');
+            const otherCategoryInput = document.getElementById('otherCategoryInput');
+
+            categorySelect.addEventListener('change', function () {
+                if (this.value === 'Khác') {
+                    // Hiện ô input và bắt buộc phải nhập dữ liệu
+                    otherCategoryInput.style.display = 'block';
+                    otherCategoryInput.setAttribute('required', 'true');
+                    otherCategoryInput.focus(); // Tự động nhảy con trỏ chuột vào ô nhập
+                } else {
+                    // Ẩn ô input và bỏ bắt buộc nhập nếu chọn cái khác
+                    otherCategoryInput.style.display = 'none';
+                    otherCategoryInput.removeAttribute('required');
+                    otherCategoryInput.value = ''; // Xóa chữ đã nhập trước đó (nếu có)
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeInput = document.getElementById('newShowtimes');
+            const timeListInput = document.getElementById('newShowtimesList');
+            const addTimeBtn = document.getElementById('addTimeBtn');
+
+            addTimeBtn.addEventListener('click', function() {
+                const timeValue = timeInput.value; // Giá trị trả về mặc định luôn là "HH:MM" (24h)
+
+                // Kiểm tra xem người dùng đã chọn giờ chưa
+                if (!timeValue) {
+                    alert('Vui lòng chọn một khung giờ!');
+                    return;
+                }
+
+                // Lấy chuỗi hiện tại ở ô text và cắt thành mảng (bỏ khoảng trắng thừa)
+                let currentTimes = timeListInput.value.trim() 
+                    ? timeListInput.value.split(',').map(t => t.trim()) 
+                    : [];
+
+                // Kiểm tra nếu giờ này đã có trong danh sách rồi thì không thêm trùng
+                if (currentTimes.includes(timeValue)) {
+                    alert('Giờ chiếu này đã có trong danh sách!');
+                    return;
+                }
+
+                // Thêm giờ mới vào mảng
+                currentTimes.push(timeValue);
+
+                // Ghép mảng lại thành chuỗi, cách nhau bằng dấu phẩy và khoảng trắng rồi đổ vào ô text
+                timeListInput.value = currentTimes.join(', ');
+
+                // Xóa giá trị ở ô time để người dùng tiện chọn khung giờ tiếp theo
+                timeInput.value = '';
+            });
+        });
+    </script>
+<script src="./script/modal.js"></script>
+</body>
+</html>
