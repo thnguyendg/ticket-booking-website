@@ -84,34 +84,34 @@ As a member of a 4-person team, I was responsible for:
 
 ### Login Page
 
-![Login](docs/screenshots/login.png)
+![Login](MovieTicket/docs/screenshots/login.png)
 
 ### Signup Page
-![Signup Page](docs/screenshots/signup.png)
+![Signup Page](MovieTicket/docs/screenshots/signup.png)
 
 ### Homepage
 
-![Homepage](docs/screenshots/homepage.png)
+![Homepage](MovieTicket/docs/screenshots/homepage.png)
 
 ### Ticket-Booking
 
-![Ticket-Booking](docs/screenshots/ticket-booking.png)
+![Ticket-Booking](MovieTicket/docs/screenshots/ticket-booking.png)
 
 ### Admin Dashboard
 
-![Dashboard](docs/screenshots/admin-dashboard.png)
+![Dashboard](MovieTicket/docs/screenshots/admin-dashboard.png)
 
 ### User Dashboard
 
-![User Dashboard](docs/screenshots/user-dashboard.png)
+![User Dashboard](MovieTicket/docs/screenshots/user-dashboard.png)
 
 ### Movie Management
 
-![Movie Management](docs/screenshots/movie-management.png)
+![Movie Management](MovieTicket/docs/screenshots/movie-management.png)
 
 ### Payment Page
 
-![Payment](docs/screenshots/payment-check.png)
+![Payment](MovieTicket/docs/screenshots/payment-check.png)
 
 ## ⚙️ Installation
 
@@ -165,7 +165,6 @@ http://127.0.0.1:5000
 MovieTicket/
 │
 ├── app.py
-├── README.md
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
